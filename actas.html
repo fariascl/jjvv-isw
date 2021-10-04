@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actas</title>
+    <link rel="stylesheet" href="static/css/sesion.css">
+
+
+    <style>
+        #row{
+            display:inline;
+            margin: 0 350px;
+            padding: 40px 60px;            
+        }
+        .inputFecha{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            background: var(--color-fondo-inputs);
+            border: 1px solid var(--color-texto-placeholder);
+            width: 200px;
+        }
+        .buttonFecha {
+            padding: 10px;
+        }
+        #acta{
+            margin: 0 350px;
+            padding: 40px 60px 29px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-bloque-central);
+            background: var(--color-bloque-central);
+        }
+        #contenido {
+            margin: 10px 50px;
+            padding: 10px;
+            background: var(--color-fondo-inputs);
+            border: 1px solid var(--color-texto-placeholder);
+            text-align: left !important;
+        }
+
+        .btnAzulito {
+            margin: 10px 50px;
+            padding: 10px;
+            text-align: center;
+            background: #4EA5D9;
+            color: #f1f1f1;
+            font-weight: var(--grosor-negrita);
+            border-radius: 5px;
+            border: #4EA5D9 1px solid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <a href="#">J.J.V.V</a>
+            </div>
+            <div class="action">
+                <a href="#">Home</a>
+                <a href="#">Anuncios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="#">Actas</a>
+                <a href="#" class="active">Iniciar Sesión</a>
+                <a href="register.html">Registro</a>
+            </div>
+        </div>
+        <div class="main">
+            <div>
+                <div id="row">
+                        <input type="date" class="inputFecha">
+                        <input type="date" class="inputFecha">
+                        <button type="submit" class="buttonFecha" value="Filtrar">🔎</button>
+                </div>
+                
+                <div id="acta">
+                    <p class="tittle">Acta reunion 00/00/00</p>
+                    <div id="contenido">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Iure cumque tenetur voluptates dicta mollitia eum nam 
+                            repellendus corporis magnam doloribus atque libero animi 
+                            totam maxime, impedit nesciunt accusantium, 
+                            distinctio omnis!
+                        </p>
+                    </div>
+                    <div id="contenido">
+                        <p><strong>Eva</strong> dijo: Lorem ipsum dolor</p>
+                    </div>
+                    <textarea rows="4" cols="30" id="contenido" placeholder="Escriba su comentario aquí"></textarea>
+                </div>
+                <button type="button" class="btnAzulito">Subir</button>
+            </div>
+        </div>
+</body>
+
+</html>
