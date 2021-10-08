@@ -40,6 +40,8 @@ html,body {
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 .menu{
     background-color:var(--color-fondo-menu);
@@ -91,31 +93,16 @@ html,body {
     color: var(--color-texto-menu-hover);
     transition: var(--transicion);
 }
-
-/*
-.main{
-    margin: 0 50px 0 50px;
-    background: url(./fondo.png) no-repeat fixed center;
-    height:657px;
-    width:auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
-}
-*/
-/* aca no tiene los bordes a los lados */
 .main{
     padding: 49px 60px 0 60px;
     background: url(../img/fondo.png) no-repeat fixed center;
-    height:647px;
     width:auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     text-align: center;
+    height: 100%;
 }
 .center{
     margin: 90px 0 0 0;
