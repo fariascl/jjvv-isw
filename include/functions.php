@@ -26,7 +26,7 @@ function login($correo, $clave){
     $stmt->bind_param('s', $correo);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $stmt->fetch_assoc();
+    $row = $result->fetch_assoc();
     $contador = $row['COUNT(*)'];
     $clave_temp = $row['clave'];
     $stmt->close();
@@ -42,5 +42,15 @@ function login($correo, $clave){
     }
     
     
+}
+
+function get_actas(){
+    $sql_query = "SELECT * from reunion;";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $stmt->close();
+    return $row;
 }
 ?>
