@@ -28,3 +28,6 @@
     justify-content: space-between;
     background: var(--color-fondo-inputs);
 }
+.item p{
+    padding: 0 5px 0 0;
+}
