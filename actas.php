@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,14 +33,15 @@
                     <input type="date" class="inputFecha">
                     <button type="submit" class="buttonFecha" value="Filtrar">🔎</button>
                 </div>
-                <div id="acta">
-                    <p class="titulo_acta">Acta reunion 00/00/00</p>
+                <?php
+                include('include/functions.php');
+                $row = get_actas();
+                foreach ($row as $acta)
+                    echo '
+                    <div id="acta">
+                    <p class="titulo_acta">'. $acta[6]. '</p>
                     <div id="contenido">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Iure cumque tenetur voluptates dicta mollitia eum nam
-                            repellendus corporis magnam doloribus atque libero animi
-                            totam maxime, impedit nesciunt accusantium,
-                            distinctio omnis!
+                        <p>' .$acta[7]. '
                         </p>
                     </div>
                     <div id="contenido">
@@ -47,6 +49,10 @@
                     </div>
                     <textarea rows="4" cols="30" id="contenido" placeholder="Escriba su comentario aquí"></textarea>
                 </div>
+                    ';
+
+                ?>
+                
                 <button type="button" class="button">Enviar</button>
             </div>
         </div>

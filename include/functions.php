@@ -1,5 +1,5 @@
 <?php
-include_once('db.php');
+include 'db.php';
 /* Funcion para registrar usuario normal, sin permisos de administrador */
 function register($nombre, $correo, $clave){
     /*Falta agregar el try catch*/
@@ -26,7 +26,7 @@ function login($correo, $clave){
     $stmt->bind_param('s', $correo);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $stmt->fetch_assoc();
+    $row = $result->fetch_assoc();
     $contador = $row['COUNT(*)'];
     $clave_temp = $row['clave'];
     $stmt->close();
@@ -42,5 +42,18 @@ function login($correo, $clave){
     }
     
     
+}
+
+function get_actas(){
+    include 'db.php';
+    $sql_query = "SELECT * FROM reunion";
+    $stmt = $conn->prepare("SELECT * FROM reunion;");
+    //echo var_dump($stmt);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_all();
+    $stmt->close();
+    //echo var_dump($row);
+    return $row;
 }
 ?>
