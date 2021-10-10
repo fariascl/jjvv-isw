@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST[''])){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     require_once('functions.php');
     if (isset($_POST['name']) && isset($_POST['rut']) && isset($_POST['email']) && isset($_POST['password'])){
         if (register($nombre, $rut, $correo, $clave) == 1){
