@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    require_once('inc/functions.php');
+    require_once('include/functions.php');
     if (isset($_POST['name']) && isset($_POST['rut']) && isset($_POST['email']) && isset($_POST['password'])){
         if (register($nombre, $rut, $correo, $clave) == 1){
             $msg = "Usuario registrado correctamente";
