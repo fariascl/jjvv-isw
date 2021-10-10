@@ -36,12 +36,12 @@
                 <?php
                 include('include/functions.php');
                 $row = get_actas();
-                foreach ($row as $acta){
+                foreach ($row as $acta)
                     echo '
                     <div id="acta">
-                    <p class="titulo_acta">'.$acta['titulo_acta'].'</p>
+                    <p class="titulo_acta">'. $acta[6]. '</p>
                     <div id="contenido">
-                        <p>'.$acta['contenido_acta'].'
+                        <p>' .$acta[7]. '
                         </p>
                     </div>
                     <div id="contenido">
@@ -51,7 +51,7 @@
                 </div>
                     ';
 
-                } ?>
+                ?>
                 
                 <button type="button" class="button">Enviar</button>
             </div>
