@@ -49,7 +49,7 @@ function get_actas(){
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $row = $result->fetch_all();
     $stmt->close();
     return $row;
 }
