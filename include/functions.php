@@ -6,8 +6,8 @@ function register($nombre, $rut, $correo, $clave){
     /*Falta agregar el try catch*/
     $seed = new DateTime();
     $random_id = md5($seed->getTimestamp()); /* Se crea un hash para ID y evitar que sea consecutivo */
-    $sql_query = "INSERT INTO USUARIO VALUES (?,?,?,?,?);"; /* SQL para insertar en usuarios */
-    $sql_query_2 = "INSERT INTO USUARIO_NORMAL VALUES (?)"; /* SQL para insertar en usuarios normal */
+    $sql_query = "INSERT INTO usuario VALUES (?,?,?,?,?);"; /* SQL para insertar en usuarios */
+    $sql_query_2 = "INSERT INTO usuario_normal VALUES (?)"; /* SQL para insertar en usuarios normal */
     $stmt = $conn->prepare($sql_query);
     $stmt_2 = $conn->prepare($sql_query_2);
 
@@ -15,8 +15,6 @@ function register($nombre, $rut, $correo, $clave){
     $stmt_2->bind_param('s', $random_id); // Lo mismo que la linea anterior
     $stmt->execute(); // Se ejecuta la insercion en los usuarios
     $stmt_2->execute(); // Se ejecuta la insercion en los usuarios_normal
-    $stmt->commit();
-    $stmt_2->commit();
     $stmt->close();
     $stmt_2->close();
     $conn->close();
