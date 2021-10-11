@@ -1,6 +1,7 @@
 CREATE TABLE usuario (
 	id_usuario VARCHAR(40) PRIMARY KEY,
 	nombre VARCHAR(50),
+    rut VARCHAR(12),
 	correo VARCHAR(50),
 	clave VARCHAR(15)
 );
