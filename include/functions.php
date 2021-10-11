@@ -1,16 +1,17 @@
 <?php
-include 'db.php';
+
 /* Funcion para registrar usuario normal, sin permisos de administrador */
-function register($nombre, $correo, $clave){
+function register($nombre, $rut, $correo, $clave){
+    include 'db.php';
     /*Falta agregar el try catch*/
     $seed = new DateTime();
     $random_id = md5($seed->getTimestamp()); /* Se crea un hash para ID y evitar que sea consecutivo */
-    $sql_query = "INSERT INTO usuario VALUES (%s,%s,%s,%s);"; /* SQL para insertar en usuarios */
-    $sql_query_2 = "INSERT INTO usuario_normal VALUES (%s)"; /* SQL para insertar en usuarios normal */
+    $sql_query = "INSERT INTO usuario VALUES (?,?,?,?,?);"; /* SQL para insertar en usuarios */
+    $sql_query_2 = "INSERT INTO usuario_normal VALUES (?)"; /* SQL para insertar en usuarios normal */
     $stmt = $conn->prepare($sql_query);
     $stmt_2 = $conn->prepare($sql_query_2);
 
-    $stmt->bind_param('ssss', $random_id, $nombre, $correo, $clave); // Se bindean los parametros para evitar inyecciones de codigo SQL
+    $stmt->bind_param('sssss', $random_id, $rut, $nombre, $correo, $clave); // Se bindean los parametros para evitar inyecciones de codigo SQL
     $stmt_2->bind_param('s', $random_id); // Lo mismo que la linea anterior
     $stmt->execute(); // Se ejecuta la insercion en los usuarios
     $stmt_2->execute(); // Se ejecuta la insercion en los usuarios_normal
