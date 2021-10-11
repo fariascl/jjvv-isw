@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (isset($_POST['name']) && isset($_POST['rut']) && isset($_POST['email']) && isset($_POST['password'])){
         if (register($_POST['name'], $_POST['rut'], $_POST['email'], $_POST['password']) == 1){
             $msg = "Usuario registrado correctamente";
-            return $msg;
+            //return $msg;
         }
     }
     

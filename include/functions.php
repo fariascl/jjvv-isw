@@ -15,6 +15,8 @@ function register($nombre, $rut, $correo, $clave){
     $stmt_2->bind_param('s', $random_id); // Lo mismo que la linea anterior
     $stmt->execute(); // Se ejecuta la insercion en los usuarios
     $stmt_2->execute(); // Se ejecuta la insercion en los usuarios_normal
+    $stmt->commit();
+    $stmt_2->commit();
     $stmt->close();
     $stmt_2->close();
     $conn->close();
