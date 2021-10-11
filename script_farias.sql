@@ -1,3 +1,22 @@
+CREATE TABLE usuario (
+	id_usuario VARCHAR(40) PRIMARY KEY,
+	nombre VARCHAR(50),
+	correo VARCHAR(50),
+	clave VARCHAR(15)
+);
+
+CREATE TABLE usuario_normal (
+	id_usuario VARCHAR(40) PRIMARY KEY,
+	FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+CREATE TABLE usuario_admin (
+	id_usuario VARCHAR(40) PRIMARY KEY,
+	FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+
+
 CREATE TABLE reunion (
     id_reunion INTEGER PRIMARY KEY,
     nombre_reunion VARCHAR(60),
