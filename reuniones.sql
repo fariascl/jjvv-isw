@@ -1,15 +1,16 @@
-CREATE TABLE comunidad(
+/*CREATE TABLE comunidad(
     id_comunidad INTEGER PRIMARY KEY,
     nombre_comunidad VARCHAR(60)
 );
-
+*/
+/*
 CREATE TABLE administrador(
     id_administrador INTEGER PRIMARY KEY,
     correo_administrador VARCHAR(60),
     nombre_administrador VARCHAR(60),
     rut_administrador VARCHAR(60),
     contrasena_administrador VARCHAR(20)
-);
+);}*/
 
 CREATE TABLE reunion (
     id_reunion INTEGER PRIMARY KEY,

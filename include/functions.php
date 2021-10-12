@@ -48,13 +48,64 @@ function login($correo, $clave){
 function get_actas(){
     include 'db.php';
     $sql_query = "SELECT * FROM reunion";
-    $stmt = $conn->prepare("SELECT * FROM reunion;");
+    $stmt = $conn->prepare($sql_query);
     //echo var_dump($stmt);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_all();
     $stmt->close();
     //echo var_dump($row);
+    $conn->close();
     return $row;
+}
+
+function get_reunion(){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT * FROM reunion;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_all();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+        return $msg;
+    }
+    
+}
+
+function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $tema_reunion,$id_comunidad, $id_usuario){
+    try {
+        include 'db.php';
+        $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?);";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('sssssds',$nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $tema_reunion,$id_comunidad, $id_usuario);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+        return 0;
+    }
+    
+}
+
+function create_comunidad($nombre_comunidad){
+    try {
+        include 'db.php';
+        $sql_query = "INSERT INTO comunidad VALUES (?);";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('s', $nombre_comunidad);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return 1;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+        return 0;
+    }   
 }
 ?>
