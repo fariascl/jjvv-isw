@@ -35,3 +35,17 @@ CREATE TABLE reunion (
     FOREIGN KEY (id_comunidad) REFERENCES comunidad(id_comunidad),
     FOREIGN KEY (id_usuario) REFERENCES usuario_admin(id_usuario)
 );
+
+CREATE TABLE pertenece (
+     id_usuario INTEGER,
+     id_comunidad INTEGER,
+     PRIMARY KEY (id_usuario, id_comunidad),
+     FOREIGN KEY (id_usuario) REFERENCES usuario_normal(id_usuario)
+);
+
+CREATE TABLE administra (
+     id_usuario INTEGER,
+     id_comunidad INTEGER,
+     PRIMARY KEY (id_usuario, id_comunidad),
+     FOREIGN KEY (id_usuario) REFERENCES usuario_admin(id_usuario)
+);
