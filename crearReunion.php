@@ -1,3 +1,24 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    require_once('include/functions.php');
+    if (isset($_POST['titulo_reunion']) && isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['ubicacion']) && isset($_POST['descripcion'])){
+        $titulo = $_POST['titulo_reunion'];
+        $fecha = $_POST['fecha'];
+        $hora = $_POST['hora'];
+        $ubicacion = $_POST['ubicacion'];
+        $descripcion = $_POST['descripcion'];
+        $id_comunidad = 1; // Ejemplo de id de comunidad
+        $id_usuario = 1; // Ejemplo de id usuario
+        if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $id_comunidad, $id_usuario) == 1){
+            $msg = "Reunion creada exitosamente";
+            //return $msg;
+        }
+    }
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,11 +57,11 @@
             <div class="center">
                 <form action="#">
                     <p class="tittle">Agendar reunión</p>
-                    <input class="input" type="text" placeholder="Título">
-                    <input class="input" type="text" placeholder="Día">
-                    <input class="input" type="text" placeholder="Hora">
-                    <input class="input" type="text" placeholder="Ubicación">
-                    <textarea class="input textarea" cols="10" rows="5" placeholder="Descripción"></textarea>
+                    <input class="input" name="titulo_reunion" type="text" placeholder="Título">
+                    <input class="input" name="fecha" type="text" placeholder="Día">
+                    <input class="input" name="hora" type="text" placeholder="Hora">
+                    <input class="input" name="ubicacion" type="text" placeholder="Ubicación">
+                    <textarea class="input textarea" cols="10" rows="5" name="descripcion" placeholder="Descripción"></textarea>
                     <input class="button" type="submit" value="Agendar">
                 </form>
             </div>
