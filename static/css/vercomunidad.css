@@ -1,0 +1,36 @@
+@import url(./menu.css);
+
+.center form{
+    margin: 0 350px;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-bloque-central);
+    background: var(--color-bloque-central);
+}
+.block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 40px;
+    border: 1px solid var(--color-texto-placeholder);
+    background-color: var(--color-fondo-inputs);
+    margin: 0 0 15px 0;
+}
+.button{
+    text-decoration: none;
+    margin: 10px 50px;
+    padding: 10px;
+    text-align: center;
+    background: var(--color-boton-secundario);
+    color: var(--color-texto-botones);
+    font-weight: var(--grosor-negrita);
+    border-radius: 5px;
+    border: 1px solid var(--color-boton-secundario);
+}
+.button:hover{
+    transition: var(--transicion);
+    background-color: var(--color-boton-secundario-hover);
+    border: 1px solid var(--color-boton-secundario-hover);
+}
