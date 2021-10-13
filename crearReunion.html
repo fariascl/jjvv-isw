@@ -34,19 +34,20 @@
         </div>
         <div class="main">
             <div class="center">
-                <form action="#">
+                <form id="form" method="" onsubmit="return validar();">
                     <p class="tittle">Agendar reunión</p>
-                    <input class="input" type="text" placeholder="Título">
-                    <input class="input" type="text" placeholder="Día">
-                    <input class="input" type="text" placeholder="Hora">
-                    <input class="input" type="text" placeholder="Ubicación">
-                    <textarea class="input textarea" cols="10" rows="5" placeholder="Descripción"></textarea>
+                    <input class="input" id="titulo" type="text" placeholder="Título">
+                    <input class="input" id="dia" type="text" placeholder="Día">
+                    <input class="input" id="hora" type="text" placeholder="Hora">
+                    <input class="input" id="ubicacion" type="text" placeholder="Ubicación">
+                    <textarea class="input textarea" id="descripcion" cols="10" rows="5"
+                        placeholder="Descripción"></textarea>
                     <input class="button" type="submit" value="Agendar">
                 </form>
             </div>
         </div>
     </div>
-
+    <script src="./static/js/validaciones.js"></script>
 </body>
 
 </html>
