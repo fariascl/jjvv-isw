@@ -91,6 +91,21 @@ function get_comunidad(){
         return $msg;
     }
 }
+
+function get_desc_by_comunidad($id){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT * FROM comunidad;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->execute();
+        $result = result->fetch_assoc();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    } catch(Exception $e){
+        $msg = $e->getMessage();
+    }
+}
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';

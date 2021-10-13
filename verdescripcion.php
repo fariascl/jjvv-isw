@@ -1,3 +1,8 @@
+<?php
+if (!isset($_GET['id'])){
+    header('Location: comunidades.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,21 +39,19 @@
         <div class="main">
             <div class="center">
                 <form action="">
-                    <!-- <?php
+                    <?php
                     include('include/functions.php');
-                    $row = get_comunidad();
-                    foreach ($row as $comunidad){
-                        echo '
+                    $row = get_desc_by_comunidad($_GET['id']);
+                    echo '
                         <div class="block">
-                            <p>' .$comunidad[1]. '</p>
+                            <p>' .$row['nombre_comunidad']. '</p>
                             <a href="#" class="button">Descripción</a>
-                        </div>';
-                    }
-                    ?>-->
+                        </div>
+
                     <p class="tittle">Junta de Vecinos X</p>
                     <div>
-                        <textarea class="input textarea" cols="30" rows="10" placeholder="Esto es una comunidad promedio" readonly><?php echo $comunidad[2]; ?> </textarea>
-                    </div>
+                        <textarea class="input textarea" cols="30" rows="10" placeholder="Esto es una comunidad promedio" readonly>'.$comunidad['descripcion_comunidad'].'</textarea>
+                    </div>'; ?>
                     <a class="button" href="vercomunidad.php">Volver</a>
                 </form>
             </div>
