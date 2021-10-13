@@ -93,14 +93,22 @@ function get_comunidad(){
         return $msg;
     }
 }
-function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $tema_reunion,$id_comunidad, $id_usuario){
+function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
         $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('sssssds',$nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $tema_reunion,$id_comunidad, $id_usuario);
+        $stmt->bind_param('sssssis',$nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
         $stmt->execute();
+
+        $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
+
+        $stmt_2 = $conn->prepare($sql_query_2);
+        $stmt_2->bind_param('ii', intval($stmt->last_id()), $id_comunidad);
+        $stmt2->execute();
+        
         $stmt->close();
+        $stmt_2->close();
         $conn->close();
     } catch (Exception $e) {
         $msg = $e->getMessage();
