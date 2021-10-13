@@ -103,7 +103,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
 
         $stmt_2 = $conn->prepare($sql_query_2);
         $stmt_2->bind_param('ii', intval($stmt->last_id), $id_comunidad);
-        $stmt2->execute();
+        $stmt_2->execute();
         
         $stmt->close();
         $stmt_2->close();
