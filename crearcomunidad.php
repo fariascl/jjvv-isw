@@ -33,17 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html" >Reuniones</a>
-                <a href="vercomunidad.html" class="active" >Comunidades</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="reuniones.php" >Reuniones</a>
+                <a href="vercomunidad.php" class="active" >Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearcomunidad.html" class="active">Crear nueva Comunidad</a>
-                <a href="vercomunidad.html">Ver Comunidad</a>
+                <a href="crearcomunidad.php" class="active">Crear nueva Comunidad</a>
+                <a href="vercomunidad.php">Ver Comunidad</a>
                 <a href="#">Editar Comunidad</a>
                 <a href="#">Eliminar Comunidad</a>
             </div>

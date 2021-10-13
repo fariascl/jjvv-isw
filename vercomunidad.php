@@ -18,17 +18,17 @@
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html">Reuniones</a>
-                <a href="vercomunidades.html" class="active">Comunidades</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="vercomunidad.php" class="active">Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearcomunidad.html">Crear nueva comunidad</a>
-                <a href="reuniones.html" class="active">Ver comunidades</a>
+                <a href="crearcomunidad.php">Crear nueva comunidad</a>
+                <a href="vercomunidades.php" class="active">Ver comunidades</a>
                 <a href="#">Editar comunidad</a>
                 <a href="#">Eliminar comunidad</a>
             </div>
