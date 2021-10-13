@@ -109,7 +109,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
     
 }
 
-function create_comunidad($nombre_comunidad, $descripcion_com){
+function create_comunidad($nombre_comunidad, $descr_comunidad){
     try {
         $sample_id = random_int(2,100); // Este es un id de ejemplo, ya que hay que modificar los ID de las tablas, que sean incrementales (excepcional las tablas de usuario)
         include 'db.php';
