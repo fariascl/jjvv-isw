@@ -40,16 +40,16 @@
                     include('include/functions.php');
                     $row = get_comunidad();
                     foreach ($row as $comunidad){
-                    echo '
-                    <div class="block">
-                        <p>'.$comunidad[1].'</p>
-                        <a href="#" class="button">Descripción</a>
-                    </div>';
+                        echo '
+                        <div class="block">
+                            <p>' .$comunidad[1]. '</p>
+                            <a href="#" class="button">Descripción</a>
+                        </div>';
+                    }
                     ?>
                 </form>
             </div>
         </div>
     </div>
 </body>
-
 </html>
