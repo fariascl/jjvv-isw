@@ -98,7 +98,8 @@ function get_desc_by_comunidad($id){
         $sql_query = "SELECT * FROM comunidad;";
         $stmt = $conn->prepare($sql_query);
         $stmt->execute();
-        $result = result->fetch_assoc();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
         $stmt->close();
         $conn->close();
         return $row;
@@ -106,6 +107,7 @@ function get_desc_by_comunidad($id){
         $msg = $e->getMessage();
     }
 }
+
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
