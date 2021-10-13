@@ -18,17 +18,17 @@
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html" class="active">Reuniones</a>
-                <a href="vercomunidad.html">Comunidades</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="reuniones.php" class="active">Reuniones</a>
+                <a href="vercomunidad.php">Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="login.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearReunion.html">Crear nueva reunión</a>
-                <a href="reuniones.html" class="active">Historial de reuniones</a>
+                <a href="crearReunion.php">Crear nueva reunión</a>
+                <a href="reuniones.php" class="active">Historial de reuniones</a>
                 <a href="#">Configuración de reuniones</a>
             </div>
         </div>
@@ -45,7 +45,7 @@
                             echo '
                             <div class="item">
                                 <p>' .$reunion[0]. '</p>
-                                <p>'.$reunion[2].'b</p>
+                                <p>'.$reunion[2].' </p>
                             </div>';
                         }
                         ?>

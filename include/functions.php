@@ -98,7 +98,6 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('sssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
         $stmt->execute();
-        //$stmt; // flag
 
         $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
 
