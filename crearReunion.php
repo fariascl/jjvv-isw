@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" method="" onsubmit="return validar();">
+                <form id="form" action="crearReunion.php" method="POST" onsubmit="return validar();">
                     <p class="tittle">Agendar reunión</p>
                     <input class="input" id="titulo" name="titulo" type="text" placeholder="Título">
                     <!-- Elegir comunidad -->
