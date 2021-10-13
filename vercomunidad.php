@@ -36,19 +36,16 @@
         <div class="main">
             <div class="center">
                 <form action="">
+                    <?php
+                    include('include/functions.php');
+                    $row = get_comunidad();
+                    foreach ($row as $comunidad){
+                    echo '
                     <div class="block">
-                        <p>Junta de vecinos</p>
+                        <p>'.$comunidad[1].'</p>
                         <a href="#" class="button">Descripción</a>
-                    </div>
-                    <div class="block">
-                        <p>Junta de vecinos</p>
-                        <a href="#" class="button">Descripción</a>
-                    </div>
-                    <div class="block">
-                        <p>Junta de vecinos</p>
-                        <a href="#" class="button">Descripción</a>
-                    </div>
-
+                    </div>';
+                    ?>
                 </form>
             </div>
         </div>
