@@ -26,11 +26,11 @@ CREATE TABLE comunidad (
 
 CREATE TABLE reunion (
     id_reunion INTEGER PRIMARY KEY,
-    nombre_reunion VARCHAR(60),
+    tema_reunion VARCHAR(60),
     fecha_reunion DATE, /*Fecha seria "Dia" en el MER y MR*/
     hora_reunion VARCHAR(5),
     ubicacion_reunion VARCHAR(50),
-    tema_reunion VARCHAR(1000),
+    descripcion_reunion VARCHAR(1000),
     id_comunidad INTEGER,
     id_usuario VARCHAR(40),
     FOREIGN KEY (id_comunidad) REFERENCES comunidad(id_comunidad),
