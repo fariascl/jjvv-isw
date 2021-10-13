@@ -21,7 +21,7 @@
                 <a href="contacto.php">Contacto</a>
                 <a href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="main">
