@@ -43,12 +43,7 @@ if (!isset($_GET['id'])){
                     include('include/functions.php');
                     $row = get_desc_by_comunidad($_GET['id']);
                     echo '
-                        <div class="block">
-                            <p>' .$row['nombre_comunidad']. '</p>
-                            <a href="#" class="button">Descripción</a>
-                        </div>
-
-                    <p class="tittle">Junta de Vecinos X</p>
+                    <p class="tittle">' .$row['nombre_comunidad']. '</p>
                     <div>
                         <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
                     </div>'; ?>
