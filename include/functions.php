@@ -49,12 +49,10 @@ function get_actas(){
     include 'db.php';
     $sql_query = "SELECT * FROM reunion";
     $stmt = $conn->prepare($sql_query);
-    //echo var_dump($stmt);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_all();
     $stmt->close();
-    //echo var_dump($row);
     $conn->close();
     return $row;
 }
@@ -104,7 +102,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
 
         $stmt_2 = $conn->prepare($sql_query_2);
-        $stmt_2->bind_param('ii', intval($stmt->last_id()), $id_comunidad);
+        $stmt_2->bind_param('ii', intval($stmt->last_id), $id_comunidad);
         $stmt2->execute();
         
         $stmt->close();
@@ -112,7 +110,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         $conn->close();
     } catch (Exception $e) {
         $msg = $e->getMessage();
-        return 0;
+        echo $msg;
     }
     
 }

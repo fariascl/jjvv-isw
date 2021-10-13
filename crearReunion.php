@@ -7,10 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $hora = $_POST['hora'];
         $ubicacion =$_POST['ubicacion'];
         $descripcion = $_POST['descripcion'];
-
+        $id_usuario = '45f321b12939156dd082181bddebf119'; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
         if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
-            $msg = "Comunidad creada correctamente";
-            //return $msg;
+            $msg = "Comunidad creada correctamente"; // flag
+            header('Location: reuniones.html');
+            
         }
     }
     
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <!-- Elegir comunidad -->
                     <select class="input" name="comunidad">
                         <?php
-                        include('include/functions.php');
+                        require_once('include/functions.php');
                         $row = get_comunidad();
                         foreach ($row as $comunidad){
                             echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
