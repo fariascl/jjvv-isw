@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $ubicacion =$_POST['ubicacion'];
         $descripcion = $_POST['descripcion'];
 
-        if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $id_comunidad, $id_usuario)  == 1){
+        if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
             $msg = "Comunidad creada correctamente";
             //return $msg;
         }
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <p class="tittle">Agendar reunión</p>
                     <input class="input" id="titulo" name="titulo" type="text" placeholder="Título">
                     <!-- Elegir comunidad -->
-                    <select class="input">
+                    <select class="input" name="comunidad">
                         <?php
                         include('include/functions.php');
                         $row = get_comunidad();
