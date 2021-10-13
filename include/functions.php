@@ -77,6 +77,22 @@ function get_reunion(){
     
 }
 
+function get_comunidad(){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT * FROM comunidad;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_all();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+        return $msg;
+    }
+}
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $tema_reunion,$id_comunidad, $id_usuario){
     try {
         include 'db.php';
