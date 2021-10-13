@@ -38,6 +38,21 @@ CREATE TABLE reunion (
     FOREIGN KEY (id_usuario) REFERENCES usuario_admin(id_usuario)
 );
 
+CREATE TABLE acta (
+    id_acta INTEGER PRIMARY KEY AUTO_INCREMENT,
+    titulo_acta VARCHAR(60),
+    contenido_acta VARCHAR(5000),
+    fecha_acta DATE
+);
+
+CREATE TABLE registra (
+    id_reunion INTEGER,
+    id_acta INTEGER,
+    PRIMARY KEY (id_reunion, id_acta),
+    FOREIGN KEY (id_reunion) REFERENCES reunion(id_reunion),
+    FOREIGN KEY (id_acta) REFERENCES acta(id_acta)
+);
+
 CREATE TABLE pertenece (
     id_usuario INTEGER,
     id_comunidad INTEGER,
