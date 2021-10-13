@@ -115,7 +115,7 @@ function create_comunidad($nombre_comunidad, $descripcion_com){
         include 'db.php';
         $sql_query = "INSERT INTO comunidad VALUES (?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('s', $nombre_comunidad, $descr_comunidad);
+        $stmt->bind_param('dss', $sample_id, $nombre_comunidad, $descr_comunidad);
         $stmt->execute();
         $stmt->close();
         $conn->close();
