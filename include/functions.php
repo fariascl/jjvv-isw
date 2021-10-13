@@ -113,7 +113,7 @@ function create_comunidad($nombre_comunidad, $descripcion_com){
     try {
         $sample_id = random_int(2,100); // Este es un id de ejemplo, ya que hay que modificar los ID de las tablas, que sean incrementales (excepcional las tablas de usuario)
         include 'db.php';
-        $sql_query = "INSERT INTO comunidad VALUES (?,?);";
+        $sql_query = "INSERT INTO comunidad VALUES (?,?,?);";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('dss', $sample_id, $nombre_comunidad, $descr_comunidad);
         $stmt->execute();
