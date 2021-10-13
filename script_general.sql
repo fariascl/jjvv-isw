@@ -20,7 +20,8 @@ CREATE TABLE usuario_admin (
 
 CREATE TABLE comunidad (
     id_comunidad INTEGER PRIMARY KEY,
-    nombre_comunidad VARCHAR(60)
+    nombre_comunidad VARCHAR(60),
+    descripcion_comunidad(500)
 );
 
 CREATE TABLE reunion (
