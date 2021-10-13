@@ -19,9 +19,10 @@ CREATE TABLE usuario_admin (
 );
 
 CREATE TABLE comunidad (
-    id_comunidad INTEGER PRIMARY KEY AUTO_INCREMENT,
+    id_comunidad INTEGER NOT NULL AUTO_INCREMENT,
     nombre_comunidad VARCHAR(60),
-    descripcion_comunidad(500)
+    descripcion_comunidad VARCHAR(500),
+    PRIMARY KEY (id_comunidad)
 );
 
 CREATE TABLE reunion (
