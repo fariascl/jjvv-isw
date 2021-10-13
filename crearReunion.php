@@ -40,17 +40,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html" class="active">Reuniones</a>
-                <a href="vercomunidad.html">Comunidades</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="reuniones.php" class="active">Reuniones</a>
+                <a href="vercomunidad.php">Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearReunion.html" class="active">Crear nueva reunión</a>
-                <a href="reuniones.html">Historial de reuniones</a>
+                <a href="crearReunion.php" class="active">Crear nueva reunión</a>
+                <a href="reuniones.php">Historial de reuniones</a>
                 <a href="#">Configuración de reuniones</a>
             </div>
         </div>

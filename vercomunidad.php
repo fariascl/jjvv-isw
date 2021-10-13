@@ -21,7 +21,7 @@
                 <a href="reuniones.php">Reuniones</a>
                 <a href="vercomunidad.php" class="active">Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
             </div>
         </div>
