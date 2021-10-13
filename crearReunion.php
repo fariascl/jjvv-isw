@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             header('Location: reuniones.html');
             
         }
+
     }
     
 }
@@ -71,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="input" id="dia" name="fecha" type="text" placeholder="Día">
                     <input class="input" id="hora" name="hora" type="text" placeholder="Hora">
                     <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación">
-                    <textarea class="input textarea" id="descripcion" cols="10" rows="5"
+                    <textarea class="input textarea" id="descripcion" name="descripcion" cols="10" rows="5"
                         placeholder="Descripción"></textarea>
                     <input class="button" type="submit" value="Agendar">
                 </form>
