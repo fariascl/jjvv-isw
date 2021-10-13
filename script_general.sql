@@ -19,13 +19,13 @@ CREATE TABLE usuario_admin (
 );
 
 CREATE TABLE comunidad (
-    id_comunidad INTEGER PRIMARY KEY,
+    id_comunidad INTEGER PRIMARY KEY AUTO_INCREMENT,
     nombre_comunidad VARCHAR(60),
     descripcion_comunidad(500)
 );
 
 CREATE TABLE reunion (
-    id_reunion INTEGER PRIMARY KEY,
+    id_reunion INTEGER PRIMARY KEY AUTO_INCREMENT,
     tema_reunion VARCHAR(60),
     fecha_reunion DATE, /*Fecha seria "Dia" en el MER y MR*/
     hora_reunion VARCHAR(5),
