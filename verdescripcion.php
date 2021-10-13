@@ -50,7 +50,7 @@ if (!isset($_GET['id'])){
 
                     <p class="tittle">Junta de Vecinos X</p>
                     <div>
-                        <textarea class="input textarea" cols="30" rows="10" placeholder="'.$comunidad['descripcion_comunidad'].'" readonly></textarea>
+                        <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
                     </div>'; ?>
                     <a class="button" href="vercomunidad.php">Volver</a>
                 </form>
