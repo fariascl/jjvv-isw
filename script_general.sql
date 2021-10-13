@@ -50,3 +50,10 @@ CREATE TABLE administra (
     PRIMARY KEY (id_usuario, id_comunidad),
     FOREIGN KEY (id_usuario) REFERENCES usuario_admin(id_usuario)
 );
+CREATE TABLE tiene (
+    id_reunion INTEGER,
+    id_comunidad INTEGER,
+    PRIMARY KEY (id_reunion, id_comunidad),
+    FOREIGN KEY (id_reunion) REFERENCES reunion(id_reunion),
+    FOREIGN KEY (id_comunidad) REFERENCES comunidad(id_comunidad)
+);
