@@ -109,12 +109,13 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
     
 }
 
-function create_comunidad($nombre_comunidad){
+function create_comunidad($nombre_comunidad, $descripcion_com){
     try {
+        $sample_id = random_int(2,100); // Este es un id de ejemplo, ya que hay que modificar los ID de las tablas, que sean incrementales (excepcional las tablas de usuario)
         include 'db.php';
-        $sql_query = "INSERT INTO comunidad VALUES (?);";
+        $sql_query = "INSERT INTO comunidad VALUES (?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('s', $nombre_comunidad);
+        $stmt->bind_param('s', $nombre_comunidad, $descr_comunidad);
         $stmt->execute();
         $stmt->close();
         $conn->close();
