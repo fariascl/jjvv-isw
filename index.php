@@ -16,9 +16,9 @@
                 <a href="#">J.J.V.V</a>
             </div>
             <div class="action">
-                <a href="#">Home</a>
+                <a href="#" class="active">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="contacto.php" class="active">Contacto</a>
+                <a href="contacto.php">Contacto</a>
                 <a href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.html">Registro</a>
