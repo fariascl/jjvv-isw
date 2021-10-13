@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html">Reuniones</a>
-                <a href="contacto.html">Contacto</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html" class="active">Registro</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="vercomunidad.php"> Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="register.php" class="active">Registro</a>
             </div>
         </div>
         <div class="main">
