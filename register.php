@@ -2,7 +2,11 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     require_once('include/functions.php');
     if (isset($_POST['name']) && isset($_POST['rut']) && isset($_POST['email']) && isset($_POST['password'])){
-        if (register($_POST['name'], $_POST['rut'], $_POST['email'], $_POST['password']) == 1){
+        $nombre = $_POST['name'];
+        $rut = $_POST['rut'];
+        $correo = $_POST['email'];
+        $clave = $_POST['password'];
+        if (register($nombre, $correo, $clave, $rut) == 1){
             $msg = "Usuario registrado correctamente";
             //return $msg;
         }
