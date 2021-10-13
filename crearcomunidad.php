@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (isset($_POST['nombre_comunidad']) && isset($_POST['descripcion_comunidad'])){
         $nombre_com = $_POST['nombre_comunidad'];
         $desc_com = $_POST['descripcion_comunidad'];
-        if (create_comunidad($nombre_com, $desc_com){
+        if (create_comunidad($nombre_com, $desc_com) == 1){
             $msg = "Comunidad creada correctamente";
             //return $msg;
         }
