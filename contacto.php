@@ -17,11 +17,11 @@
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.html">Reuniones</a>
-                <a href="contacto.html" class="active">Contacto</a>
-                <a href="actas.html">Actas</a>
-                <a href="sesion.html">Iniciar Sesión</a>
-                <a href="register.html">Registro</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="contacto.php" class="active">Contacto</a>
+                <a href="actas.php">Actas</a>
+                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="main">

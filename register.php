@@ -53,10 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="button" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
-                        <<<<<<< HEAD <a href="#" class="link">Entrar</a>
-                            =======
-                            <p class="link">Entrar</p>
-                            >>>>>>> d40db5195777cfeb19cad5ffc115684991e53739
+                        <a href="#" class="link">Entrar</a>
+                        <p class="link">Entrar</p>
                     </nav>
                 </form>
             </div>
