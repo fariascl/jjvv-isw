@@ -94,15 +94,15 @@ function get_comunidad(){
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
-        $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?,?);";
+        $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('isssssis',intval(($stmt->last_id)+1), $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
+        $stmt->bind_param('isssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
         $stmt->execute();
 
         $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
 
         $stmt_2 = $conn->prepare($sql_query_2);
-        $stmt_2->bind_param('ii', intval($stmt->last_id), $id_comunidad);
+        $stmt_2->bind_param('ii', intval($stmt->insert_id), $id_comunidad);
         $stmt_2->execute();
         
         $stmt->close();
@@ -117,11 +117,10 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
 
 function create_comunidad($nombre_comunidad, $descr_comunidad){
     try {
-        $sample_id = random_int(2,100); // Este es un id de ejemplo, ya que hay que modificar los ID de las tablas, que sean incrementales (excepcional las tablas de usuario)
         include 'db.php';
-        $sql_query = "INSERT INTO comunidad VALUES (?,?,?);";
+        $sql_query = "INSERT INTO comunidad VALUES (?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('iss', $sample_id, $nombre_comunidad, $descr_comunidad);
+        $stmt->bind_param('ss', $nombre_comunidad, $descr_comunidad);
         $stmt->execute();
         $stmt->close();
         $conn->close();
