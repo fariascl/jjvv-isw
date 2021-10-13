@@ -95,8 +95,9 @@ function get_comunidad(){
 function get_desc_by_comunidad($id){
     try {
         include 'db.php';
-        $sql_query = "SELECT * FROM comunidad;";
+        $sql_query = "SELECT * FROM comunidad WHERE id_comunidad = ?;";
         $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('i', $id);
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
