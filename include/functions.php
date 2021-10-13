@@ -96,7 +96,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         include 'db.php';
         $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt->bind_param('isssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
+        $stmt->bind_param('sssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
         $stmt->execute();
 
         $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
