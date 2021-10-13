@@ -94,7 +94,7 @@ function get_comunidad(){
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
-        $sql_query = "INSERT INTO reunion VALUES (?,?,?,?,?,?,?);";
+        $sql_query = "INSERT INTO reunion(tema_reunion, fecha_reunion, hora_reunion, ubicacion_reunion, descripcion_reunion, id_comunidad, id_usuario) VALUES (?,?,?,?,?,?,?);";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('sssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
         $stmt->execute();
@@ -119,7 +119,7 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
 function create_comunidad($nombre_comunidad, $descr_comunidad){
     try {
         include 'db.php';
-        $sql_query = "INSERT INTO comunidad VALUES (?,?);";
+        $sql_query = "INSERT INTO comunidad(nombre_comunidad, descripcion_comunidad) VALUES (?,?);";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('ss', $nombre_comunidad, $descr_comunidad);
         $stmt->execute();
