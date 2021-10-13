@@ -39,9 +39,9 @@
                 foreach ($row as $acta)
                     echo '
                     <div id="acta">
-                    <p class="titulo_acta">'. $acta[6]. '</p>
+                    <p class="titulo_acta">'. $acta[1]. '</p>
                     <div id="contenido">
-                        <p>' .$acta[7]. '
+                        <p>' .$acta[2]. '
                         </p>
                     </div>
                     <div id="contenido">

@@ -47,7 +47,7 @@ function login($correo, $clave){
 
 function get_actas(){
     include 'db.php';
-    $sql_query = "SELECT * FROM actas;";
+    $sql_query = "SELECT * FROM acta;";
     $stmt = $conn->prepare($sql_query);
     $stmt->execute();
     $result = $stmt->get_result();
