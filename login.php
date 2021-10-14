@@ -1,3 +1,41 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    require_once('include/functions.php');
+    if (isset($_POST['email']) && isset($_POST['password'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $is_valid = login($email, $password);
+        if ($is_valid == 1){
+            try {
+                session_start();
+                $row = get_user_data($email);
+                $_SESSION['id_usuario'] = $row['id_usuario'];
+                $_SESSION['nombre'] = $row['nombre'];
+                $_SESSION['rut'] = $row['rut'];
+                $_SESSION['correo'] = $row['correo'];
+                $_SESSION['clave'] = $row['clave'];
+
+                header('Location: index.php');
+
+            }
+            catch {
+                msg = "Se ha detectado un error";
+            }
+            
+        }
+        else if ($is_valid == 2){
+            $msg = "La clave es incorrecta";
+            header('Location: login.php?error=2');
+        }
+        else {
+            $msg = "No existe el correo";
+            header('Location: login.php?error=0');
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,11 +64,11 @@
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="">
+                <form id="form" action="login.php" method="POST" onclick="">
                     <p class="tittle">Iniciar sesión</p>
-                    <input class="input" type="email" placeholder="Correo electrónico">
-                    <input class="input" type="password" placeholder="Contraseña">
-                    <input class="button" type="button" value="Iniciar sesión">
+                    <input class="input" type="email" name="email" placeholder="Correo electrónico">
+                    <input class="input" type="password" name="password" placeholder="Contraseña">
+                    <input class="button" type="submit" value="Iniciar sesión">
                     <a href="#" class="link">¿Has olvidado tu contraseña?</a>
                     <a href="#" class="link">Regístrate</a>
                 </form>

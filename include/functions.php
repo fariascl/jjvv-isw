@@ -22,8 +22,9 @@ function register($nombre, $rut, $correo, $clave){
 }
 
 function login($correo, $clave){
+    require_once('db.php');
     $sql_query = "SELECT COUNT(*), clave FROM usuarios WHERE correo = ? GROUP BY clave;";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $correo);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -36,13 +37,23 @@ function login($correo, $clave){
             return 1; // la clave es la correcta
         }
 
-        return 3; // la clave es incorrecta
+        return 2; // la clave es incorrecta
     }
     else{
         return 0; // no existe ninguna cuenta con ese correo
-    }
-    
-    
+    }   
+}
+
+function get_user_data($email){
+    require_once('db.php');
+    $sql_query = "SELECT * FROM usuario WHERE correo = ?;"
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bind_param('s', $correo);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row;
+
 }
 
 function get_actas(){
