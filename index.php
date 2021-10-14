@@ -1,3 +1,11 @@
+<?
+session_start();
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == False) {
+    header('Location: login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,7 +33,8 @@
             </div>
         </div>
         <div class="main">
-            
+            Para prueba: <br>
+            <?php echo $_SESSION['correo']. " -- ". $_SESSION['id_usuario']; ?>
         </div>
     </div>
 </body>
