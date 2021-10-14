@@ -11,7 +11,7 @@ if (!isset($_GET['id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descripcion</title>
     <link rel="stylesheet" href="static/css/menu.css">
-    <link rel="stylesheet" href="static/css/verdescripcion.css">
+    <link rel="stylesheet" href="static/css/verdescripcionComunidades.css">
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,7 @@ if (!isset($_GET['id'])){
             <div class="action">
                 <a href="#">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="vercomunidad.php" class="active">Comunidades</a>
+                <a href="comunidadades.php" class="active">Comunidades</a>
                 <a href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
@@ -31,7 +31,7 @@ if (!isset($_GET['id'])){
         <div class="submenu">
             <div class="action-submenu">
                 <a href="crearcomunidad.php">Crear nueva comunidad</a>
-                <a href="vercomunidad.php" class="active">Ver comunidades</a>
+                <a href="comunidadades.php" class="active">Ver comunidades</a>
                 <a href="#">Editar comunidad</a>
                 <a href="#">Eliminar comunidad</a>
             </div>
@@ -46,7 +46,7 @@ if (!isset($_GET['id'])){
                     <p class="tittle">' .$row['nombre_comunidad']. '</p>
                     <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
                     '; ?>
-                    <a class="button" href="vercomunidad.php">Volver</a>
+                    <a class="button" href="comunidades.php">Volver</a>
                 </form>
             </div>
         </div>
