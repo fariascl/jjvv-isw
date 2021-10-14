@@ -36,16 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <a href="reuniones.php" >Reuniones</a>
                 <a href="vercomunidad.php" class="active" >Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
             </div>
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearcomunidad.php" class="active">Crear nueva Comunidad</a>
-                <a href="vercomunidad.php">Ver Comunidad</a>
-                <a href="#">Editar Comunidad</a>
-                <a href="#">Eliminar Comunidad</a>
+                <a href="crearcomunidad.php" class="active">Crear nueva comunidad</a>
+                <a href="vercomunidad.php">Ver comunidad</a>
+                <a href="#">Editar comunidad</a>
+                <a href="#">Eliminar comunidad</a>
             </div>
         </div>
         <div class="main">

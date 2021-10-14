@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <a href="reuniones.php">Reuniones</a>
                 <a href="vercomunidad.php"> Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php" class="active">Registro</a>
             </div>
         </div>

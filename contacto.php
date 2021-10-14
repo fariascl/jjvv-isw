@@ -18,9 +18,9 @@
             <div class="action">
                 <a href="#">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="contacto.php" class="active">Contacto</a>
+                <a href="vercomunidad.php" class="active">Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="sesion.php">Iniciar Sesión</a>
+                <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
             </div>
         </div>

@@ -20,7 +20,7 @@
                 <a href="reuniones.php">Reuniones</a>
                 <a href="vercomunidad.php">Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="sesion.php" class="active">Iniciar Sesión</a>
+                <a href="login.php" class="active">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
             </div>
         </div>
