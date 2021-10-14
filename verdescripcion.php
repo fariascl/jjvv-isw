@@ -44,9 +44,8 @@ if (!isset($_GET['id'])){
                     $row = get_desc_by_comunidad($_GET['id']);
                     echo '
                     <p class="tittle">' .$row['nombre_comunidad']. '</p>
-                    <div>
-                        <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
-                    </div>'; ?>
+                    <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
+                    '; ?>
                     <a class="button" href="vercomunidad.php">Volver</a>
                 </form>
             </div>

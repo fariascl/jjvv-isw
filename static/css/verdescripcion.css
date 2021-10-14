@@ -5,8 +5,10 @@
     padding: 40px 60px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 1px solid var(--color-bloque-central);
     background: var(--color-bloque-central);
+    align-items: center;
 }
 .tittle{
     font-size: var(--tamano-titulo-20px);
@@ -30,7 +32,9 @@
 .textarea{
     cursor: not-allowed;
     resize: none;
-    padding: 30px 290px 100px 290px;
+    /*padding: 30px 290px 100px 290px;*/
+    box-sizing: content-box;
+    width: 100%;
 }
 .button{
     text-decoration: none;
