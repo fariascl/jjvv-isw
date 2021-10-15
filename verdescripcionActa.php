@@ -42,8 +42,13 @@ if (check_session()){
         </div>
         <div class="main">
             <div class="center">
+                <?php
+                include 'include/functions.php';
+                $id_acta = $_GET['id'];
+                $row = get_acta_by_id($id_acta);
+                echo '
                 <form id="form" action="#" method="" onclick="">
-                    <p class="tittle">Junta de Vecinos X</p>
+                    <p class="tittle">'.$row['titulo_acta'].'</p>
                     <div class="comunidades">
                         <p class="parrafo">Comunidad:</p>
                         <p class="parrafo">X</p>
@@ -53,16 +58,15 @@ if (check_session()){
                         <p class="parrafo">Fecha reunión</p>
                     </div>
                     <p class="contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores hic, aut eveniet, nobis
-                        aspernatur aliquam expedita voluptate error dolorem qui, dolore nulla eum libero beatae
-                        doloribus consequuntur at. Tempora, reprehenderit!
+                        '.$row['contenido_acta'].'
                     </p>
                     <div class="datos">
                         <p class="parrafo">Nombre del que escribe el acta</p>
-                        <p class="parrafo">Fecha</p>
+                        <p class="parrafo">'.$row['fecha_acta'].'</p>
                     </div>
-                    <a class="button" href="actas.html">Volver</a>
-                </form>
+                    <a class="button" href="actas.php">Volver</a>
+                </form>';
+                ?>
             </div>
         </div>
     </div>
