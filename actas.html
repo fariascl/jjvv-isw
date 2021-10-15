@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actas</title>
+    <link rel="stylesheet" href="static/css/menu.css">
+    <link rel="stylesheet" href="static/css/actas.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <a href="#">J.J.V.V</a>
+            </div>
+            <div class="action">
+                <a href="#">Home</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="vercomunidad.php">Comunidades</a>
+                <a class="active" href="actas.php">Actas</a>
+                <a href="login.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
+            </div>
+        </div>
+        <div class="submenu">
+            <div class="action-submenu">
+                <a href="crearActa.php">Crear nueva acta</a>
+                <a href="actas.php" class="active">Historial de actas</a>
+                <a href="#">Configuración actas</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="center">
+                <form id="form" action="#" method="" onclick="">
+                    <div class="searcher">
+                        <input class="date" type="date" class="inputFecha">
+                        <input class="date" type="date" class="inputFecha">
+                        <button class="date" type="submit" class="buttonFecha" value="Filtrar">🔎</button>
+                    </div>
+                    <p class="tittle">Actas archivadas</p>
+                    <select class="input" name="comunidad">
+                        <option class="input" value="comunidad 1">comunidad 1</option>
+                        <option value="comunidad 2">comunidad 2</option>
+                        <?php
+                            require_once('include/functions.php');
+                            $row = get_comunidad();
+                            foreach ($row as $comunidad){
+                                echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <div class="datosActas">
+                        <p>Nombre de la reunión</p>
+                        <p>Dia de la reunión</p>
+                        <a class="button" href="verdescripcionActa.html">Ver detalle</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!--
+    <div id="row">
+                    <input type="date" class="inputFecha">
+                    <input type="date" class="inputFecha">
+                    <button type="submit" class="buttonFecha" value="Filtrar">🔎</button>
+                </div>
+-->
+<!--
+<?php
+                include('include/functions.php');
+                $row = get_actas();
+                foreach ($row as $acta)
+                    echo '
+                    <div id="acta">
+                    <p class="titulo_acta">'. $acta[1]. '</p>
+                    <div id="contenido">
+                        <p>' .$acta[2]. '
+                        </p>
+                    </div>
+                    <div id="contenido">
+                        <p><strong>Eva</strong> dijo: Lorem ipsum dolor</p>
+                    </div>
+        <textarea rows="4" cols="30" id="contenido" placeholder="Escriba su comentario aquí"></textarea>
+    </div>
+    ';
+    ?>
+-->
