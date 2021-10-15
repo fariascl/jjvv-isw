@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             try {
                 
                 $row = get_user_data($email);
+                $_SESSION['logged_in'] = true;
                 $_SESSION['id_usuario'] = $row['id_usuario'];
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['rut'] = $row['rut'];

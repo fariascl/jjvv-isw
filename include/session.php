@@ -2,8 +2,8 @@
 
 function check_session(){
     if (!isset($_SESSION)){
-        $id_user = $_SESSION['id_user'];
-        if (empty($id_user)){
+        $logged_in = $_SESSION['logged_in'];
+        if (empty($logged_in)){
             return true;
         }
         return false;
