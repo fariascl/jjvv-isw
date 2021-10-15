@@ -47,12 +47,12 @@ if (check_session()){
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Reuniones realizadas</p>
                     <div class="reuniones">
-                        <select class="input" name="comunidad">
+                        <select class="input" name="comunidad" onchange="location = this.value;">
                             <?php
                                 require_once('include/functions.php');
                                 $row = get_comunidad();
                                 foreach ($row as $comunidad){
-                                    echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                                    echo '<option value="reuniones.php?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
                                 }
                             ?>
                         </select>

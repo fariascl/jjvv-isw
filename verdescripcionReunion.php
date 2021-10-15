@@ -1,3 +1,11 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,19 +41,24 @@
             </div>
         </div>
         <div class="main">
+            <?php
+            include 'include/functions.php';
+            $id_reunion = $_GET['id'];
+            $row = get_reunion_by_id($id_reunion);
+            echo '
             <div class="center">
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Detalle Reunión</p>
-                    <p class="parrafo">Título</p>
-                    <p class="parrafo">Día</p>
-                    <p class="parrafo">Hora</p>
-                    <p class="parrafo">Ubicación</p>
-                    <p class="parrafo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam sint nisi,
-                        possimus quaerat facilis nostrum consectetur unde? Quos rerum fuga ratione? Odit earum
-                        perspiciatis, deleniti facilis ullam id ratione molestiae?</p>
-                    <a class="button" href="reuniones.html">Volver</a>
+                    <p class="parrafo">'.$row['tema_reunion'].'</p>
+                    <p class="parrafo">'.$row['fecha_reunion'].'</p>
+                    <p class="parrafo">'.$row['hora_reunion'].'</p>
+                    <p class="parrafo">'.$row['ubicacion_reunion'].'</p>
+                    <p class="parrafo">'.$row['descripcion_reunion'].'</p>
+                    <a class="button" href="reuniones.php">Volver</a>
                 </form>
             </div>
+            ';
+            ?>
         </div>
     </div>
 </body>
