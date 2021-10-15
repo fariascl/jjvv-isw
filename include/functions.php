@@ -129,7 +129,7 @@ function get_reunion_by_id($id_reunion){
     include 'db.php';
     $sql_query = "SELECT * FROM reunion WHERE id_reunion = ?;";
     $stmt = $conn->prepare($sql_query);
-    $stmt->bind_param('i', $id_comunidad);
+    $stmt->bind_param('i', $id_reunion);
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
     $stmt->close();
