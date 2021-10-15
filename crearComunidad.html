@@ -23,14 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/menu.css">
-    <link rel="stylesheet" href="static/css/crearcomunidad.css">
-    <title>Crear nueva Comunidad</title>
+    <link rel="stylesheet" href="static/css/crearComunidad.css">
+    <title>Crear nueva comunidad</title>
 </head>
+
 <body>
     <div class="container">
         <div class="menu">
@@ -39,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
             <div class="action">
                 <a href="#">Home</a>
-                <a href="reuniones.php" >Reuniones</a>
-                <a href="comunidades.php" class="active" >Comunidades</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="comunidades.php" class="active">Comunidades</a>
                 <a href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
@@ -48,10 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="crearcomunidad.php" class="active">Crear nueva comunidad</a>
-                <a href="vercomunidad.php">Ver comunidad</a>
-                <a href="#">Editar comunidad</a>
-                <a href="#">Eliminar comunidad</a>
+                <a href="crearComunidad.php" class="active">Crear nueva comunidad</a>
+                <a href="vercomunidad.php">Ver comunidades</a>
+                <a href="configuracionComunidades.php">Configuración comunidades</a>
             </div>
         </div>
         <div class="main">
@@ -59,12 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <form action="crearcomunidad.php" method="POST">
                     <p class="tittle">Crear Comunidad</p>
                     <input class="input" name="nombre_comunidad" type="text" placeholder="Nombre de la Comunidad">
-                    <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5" placeholder="Descripción"></textarea>
-                    <input class="button" type="submit" value="Crear">
+                    <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
+                        placeholder="Descripción"></textarea>
+                    <input class="button" type="submit" value="Crear comunidad">
                 </form>
             </div>
         </div>
     </div>
 
 </body>
+
 </html>

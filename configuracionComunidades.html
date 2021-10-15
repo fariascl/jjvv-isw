@@ -1,10 +1,3 @@
-<?php
-require_once('include/session.php');
-if (check_session()){
-    header('Location: login.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,9 +5,9 @@ if (check_session()){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver comunidades</title>
+    <title>Configuración comunidades</title>
     <link rel="stylesheet" href="static/css/menu.css">
-    <link rel="stylesheet" href="static/css/comunidades.css">
+    <link rel="stylesheet" href="static/css/configuracionGeneral.css">
 </head>
 
 <body>
@@ -26,7 +19,7 @@ if (check_session()){
             <div class="action">
                 <a href="#">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="comunidades.php" class="active">Comunidades</a>
+                <a class="active" href="vercomunidad.php">Comunidades</a>
                 <a href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
@@ -35,28 +28,22 @@ if (check_session()){
         <div class="submenu">
             <div class="action-submenu">
                 <a href="crearcomunidad.php">Crear nueva comunidad</a>
-                <a href="comunidades.php" class="active">Ver comunidades</a>
-                <a href="#">Editar comunidad</a>
-                <a href="#">Eliminar comunidad</a>
+                <a href="comunidades.php">Ver comunidades</a>
+                <a class="active" href="configuracionComunidades.php">Configuracion comunidades</a>
             </div>
         </div>
         <div class="main">
             <div class="center">
-                <form action="">
-                    <?php
-                    include('include/functions.php');
-                    $row = get_comunidad();
-                    foreach ($row as $comunidad){
-                        echo '
-                        <div class="block">
-                            <p>' .$comunidad[1]. '</p>
-                            <a href="verdescripcionComunidades.php?id='.$comunidad[0].'" class="button">Descripción</a>
-                        </div>';
-                    }
-                    ?>
+                <form id="form" action="#" method="" onclick="">
+                    <div class="contenedor">
+                        <p class="parrafo">Título Junta de vecinos</p>
+                        <a class="button modificar" href="editarComunidad.php">Editar comunidad</a>
+                        <a class="button eliminar" href="eliminarComunidad.php">Eliminar comunidad</a>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
 </html>

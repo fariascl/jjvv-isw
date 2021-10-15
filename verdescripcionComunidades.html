@@ -12,14 +12,16 @@ if (!isset($_GET['id'])){
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descripcion</title>
+    <title>Descripcion comunidad</title>
     <link rel="stylesheet" href="static/css/menu.css">
     <link rel="stylesheet" href="static/css/verdescripcionComunidades.css">
 </head>
+
 <body>
     <div class="container">
         <div class="menu">
@@ -39,8 +41,7 @@ if (!isset($_GET['id'])){
             <div class="action-submenu">
                 <a href="crearcomunidad.php">Crear nueva comunidad</a>
                 <a href="comunidades.php" class="active">Ver comunidades</a>
-                <a href="#">Editar comunidad</a>
-                <a href="#">Eliminar comunidad</a>
+                <a href="configuracionComunidades.php">Configuracion comunidades</a>
             </div>
         </div>
         <div class="main">
@@ -59,4 +60,5 @@ if (!isset($_GET['id'])){
         </div>
     </div>
 </body>
+
 </html>

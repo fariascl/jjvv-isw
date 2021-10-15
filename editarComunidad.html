@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/menu.css">
+    <link rel="stylesheet" href="static/css/crearComunidad.css">
+    <link rel="stylesheet" href="static/css/configuracionGeneral.css">
+    <title>Editar comunidad</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <a href="#">J.J.V.V</a>
+            </div>
+            <div class="action">
+                <a href="#">Home</a>
+                <a href="reuniones.php">Reuniones</a>
+                <a href="comunidades.php" class="active">Comunidades</a>
+                <a href="actas.php">Actas</a>
+                <a href="login.php">Iniciar Sesión</a>
+                <a href="register.php">Registro</a>
+            </div>
+        </div>
+        <div class="submenu">
+            <div class="action-submenu">
+                <a href="crearComunidad.php">Crear nueva comunidad</a>
+                <a href="vercomunidad.php">Ver comunidades</a>
+                <a class="active" href="configuracionComunidades.php">Configuración comunidades</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="center">
+                <form action="" method="POST">
+                    <p class="tittle">Editar comunidad</p>
+                    <input class="input" name="nombre_comunidad" type="text"
+                        placeholder="Editar nombre de la Comunidad">
+                    <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
+                        placeholder="Editar descripción"></textarea>
+                    <input class="button modificar" type="submit" value="Guardar cambios">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
