@@ -52,6 +52,9 @@ if (check_session()){
                                 require_once('include/functions.php');
                                 
                                 $row = get_comunidad();
+                                if (isset($_GET['comunidad'])){
+                                    echo '<option selected disabled>'.$row[$_GET['comunidad']-1][1].'</option>';
+                                }
                                 foreach ($row as $comunidad){
                                     echo '<option value="reuniones.php?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
                                 }
