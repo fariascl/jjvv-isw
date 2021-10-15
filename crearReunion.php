@@ -1,4 +1,10 @@
 <?php
+
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     require_once('include/functions.php');
     if (isset($_POST['titulo']) && isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['ubicacion']) && isset($_POST['descripcion'])){
@@ -8,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $ubicacion =$_POST['ubicacion'];
         $descripcion = $_POST['descripcion'];
         $comunidad = $_POST['comunidad'];
-        $id_usuario = '45f321b12939156dd082181bddebf119'; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
+        $id_usuario = $_SESSION['id_usuario']; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
         if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
             $msg = "Comunidad creada correctamente"; // flag
             header('Location: reuniones.html');
