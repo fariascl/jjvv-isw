@@ -27,7 +27,7 @@ if (check_session()){
             <div class="action">
                 <a href="#">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="vercomunidad.php">Comunidades</a>
+                <a href="comunidades">Comunidades</a>
                 <a class="active" href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
@@ -50,8 +50,6 @@ if (check_session()){
                     </div>
                     <p class="tittle">Actas archivadas</p>
                     <select class="input" name="comunidad">
-                        <option class="input" value="comunidad 1">comunidad 1</option>
-                        <option value="comunidad 2">comunidad 2</option>
                         <?php
                             require_once('include/functions.php');
                             $row = get_comunidad();
@@ -60,11 +58,20 @@ if (check_session()){
                             }
                         ?>
                     </select>
+                    <?php
+                        require_once('include/functions.php');
+                        $id_comunidad = $_POST['comunidad'];
+                        $row_2 = get_actas_by_comun($id_comunidad);
+                        foreach ($row_2 as $acta){
+                        echo '
                     <div class="datosActas">
-                        <p>Nombre de la reunión</p>
-                        <p>Dia de la reunión</p>
-                        <a class="button" href="verdescripcionActa.html">Ver detalle</a>
+                        <p>'.$acta[1].'</p>
+                        <p>'.$acta[2].'</p>
+                        <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                     </div>
+                    ';
+                    }
+                    ?>
                 </form>
             </div>
         </div>
