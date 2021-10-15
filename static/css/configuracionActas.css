@@ -1,0 +1,47 @@
+@import url(./menu.css);
+.center form{
+    margin: 0 350px;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-bloque-central);
+    background: var(--color-bloque-central);
+}
+.tittle{
+    font-size: var(--tamano-titulo-20px);
+    color: var(--color-titulo);
+    font-weight: var(--grosor-negrita);
+    padding: 0 0 15px 0;
+    border-bottom: 3px solid var(--color-fondo-menu) ;
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 35px;
+}
+.button{
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: var(--color-texto-botones);
+    font-weight: var(--grosor-negrita);
+    border-radius: 5px;
+}
+.modificar{
+    background: var(--color-boton-precaucion);
+    border: 1px solid var(--color-boton-precaucion);
+}
+.modificar:hover{
+    background: var(--color-boton-precaucion-hover);
+    border: 1px solid var(--color-boton-precaucion-hover);
+}
+.eliminar{
+    background: var(--color-boton-peligro);
+    border: 1px solid var(--color-boton-peligro);
+}
+.eliminar:hover{
+    background: var(--color-boton-peligro-hover);
+    border: 1px solid var(--color-boton-peligro-hover);
+}
