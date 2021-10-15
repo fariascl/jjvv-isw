@@ -100,6 +100,18 @@ function get_reunion(){
     
 }
 
+function get_reunion_by_comun($id_comunidad){
+    include 'db.php';
+    $sql_query = "SELECT reunion.id_reunion, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ?";
+    $stmt = $conn->prepare($sql_query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_all();
+    $stmt->close();
+    $conn->close();
+    return $row;
+}
+
 function get_comunidad(){
     try {
         include 'db.php';

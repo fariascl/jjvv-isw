@@ -56,11 +56,21 @@ if (check_session()){
                                 }
                             ?>
                         </select>
+
+                        <?php
+                        $id_comunidad = $_GET['comunidad'];
+                        $row_2 = get_reunion_by_comun($id_comunidad);
+                        foreach ($row_2 as $reunion){
+                        echo '
+                        
                         <div class="datosReunion">
-                            <p>Nombre de la reunión</p>
-                            <p>Dia de la reunión</p>
-                            <a class="button" href="verdescripcionReunion.php">Ver detalle</a>
+                            <p>'.$reunion[1].'</p>
+                            <p>'.$reunion[2].'</p>
+                            <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                         </div>
+                        ';
+                        }
+                        ?>
                     </div>
                 </form>
             </div>
@@ -69,16 +79,3 @@ if (check_session()){
 </body>
 
 </html>
-<!--
-    <?php
-                        require_once('include/functions.php');
-                        $row = get_reunion();
-                        foreach ($row as $reunion){
-                            echo '
-                            <div class="item">
-                                <p>' .$reunion[0]. '</p>
-                                <p>'.$reunion[2].' </p>
-                            </div>';
-                        }
-    ?>
--->
