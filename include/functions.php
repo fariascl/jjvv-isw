@@ -11,7 +11,7 @@ function register($nombre, $rut, $correo, $clave){
     $stmt = $conn->prepare($sql_query);
     $stmt_2 = $conn->prepare($sql_query_2);
 
-    $stmt->bind_param('sssss', $random_id, $rut, $nombre, $correo, $clave); // Se bindean los parametros para evitar inyecciones de codigo SQL
+    $stmt->bind_param('sssss', $random_id, $nombre, $correo, $clave, $rut); // Se bindean los parametros para evitar inyecciones de codigo SQL
     $stmt_2->bind_param('s', $random_id); // Lo mismo que la linea anterior
     $stmt->execute(); // Se ejecuta la insercion en los usuarios
     $stmt_2->execute(); // Se ejecuta la insercion en los usuarios_normal
