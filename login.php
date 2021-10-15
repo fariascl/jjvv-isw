@@ -1,13 +1,14 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    require_once('include/functions.php');
+    include 'include/functions.php';
     if (isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
         $is_valid = login($email, $password);
         if ($is_valid == 1){
             try {
-                session_start();
+                
                 $row = get_user_data($email);
                 $_SESSION['id_usuario'] = $row['id_usuario'];
                 $_SESSION['nombre'] = $row['nombre'];

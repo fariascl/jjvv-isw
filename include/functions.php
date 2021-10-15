@@ -22,8 +22,8 @@ function register($nombre, $rut, $correo, $clave){
 }
 
 function login($correo, $clave){
-    require_once('db.php');
-    $sql_query = "SELECT COUNT(*), clave FROM usuarios WHERE correo = ? GROUP BY clave;";
+    include 'db.php';
+    $sql_query = "SELECT COUNT(*), clave FROM usuario WHERE correo = ? GROUP BY clave;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $correo);
     $stmt->execute();
@@ -44,8 +44,8 @@ function login($correo, $clave){
     }   
 }
 
-function get_user_data($email){
-    require_once('db.php');
+function get_user_data($correo){
+    include 'db.php';
     $sql_query = "SELECT * FROM usuario WHERE correo = ?;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $correo);
