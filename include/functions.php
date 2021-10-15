@@ -46,7 +46,7 @@ function login($correo, $clave){
 
 function get_user_data($email){
     require_once('db.php');
-    $sql_query = "SELECT * FROM usuario WHERE correo = ?;"
+    $sql_query = "SELECT * FROM usuario WHERE correo = ?;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $correo);
     $stmt->execute();

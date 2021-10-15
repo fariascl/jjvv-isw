@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 header('Location: index.php');
 
             }
-            catch {
-                msg = "Se ha detectado un error";
+            catch (Exception $e) {
+                $msg = "Se ha detectado un error";
             }
             
         }
