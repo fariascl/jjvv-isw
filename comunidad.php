@@ -1,3 +1,10 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 

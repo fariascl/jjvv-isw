@@ -1,4 +1,11 @@
 <?php
+
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+
 if (!isset($_GET['id'])){
     header('Location: vercomunidad.php');
 }

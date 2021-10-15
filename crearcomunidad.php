@@ -1,4 +1,10 @@
 <?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     require_once('include/functions.php');
     if (isset($_POST['nombre_comunidad']) && isset($_POST['descripcion_comunidad'])){
