@@ -70,12 +70,11 @@ function get_actas(){
 
 function get_actas_by_comun($id_comunidad){
     include 'db.php';
-    $sql_query = "SELECT a.id_acta, a.titulo_acta,a.fecha_acta FROM acta a, registra re, reunion r, tiene t, comunidad c WHERE a.id_acta = re.id_acta AND re.id_reunion = r.id_reunion AND t.id_reunion = r.id_reunion AND t.id_comunidad = c.id_comunidad AND c.id_comunidad = ?;";
+    $sql_query = "SELECT acta.id_acta, acta.titulo_acta, acta.fecha_acta FROM acta, registra, reunion, comunidad WHERE acta.id_acta = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ?;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('i', $id_comunidad);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->get_result();
     $row = $result->fetch_all();
     $stmt->close();
     $conn->close();

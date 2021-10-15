@@ -49,18 +49,17 @@ if (check_session()){
                         <button class="date" type="submit" class="buttonFecha" value="Filtrar">🔎</button>
                     </div>
                     <p class="tittle">Actas archivadas</p>
-                    <select class="input" name="comunidad">
+                    <select class="input" name="comunidad" onchange="location = this.value;">
                         <?php
-                            include 'include/functions.php';
+                            require_once('include/functions.php');
                             $row = get_comunidad();
                             foreach ($row as $comunidad){
-                                echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                                echo '<option value="actas.php?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
                             }
                         ?>
                     </select>
                     <?php
-                        include 'include/functions.php';
-                        $id_comunidad = $_POST['comunidad'];
+                        $id_comunidad = $_GET['comunidad'];
                         $row_2 = get_actas_by_comun($id_comunidad);
                         foreach ($row_2 as $acta){
                         echo '
@@ -79,30 +78,3 @@ if (check_session()){
 </body>
 
 </html>
-<!--
-    <div id="row">
-                    <input type="date" class="inputFecha">
-                    <input type="date" class="inputFecha">
-                    <button type="submit" class="buttonFecha" value="Filtrar">🔎</button>
-                </div>
--->
-<!--
-<?php
-                include('include/functions.php');
-                $row = get_actas();
-                foreach ($row as $acta)
-                    echo '
-                    <div id="acta">
-                    <p class="titulo_acta">'. $acta[1]. '</p>
-                    <div id="contenido">
-                        <p>' .$acta[2]. '
-                        </p>
-                    </div>
-                    <div id="contenido">
-                        <p><strong>Eva</strong> dijo: Lorem ipsum dolor</p>
-                    </div>
-        <textarea rows="4" cols="30" id="contenido" placeholder="Escriba su comentario aquí"></textarea>
-    </div>
-    ';
-    ?>
--->
