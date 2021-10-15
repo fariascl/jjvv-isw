@@ -27,7 +27,7 @@ if (check_session()){
             <div class="action">
                 <a href="#">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="vercomunidad.php">Comunidades</a>
+                <a href="comunidades.php">Comunidades</a>
                 <a class="active" href="actas.php">Actas</a>
                 <a href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>

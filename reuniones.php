@@ -1,3 +1,13 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,8 +48,6 @@
                     <p class="tittle">Reuniones realizadas</p>
                     <div class="reuniones">
                         <select class="input" name="comunidad">
-                            <option class="input" value="comunidad 1">comunidad 1</option>
-                            <option value="comunidad 2">comunidad 2</option>
                             <?php
                                 require_once('include/functions.php');
                                 $row = get_comunidad();
@@ -51,7 +59,7 @@
                         <div class="datosReunion">
                             <p>Nombre de la reunión</p>
                             <p>Dia de la reunión</p>
-                            <a class="button" href="verdescripcionReunion.html">Ver detalle</a>
+                            <a class="button" href="verdescripcionReunion.php">Ver detalle</a>
                         </div>
                     </div>
                 </form>
