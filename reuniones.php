@@ -50,6 +50,7 @@ if (check_session()){
                         <select class="input" name="comunidad" onchange="location = this.value;">
                             <?php
                                 require_once('include/functions.php');
+                                
                                 $row = get_comunidad();
                                 foreach ($row as $comunidad){
                                     echo '<option value="reuniones.php?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
@@ -58,6 +59,10 @@ if (check_session()){
                         </select>
 
                         <?php
+                        if (!isset($_GET['comunidad'])){
+                            $id_comunidad = 1;
+                        }
+                        else{
                         $id_comunidad = $_GET['comunidad'];
                         $row_2 = get_reunion_by_comun($id_comunidad);
                         foreach ($row_2 as $reunion){
@@ -69,6 +74,7 @@ if (check_session()){
                             <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                         </div>
                         ';
+                        }
                         }
                         ?>
                     </div>
