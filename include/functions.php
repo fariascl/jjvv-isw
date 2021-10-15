@@ -87,6 +87,7 @@ function get_acta_by_id($id_acta){
     $sql_query = "SELECT * FROM acta WHERE id_acta = ?;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('i', $id_comunidad);
+    $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
     $stmt->close();
