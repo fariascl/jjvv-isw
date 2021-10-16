@@ -96,8 +96,10 @@ html,body {
     transition: var(--transicion);
 }
 .main{
+    background-image: url(../img/fondo.png);
+    background-attachment: fixed;
+    background-position: center;
     padding: 49px 60px 0 60px;
-    background: url(../img/fondo.png) no-repeat fixed center;
     width:auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
