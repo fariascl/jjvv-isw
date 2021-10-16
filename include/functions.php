@@ -173,6 +173,22 @@ function get_desc_by_comunidad($id){
     }
 }
 
+function get_comunidad_by_id($id_comunidad){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT * FROM comunidad WHERE id_comunidad = ?;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('i', $id_comunidad);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        return $row;
+    } catch (Exception $e){
+        $msg = $e->getMessage();
+    }
+}
+
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
