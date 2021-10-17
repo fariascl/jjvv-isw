@@ -43,11 +43,11 @@ if (check_session()){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="">
+                <form id="form" action="actas.php" method="GET" onclick="">
                     <div class="searcher">
-                        <input class="date" type="date" class="inputFecha">
-                        <input class="date" type="date" class="inputFecha">
-                        <button class="date" type="submit" class="buttonFecha" value="Filtrar">🔎</button>
+                        <input class="date" type="date" name="fecha_comienzo" class="inputFecha">
+                        <input class="date" type="date" name="fecha_termino" class="inputFecha">
+                        <button class="date" type="submit" class="buttonFecha" value="filtrar">🔎</button>
                     </div>
                     <p class="tittle">Actas archivadas</p>
                     <select class="input" name="comunidad" onchange="location = this.value;">
@@ -66,17 +66,35 @@ if (check_session()){
                         ?>
                     </select>
                     <?php
-                        $id_comunidad = $_GET['comunidad'];
-                        $row_2 = get_actas_by_comun($id_comunidad);
-                        foreach ($row_2 as $acta){
-                        echo '
-                    <div class="datosActas">
-                        <p>'.$acta[1].'</p>
-                        <p>'.$acta[2].'</p>
-                        <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
-                    </div>
-                    ';
-                    }
+                        if (isset($_GET['fecha_comienzo'])){
+                            $id_comunidad = $_GET['comunidad'];
+                            $fecha_termino = $_GET['fecha_comienzo'];
+                            $fecha_termino = $_GET['fecha_termino'];
+                            
+                            $row_2 = search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino);
+                            foreach ($row_2 as $acta){
+                                echo '
+                                <div class="datosActas">
+                                    <p>'.$acta[1].'</p>
+                                    <p>'.$acta[2].'</p>
+                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                </div>
+                                ';
+                            }
+                        }
+                        else {
+                            $id_comunidad = $_GET['comunidad'];
+                            $row_2 = get_actas_by_comun($id_comunidad);
+                            foreach ($row_2 as $acta){
+                            echo '
+                                <div class="datosActas">
+                                    <p>'.$acta[1].'</p>
+                                    <p>'.$acta[2].'</p>
+                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                </div>
+                                ';
+                            }
+                        }
                     ?>
                 </form>
             </div>

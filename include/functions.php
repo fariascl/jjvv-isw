@@ -264,6 +264,25 @@ function get_usuario_by_acta($id_acta){
 
     }
 }
+
+
+function search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT acta.* FROM acta, registra, reunion, tiene, comunidad WHERE acta.id = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id = ?
+        AND acta.fecha_acta BETWEEN '?' AND '?';";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('iss', $id_comunidad, $fecha_comienzo, $fecha_termino);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_all();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+    }
+}
 ?>
 
 
