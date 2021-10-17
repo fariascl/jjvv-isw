@@ -31,7 +31,7 @@ if ($_SERVER['PHP_SELF'] == '/contacto.php'){
 else {
     echo '<a href="contacto.php">Contacto</a>';
 }
-if ($_GET['salir'] == true){
+if (isset($_GET['salir']) && $_GET['salir'] == true){
     session_destroy();
     header('Location: login.php');
     exit;

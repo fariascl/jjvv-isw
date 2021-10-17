@@ -4,6 +4,7 @@ if (check_session()){
     header('Location: login.php');
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +50,7 @@ if (check_session()){
                     <select class="input" name="comunidad" onchange="location = this.value;">
                         <?php
                             require_once('include/functions.php');
+
                         
                             $row = get_comunidad();
                             if (isset($_GET['comunidad'])){
@@ -62,6 +64,21 @@ if (check_session()){
                         ?>
                     </select>
                     <?php
+                        if (!isset($_GET['comunidad'])){
+                            $id_comunidad = 1;
+                            
+                            $row_2 = get_actas_by_comun($id_comunidad);
+                            foreach ($row_2 as $acta){
+                            echo '
+                                <div class="datosActas">
+                                    <p>'.$acta[1].'</p>
+                                    <p>'.$acta[2].'</p>
+                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                </div>
+                                ';
+                            }
+
+                        }
                         if (isset($_GET['fecha_comienzo'])){
                             $id_comunidad = $_GET['comunidad'];
                             $fecha_comienzo = $_GET['fecha_comienzo'];
@@ -82,7 +99,9 @@ if (check_session()){
                             }
                         }
                         else {
+                            
                             $id_comunidad = $_GET['comunidad'];
+                            
                             $row_2 = get_actas_by_comun($id_comunidad);
                             foreach ($row_2 as $acta){
                             echo '
