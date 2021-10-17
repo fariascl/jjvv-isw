@@ -188,6 +188,21 @@ function get_comunidad_by_id($id_comunidad){
         $msg = $e->getMessage();
     }
 }
+function get_comunidad_by_acta($id_acta){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT comunidad.nombre_comunidad FROM comunidad, reunion, registra, acta WHERE comunidad.id_comunidad = reunion.id_comunidad AND reunion.id_reunion = registra.id_reunion AND registra.id_acta = ?;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('i', $id_acta);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        return $row;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+    }
+}
 
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
@@ -228,4 +243,27 @@ function create_comunidad($nombre_comunidad, $descr_comunidad){
         return 0;
     }   
 }
+
+function get_usuario_by_acta($id_acta){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT usuario.nombre, acta.fecha_acta, reunion.fecha_reunion FROM registra, reunion, usuario, acta WHERE usuario.id_usuario = reunion.id_usuario AND reunion.id_reunion = registra.id_reunion AND registra.id_acta = acta.id_acta AND acta.id_acta = ? 
+        GROUP BY nombre, fecha_acta, fecha_reunion;";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('i', $id_acta);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    }
+    catch (Exception $e){
+        $msg = $e->getMessage();
+        return 0;
+
+    }
+}
 ?>
+
+

@@ -53,9 +53,11 @@ if (check_session()){
                     <select class="input" name="comunidad" onchange="location = this.value;">
                         <?php
                             require_once('include/functions.php');
+                        
                             $row = get_comunidad();
                             if (isset($_GET['comunidad'])){
-                                echo '<option selected disabled>'.$row[$_GET['comunidad']-1][1].'</option>';
+                                $id_comunidad = $_GET['comunidad'];
+                                echo '<option selected disabled>'.get_comunidad_by_id($id_comunidad)['nombre_comunidad'].'</option>';
                             }
                             
                             foreach ($row as $comunidad){

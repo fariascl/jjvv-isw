@@ -49,7 +49,7 @@ if (check_session()){
             include 'include/functions.php';
             $id_reunion = $_GET['id'];
             $row = get_reunion_by_id($id_reunion);
-            echo var_dump($row);
+
             echo '
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Detalle Reunión</p>

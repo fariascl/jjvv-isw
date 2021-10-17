@@ -47,23 +47,23 @@ if (check_session()){
                 include 'include/functions.php';
                 $id_acta = $_GET['id'];
                 $row = get_acta_by_id($id_acta);
+                $data = get_usuario_by_acta($id_acta); 
+                $aux_com = get_comunidad_by_acta($id_acta);
                 echo '
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">'.$row['titulo_acta'].'</p>
                     <div class="comunidades">
-                        <p class="parrafo">Comunidad:</p>
-                        <p class="parrafo">X</p>
+                        <p class="parrafo">Comunidad: '.$aux_com['nombre_comunidad'].':</p>
                     </div>
                     <div class="fecha">
-                        <p class="parrafo">Reunión:</p>
-                        <p class="parrafo">Fecha reunión</p>
+                        <p class="parrafo">Reunión: '.$data['fecha_reunion'].'</p>
                     </div>
                     <p class="contenido">
                         '.$row['contenido_acta'].'
                     </p>
                     <div class="datos">
-                        <p class="parrafo">Nombre del que escribe el acta</p>
-                        <p class="parrafo">'.$row['fecha_acta'].'</p>
+                        <p class="parrafo">Escrito por <strong>'.$data['nombre'].'</strong></p>
+                        <p class="parrafo">Fecha: '.$row['fecha_acta'].'</p>
                     </div>
                     <a class="button" href="actas.php">Volver</a>
                 </form>';
