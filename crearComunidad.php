@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class="submenu">
             <div class="action-submenu">
                 <a href="crearComunidad.php" class="active">Crear nueva comunidad</a>
-                <a href="vercomunidad.php">Ver comunidades</a>
+                <a href="verdescripcionComunidades.php">Ver comunidades</a>
                 <a href="configuracionComunidades.php">Configuración comunidades</a>
             </div>
         </div>
