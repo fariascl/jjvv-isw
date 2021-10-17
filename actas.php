@@ -47,6 +47,7 @@ if (check_session()){
                     <div class="searcher">
                         <input class="date" type="date" name="fecha_comienzo" class="inputFecha">
                         <input class="date" type="date" name="fecha_termino" class="inputFecha">
+                        <input type="hidden" name="comunidad" value="<?php echo $_GET['comunidad']; ?>">
                         <button class="date" type="submit" class="buttonFecha" value="filtrar">🔎</button>
                     </div>
                     <p class="tittle">Actas archivadas</p>
@@ -68,15 +69,18 @@ if (check_session()){
                     <?php
                         if (isset($_GET['fecha_comienzo'])){
                             $id_comunidad = $_GET['comunidad'];
-                            $fecha_termino = $_GET['fecha_comienzo'];
+                            $fecha_comienzo = $_GET['fecha_comienzo'];
                             $fecha_termino = $_GET['fecha_termino'];
+                            echo $id_comunidad;
+                            echo $fecha_comienzo;
+                            echo $fecha_termino;
                             
                             $row_2 = search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino);
                             foreach ($row_2 as $acta){
                                 echo '
                                 <div class="datosActas">
                                     <p>'.$acta[1].'</p>
-                                    <p>'.$acta[2].'</p>
+                                    <p>'.$acta[3].'</p>
                                     <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                                 </div>
                                 ';
