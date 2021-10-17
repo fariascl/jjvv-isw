@@ -16,6 +16,7 @@ if (check_session()){
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <title>Home</title>
     <link rel="stylesheet" href="static/css/contacto.css">
+    <link rel="stylesheet" href="static/css/index.css">
 </head>
 
 <body>
@@ -29,10 +30,26 @@ if (check_session()){
             </div>
         </div>
         <div class="main">
-            Para prueba: <br>
-            <?php echo $_SESSION['correo']. " -- ". $_SESSION['id_usuario']; ?>
+            <div class="center">
+                <div class="welcome">
+                    <p class="tittle">Bienvenido</p>
+                    <p class="parrafo">Nombre usuario</p>
+                </div>
+                <form id="form" action="#" method="" onclick="">
+                    <p class="tittle">Tus próximas reuniones</p>
+                    <div class="datosReunion">
+                        <p>Nombre reunion</p>
+                        <p>Fecha Reunión</p>
+                        <a class="button" href="">Ver detalle</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<!--
+<?php echo $_SESSION['correo']. " -- ". $_SESSION['id_usuario']; ?>
+-->
