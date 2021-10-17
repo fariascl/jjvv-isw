@@ -31,7 +31,7 @@ if (check_session()){
         <div class="submenu">
             <div class="action-submenu">
                 <a href="crearComunidad.php">Crear nueva comunidad</a>
-                <a href="verdescripcionComunidades.php" class="active">Ver comunidades</a>
+                <a href="comunidades.php" class="active">Ver comunidades</a>
                 <a href="#">Configuración comunidades</a>
             </div>
         </div>
