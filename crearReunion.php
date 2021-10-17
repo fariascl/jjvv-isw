@@ -46,12 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <a href="#">J.J.V.V</a>
             </div>
             <div class="action">
-                <a href="#">Home</a>
-                <a href="reuniones.php" class="active">Reuniones</a>
-                <a href="comunidades.php">Comunidades</a>
-                <a href="actas.php">Actas</a>
-                <a href="sesion.php">Iniciar Sesión</a>
-                <a href="register.php">Registro</a>
+                <?php include 'include/menu.php'; ?>
             </div>
         </div>
         <div class="submenu">

@@ -57,11 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <a href="#">J.J.V.V</a>
             </div>
             <div class="action">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
                 <a href="reuniones.php">Reuniones</a>
                 <a href="comunidades.php">Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="login.php" class="active">Iniciar Sesión</a>
+                <a class="active" href="login.php">Iniciar Sesión</a>
                 <a href="register.php">Registro</a>
             </div>
         </div>

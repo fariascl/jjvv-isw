@@ -16,14 +16,16 @@
             <div class="logo">
                 <a href="#">J.J.V.V</a>
             </div>
+
             <div class="action">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
                 <a href="reuniones.php">Reuniones</a>
-                <a href="comunidadades.php" class="active">Comunidades</a>
+                <a href="comunidades.php">Comunidades</a>
                 <a href="actas.php">Actas</a>
-                <a href="login.php">Iniciar Sesión</a>
-                <a href="register.php">Registro</a>
+                <a class="active" href="contacto.php">Contacto</a>
+                <a href="?salir=true">Salir</a>
             </div>
+
         </div>
         <div class="main">
             <div class="center">

@@ -25,12 +25,7 @@ if (check_session()){
                 <a href="#">J.J.V.V</a>
             </div>
             <div class="action">
-                <a href="#" class="active">Home</a>
-                <a href="reuniones.php">Reuniones</a>
-                <a href="contacto.php">Contacto</a>
-                <a href="actas.php">Actas</a>
-                <a href="login.php">Iniciar Sesión</a>
-                <a href="register.php">Registro</a>
+                <?php include 'include/menu.php'; ?>
             </div>
         </div>
         <div class="main">
