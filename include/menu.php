@@ -38,7 +38,7 @@ if (isset($_GET['salir']) && $_GET['salir'] == true){
 }
 
 if (!check_session()){
-    echo '<a href="?salir=true">Salir</a>';
+    echo '<a href="?salir=true">Cerrar sesión</a>';
 }
 else {
     echo '<a href="login.php">Iniciar Sesión</a>
