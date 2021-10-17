@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form action="crearcomunidad.php" method="POST">
+                <form action="crearcomunidad.php" method="POST" autocomplete="off">
                     <p class="tittle">Crear Comunidad</p>
                     <input class="input" name="nombre_comunidad" type="text" placeholder="Nombre de la Comunidad">
                     <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"

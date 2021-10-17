@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="register.php" method="POST" onclick="">
+                <form id="form" action="register.php" method="POST" onclick="" autocomplete="off">
                     <p class="tittle">Registro junta vecinos</p>
                     <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico">
                     <input class="input" name="name" id="name" type="text" placeholder="Nombre completo">
@@ -55,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
                         <a href="#" class="link">Entrar</a>
-                        <p class="link">Entrar</p>
                     </nav>
                 </form>
             </div>

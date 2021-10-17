@@ -99,6 +99,7 @@ html,body {
     background-image: url(../img/fondo.png);
     background-attachment: fixed;
     background-position: center;
+    background-repeat: no-repeat;
     padding: 49px 60px 0 60px;
     width:auto;
     -webkit-background-size: cover;

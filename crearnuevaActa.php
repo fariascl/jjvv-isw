@@ -30,7 +30,7 @@
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="">
+                <form id="form" action="#" method="" onclick="" autocomplete="off">
                     <p class="tittle">Crear nueva acta</p>
                     <input class="input" type="text" placeholder="Título del acta">
                     <select class="input" name="comunidad">
