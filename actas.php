@@ -83,9 +83,9 @@ if (check_session()){
                             $id_comunidad = $_GET['comunidad'];
                             $fecha_comienzo = $_GET['fecha_comienzo'];
                             $fecha_termino = $_GET['fecha_termino'];
-                            echo $id_comunidad;
-                            echo $fecha_comienzo;
-                            echo $fecha_termino;
+                            //echo $id_comunidad;
+                            //echo $fecha_comienzo;
+                            //echo $fecha_termino;
                             
                             $row_2 = search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino);
                             foreach ($row_2 as $acta){

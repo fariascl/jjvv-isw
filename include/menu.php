@@ -36,13 +36,27 @@ if (isset($_GET['salir']) && $_GET['salir'] == true){
     header('Location: login.php');
     exit;
 }
+try {
+    if (!check_session()){
+        echo '<a href="?salir=true">Cerrar sesión</a>';
+    }
+    else {
+        echo '<a href="login.php">Iniciar Sesión</a>
+        <a href="register.php">Registro</a>';
+        exit;
+    }
+} catch (\Throwable $th) {
+    include 'session.php';
+    if (!check_session()){
+        echo '<a href="?salir=true">Cerrar sesión</a>';
+    }
+    else {
+        echo '<a href="login.php">Iniciar Sesión</a>
+        <a href="register.php">Registro</a>';
+        exit;
+    }
 
-if (!check_session()){
-    echo '<a href="?salir=true">Cerrar sesión</a>';
 }
-else {
-    echo '<a href="login.php">Iniciar Sesión</a>
-    <a href="register.php">Registro</a>';
-    exit;
-}
+
+
 ?>
