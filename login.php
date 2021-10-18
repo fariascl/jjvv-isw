@@ -69,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="center">
                 <form id="form" action="login.php" method="POST" onclick="" autocomplete="off">
                     <p class="tittle">Iniciar sesión</p>
-                    <input class="input" type="email" name="email" placeholder="Correo electrónico">
-                    <input class="input" type="password" name="password" placeholder="Contraseña">
+                    <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+                    <input class="input" type="password" name="password" placeholder="Contraseña" required>
                     <input class="button" type="submit" value="Iniciar sesión">
                     <a href="#" class="link">¿Has olvidado tu contraseña?</a>
                     <a href="#" class="link">Regístrate</a>

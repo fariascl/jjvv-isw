@@ -43,7 +43,7 @@ if (check_session()){
                     <div class="searcher">
                         <input class="date" type="date" name="fecha_comienzo" class="inputFecha">
                         <input class="date" type="date" name="fecha_termino" class="inputFecha">
-                        <input type="hidden" name="comunidad" value="<?php echo $_GET['comunidad']; ?>">
+                        <input type="hidden" name="comunidad" value="<?php if(!isset($_GET['comunidad'])){$_GET['comunidad']=1; } echo $_GET['comunidad'];?>">
                         <button class="date" type="submit" class="buttonFecha" value="filtrar">🔎</button>
                     </div>
                     <p class="tittle">Actas archivadas</p>

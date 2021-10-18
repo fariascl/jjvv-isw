@@ -47,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="center">
                 <form id="form" action="register.php" method="POST" onclick="" autocomplete="off">
                     <p class="tittle">Registro junta vecinos</p>
-                    <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico">
-                    <input class="input" name="name" id="name" type="text" placeholder="Nombre completo">
-                    <input class="input" name="rut" id="rut" type="text" placeholder="Rut">
-                    <input class="input" name="password" id="password" type="password" placeholder="Contraseña">
+                    <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico" required>
+                    <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" required>
+                    <input class="input" name="rut" id="rut" type="text" placeholder="Rut" required>
+                    <input class="input" name="password" id="password" type="password" placeholder="Contraseña" required>
                     <input class="button" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
