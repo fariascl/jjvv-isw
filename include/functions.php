@@ -70,7 +70,7 @@ function get_actas(){
 
 function get_actas_by_comun($id_comunidad){
     include 'db.php';
-    $sql_query = "SELECT acta.id_acta, acta.titulo_acta, acta.fecha_acta FROM acta, registra, reunion, comunidad WHERE acta.id_acta = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ?;";
+    $sql_query = "SELECT acta.id_acta, acta.titulo_acta, acta.fecha_acta FROM acta, registra, reunion, comunidad WHERE acta.id_acta = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ? ORDER BY acta.fecha_acta DESC;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('i', $id_comunidad);
     $stmt->execute();
@@ -115,7 +115,7 @@ function get_reunion(){
 
 function get_reunion_by_comun($id_comunidad){
     include 'db.php';
-    $sql_query = "SELECT reunion.id_reunion, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ?";
+    $sql_query = "SELECT reunion.id_reunion, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ? ORDER BY reunion.fecha_reunion DESC;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('i', $id_comunidad);
     $stmt->execute();
@@ -269,7 +269,7 @@ function get_usuario_by_acta($id_acta){
 function search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino){
     try {
         include 'db.php';
-        $sql_query = "SELECT DISTINCT acta.* FROM acta, registra, reunion, tiene, comunidad WHERE acta.id_acta = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ? AND acta.fecha_acta BETWEEN ? AND ?;";
+        $sql_query = "SELECT DISTINCT acta.* FROM acta, registra, reunion, tiene, comunidad WHERE acta.id_acta = registra.id_acta AND registra.id_reunion = reunion.id_reunion AND reunion.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = ? AND acta.fecha_acta BETWEEN ? AND ? ORDER BY acta.fecha_acta DESC;";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('iss', $id_comunidad, $fecha_comienzo, $fecha_termino);
         $stmt->execute();
