@@ -112,3 +112,17 @@ html,body {
 .center{
     margin: 90px 0 0 0;
 }
+
+.alerta{
+    border: 1px solid var(--color-texto-placeholder);
+    padding: 10px 30px;
+    font-size: var(--tamano-texto-botones-16px);
+    font-weight: var(--grosor-negrita);
+    color: var(--color-texto-botones);
+}
+.exito{
+    background-color: var(--color-boton-secundario-hover);
+}
+.error{
+    background-color: var(--color-boton-peligro-hover);
+}
