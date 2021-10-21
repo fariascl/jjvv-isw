@@ -64,20 +64,26 @@ if (check_session()){
                         if (!isset($_GET['comunidad'])){
                             $id_comunidad = 1;
                             $row_2 = get_reunion_by_comun($id_comunidad);
+                            if (count($row_2) == 0){
+                                echo '<p class="mensaje">No se han encontrado reuniones</p>';
+                            }
                         foreach ($row_2 as $reunion){
                         echo '
-                        
-                        <div class="datosReunion">
-                            <p>'.$reunion[1].'</p>
-                            <p>'.$reunion[2].'</p>
-                            <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
-                        </div>
-                        ';
-                        }
+                            
+                            <div class="datosReunion">
+                                <p>'.$reunion[1].'</p>
+                                <p>'.$reunion[2].'</p>
+                                <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
+                            </div>
+                            ';
+                            }
                         }
                         else{
                         $id_comunidad = $_GET['comunidad'];
                         $row_2 = get_reunion_by_comun($id_comunidad);
+                        if (count($row_2) == 0){
+                            echo '<p class="mensaje">No se han encontrado reuniones</p>';
+                        }
                         foreach ($row_2 as $reunion){
                         echo '
                         

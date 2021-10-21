@@ -33,7 +33,7 @@ if (check_session()){
             <div class="center">
                 <div class="welcome">
                     <p class="tittle">Bienvenido</p>
-                    <p class="parrafo">Nombre usuario</p>
+                    <p class="parrafo"><?php echo $_SESSION['nombre']; ?></p>
                 </div>
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Tus próximas reuniones</p>
@@ -49,7 +49,3 @@ if (check_session()){
 </body>
 
 </html>
-
-<!--
-<?php echo $_SESSION['correo']. " -- ". $_SESSION['id_usuario']; ?>
--->

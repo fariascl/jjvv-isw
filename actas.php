@@ -68,6 +68,7 @@ if (check_session()){
                             $id_comunidad = 1;
                             
                             $row_2 = get_actas_by_comun($id_comunidad);
+                            
                             foreach ($row_2 as $acta){
                             echo '
                                 <div class="datosActas">
@@ -88,6 +89,9 @@ if (check_session()){
                             //echo $fecha_termino;
                             
                             $row_2 = search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino);
+                            if (count($row_2) == 0){
+                                echo '<p class="mensaje">No se han encontrado actas</p>';
+                            }
                             foreach ($row_2 as $acta){
                                 echo '
                                 <div class="datosActas">
@@ -103,6 +107,10 @@ if (check_session()){
                             $id_comunidad = $_GET['comunidad'];
                             
                             $row_2 = get_actas_by_comun($id_comunidad);
+
+                            if (count($row_2) == 0){
+                                echo '<p class="mensaje">No se han encontrado actas</p>';
+                            }
                             foreach ($row_2 as $acta){
                             echo '
                                 <div class="datosActas">
