@@ -11,13 +11,19 @@
 .block{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 0px 20px 40px;
     border: 1px solid var(--color-texto-placeholder);
     background-color: var(--color-fondo-inputs);
     margin: 0 0 15px 0;
 }
+.parrafo{
+        font-weight: bold; 
+        padding-left: 100px;
+        display: flex;
+    }
+
 .button{
     text-decoration: none;
     margin: 10px 50px;

@@ -36,19 +36,22 @@ if (check_session()){
             </div>
         </div>
         <div class="main">
+            form
             <div class="center">
                 <form action="">
+                    <div class="block">
                     <?php
                         include('include/functions.php');
                         $row = get_comunidad();
                         foreach ($row as $comunidad){
                             echo '
                                 <div class="block">
-                                <p>' .$comunidad[1]. '</p>
+                                <strong class="parrafo">' .$comunidad[1]. '</strong>
                                 <a href="verdescripcionComunidades.php?id='.$comunidad[0].'" class="button">Descripción</a>
                         </div>';
                         }
-                    ?>
+                    ?> 
+                </div>
                 </form>
             </div>
         </div>
@@ -59,5 +62,5 @@ if (check_session()){
 
 
 <!--
-    
 -->
+

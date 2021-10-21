@@ -51,6 +51,7 @@ if (!isset($_GET['id'])){
                     <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
                     '; ?>
                     <a class="button" href="comunidades.php">Volver</a>
+                    <a class="button" href="actas.php">Actas</a>
                 </form>
             </div>
         </div>
