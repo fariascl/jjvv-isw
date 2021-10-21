@@ -46,7 +46,11 @@ if (check_session()){
                         foreach ($row as $comunidad){
                             echo '
                                 <div class="block">
+<<<<<<< HEAD
                                 <strong class="parrafo">' .$comunidad[1]. '</strong>
+=======
+                                <p class="parrafo">' .$comunidad[1]. '</p>
+>>>>>>> 6f7fe7de2fcfcd9007ad06b0b51903152f259b3a
                                 <a href="verdescripcionComunidades.php?id='.$comunidad[0].'" class="button">Descripción</a>
                         </div>';
                         }

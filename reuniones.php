@@ -67,12 +67,15 @@ if (check_session()){
                             if (count($row_2) == 0){
                                 echo '<p class="mensaje">No se han encontrado reuniones</p>';
                             }
+                            
                         foreach ($row_2 as $reunion){
+                            $fecha = date("d-m-Y", strtotime($reunion[2])); // Esto es para cambiar formato de fecha
                         echo '
                             
                             <div class="datosReunion">
                                 <p>'.$reunion[1].'</p>
-                                <p>'.$reunion[2].'</p>
+                                <p>'.$fecha.'</p>
+                                
                                 <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                             </div>
                             ';
