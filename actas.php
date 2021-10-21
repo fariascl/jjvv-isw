@@ -41,8 +41,8 @@ if (check_session()){
             <div class="center">
                 <form id="form" action="actas.php" method="GET" onclick="">
                     <div class="searcher">
-                        <input type="date" name="fecha_comienzo" class="inputFecha" required>
-                        <input type="date" name="fecha_termino" class="inputFecha" required>
+                        <input class="input" type="date" name="fecha_comienzo" required>
+                        <input class="input" type="date" name="fecha_termino" required>
                         <input type="hidden" name="comunidad" value="<?php if(!isset($_GET['comunidad'])){$_GET['comunidad']=1; } echo $_GET['comunidad'];?>">
                         <button class="date" type="submit" class="buttonFecha" value="filtrar">🔎</button>
                     </div>
