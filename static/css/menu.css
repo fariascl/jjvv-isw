@@ -128,3 +128,9 @@ html,body {
     border: 1px solid var(--color-boton-peligro-hover);
     background-color: var(--color-boton-peligro-hover);
 }
+.mensaje{
+    border: 3px solid var(--color-texto-placeholder);
+    background-color: var(--color-fondo-inputs);
+    padding: 15px 20px;
+    text-align: center;
+}
