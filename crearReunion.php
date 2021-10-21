@@ -17,8 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id_usuario = $_SESSION['id_usuario']; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
         if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
             $msg = "Comunidad creada correctamente"; // flag
-            header('Location: reuniones.html');
+            header('Location: crearReunion.php?msg=1');
             
+        }
+        else {
+            header('Location: crearReunion.php?msg=2');
         }
 
     }
@@ -60,6 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="center">
                 <form id="form" action="crearReunion.php" method="POST" onsubmit="return validar();" autocomplete="off">
                     <p class="tittle">Agendar reunión</p>
+                    <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
+                            echo "<p class='alerta exito'>La reunión ha sido agendada con éxito</p>"; 
+                        }
+                        else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
+                            echo "<p class='alerta error'>Ha habido un error al agendar la reunión, revise los datos e inténtelo nuevamente</p>";
+                        }
+                            ?>
                     <input class="input" id="titulo" name="titulo" type="text" placeholder="Título" required>
                     <!-- Elegir comunidad -->
                     <select class="input" name="comunidad">

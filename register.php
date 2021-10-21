@@ -7,8 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $correo = $_POST['email'];
         $clave = $_POST['password'];
         if (register($nombre, $correo, $clave, $rut) == 1){
-            $msg = "Usuario registrado correctamente";
-            //return $msg;
+            //$msg = "Usuario registrado correctamente";
+            header("Location: register.php?msg=1");
+        }
+        else {
+            header("Location: register.php?msg=2");
         }
     }
     
@@ -47,6 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="center">
                 <form id="form" action="register.php" method="POST" onclick="" autocomplete="off">
                     <p class="tittle">Registro junta vecinos</p>
+                    <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
+                            echo "<p class='alerta exito'>El usuario se ha registrado</p>"; 
+                        }
+                        else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
+                            echo "<p class='alerta error'>Ha habido un error al registrar el usuario, revise los datos e inténtelo nuevamente</p>";
+                        } ?>
                     <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico" required>
                     <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" required>
                     <input class="input" name="rut" id="rut" type="text" placeholder="Rut" required>
@@ -54,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="button" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
-                        <a href="#" class="link">Entrar</a>
+                        <a href="login.php" class="link">Entrar</a>
                     </nav>
                 </form>
             </div>
