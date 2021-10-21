@@ -207,6 +207,13 @@ function get_comunidad_by_acta($id_acta){
 function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario){
     try {
         include 'db.php';
+        echo $nombre_reunion;
+        echo $fecha_reunion;
+        echo $hora_reunion;
+        echo $ubicacion_reunion;
+        echo $descripcion;
+        echo $id_comunidad;
+        echo $id_usuario;
         $sql_query = "INSERT INTO reunion(tema_reunion, fecha_reunion, hora_reunion, ubicacion_reunion, descripcion_reunion, id_comunidad, id_usuario) VALUES (?,?,?,?,?,?,?);";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('sssssis', $nombre_reunion, $fecha_reunion, $hora_reunion, $ubicacion_reunion, $descripcion, $id_comunidad, $id_usuario);
