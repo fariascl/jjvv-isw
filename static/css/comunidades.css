@@ -18,6 +18,11 @@
     background-color: var(--color-fondo-inputs);
     margin: 0 0 15px 0;
 }
+.parrafo{
+    font-weight: bold;
+    padding: 0 0 0 20px;
+}
+
 .button{
     text-decoration: none;
     margin: 10px 50px;
