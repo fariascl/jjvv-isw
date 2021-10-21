@@ -1,6 +1,6 @@
 <?php
-$userdb = 'root';
-$passdb = '';
+$userdb = 'bongo';
+$passdb = '13146519';
 $dbname = 'isw';
 $host = 'localhost';
 
