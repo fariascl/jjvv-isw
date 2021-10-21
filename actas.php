@@ -44,7 +44,7 @@ if (check_session()){
                         <input class="date" type="date" name="fecha_comienzo" required>
                         <input class="date" type="date" name="fecha_termino" required>
                         <input type="hidden" name="comunidad" value="<?php if(!isset($_GET['comunidad'])){$_GET['comunidad']=1; } echo $_GET['comunidad'];?>">
-                        <button class="date" type="submit" class="buttonFecha" value="filtrar">🔎</button>
+                        <button class="date" type="submit" value="filtrar">🔎</button>
                     </div>
                     <p class="tittle">Actas archivadas</p>
                     <select class="input" name="comunidad" onchange="location = this.value;">
