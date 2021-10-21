@@ -220,9 +220,9 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         $stmt->execute();
 
         $sql_query_2 = "INSERT INTO tiene VALUES (?,?);";
-
+        $lastid = intval($stmt->insert_id);
         $stmt_2 = $conn->prepare($sql_query_2);
-        $stmt_2->bind_param('ii', intval($stmt->insert_id), $id_comunidad);
+        $stmt_2->bind_param('ii', $lastid, $id_comunidad);
         $stmt_2->execute();
         
         $stmt->close();
