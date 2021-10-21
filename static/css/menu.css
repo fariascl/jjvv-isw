@@ -129,8 +129,11 @@ html,body {
     background-color: var(--color-boton-peligro-hover);
 }
 .mensaje{
-    border: 3px solid var(--color-texto-placeholder);
-    background-color: var(--color-fondo-inputs);
+    border: 1px solid var(--color-fondo-menu);
+    background-color: var(--color-fondo-menu);
     padding: 15px 20px;
     text-align: center;
+    font-size: var(--tamano-texto-botones-16px);
+    font-weight: var(--grosor-negrita);
+    color: var(--color-bloque-central);
 }
