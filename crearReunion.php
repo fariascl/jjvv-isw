@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="center">
                 <form id="form" action="crearReunion.php" method="POST" onsubmit="return validar();" autocomplete="off">
                     <p class="tittle">Agendar reunión</p>
-                    <input class="input" id="titulo" name="titulo" type="text" placeholder="Título">
+                    <input class="input" id="titulo" name="titulo" type="text" placeholder="Título" required>
                     <!-- Elegir comunidad -->
                     <select class="input" name="comunidad">
                         <?php
@@ -71,11 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         }
                         ?>
                     </select>
-                    <input class="input" id="dia" name="fecha" type="date" placeholder="Día">
-                    <input class="input" id="hora" name="hora" type="time" placeholder="Hora">
-                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación">
+                    <input class="input" id="dia" name="fecha" type="date" placeholder="Día" required>
+                    <input class="input" id="hora" name="hora" type="time" placeholder="Hora" required>
+                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación" required>
                     <textarea class="input textarea" id="descripcion" name="descripcion" cols="10" rows="5"
-                        placeholder="Descripción"></textarea>
+                        placeholder="Descripción" required></textarea>
                     <input class="button" type="submit" value="Agendar">
                 </form>
             </div>
