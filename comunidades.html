@@ -44,8 +44,8 @@ if (check_session()){
                         foreach ($row as $comunidad){
                             echo '
                                 <div class="block">
-                                <strong class="parrafo">' .$comunidad[1]. '</strong>
-                                <a href="verdescripcionComunidades.php?id='.$comunidad[0].'" class="button">Descripción</a>
+                                <p class="parrafo">' .$comunidad[1]. '</p>
+                                <a class="button" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
                                 </div>';
                         }
                     ?>
@@ -59,6 +59,10 @@ if (check_session()){
 
 
 <!--
-                        
--->
+<div class="block">
+                        <p class="parrafo">Nombre Comunidad</p>
+                        <a href="#" class="button">Descripción</a>
+                    </div>
 
+
+-->
