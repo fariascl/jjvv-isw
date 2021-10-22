@@ -228,9 +228,11 @@ function create_reunion($nombre_reunion, $fecha_reunion, $hora_reunion, $ubicaci
         $stmt->close();
         $stmt_2->close();
         $conn->close();
+        return 1;
     } catch (Exception $e) {
         $msg = $e->getMessage();
         echo $msg;
+        return 0;
     }
     
 }
