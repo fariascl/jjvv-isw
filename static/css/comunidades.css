@@ -19,17 +19,10 @@
     margin: 0 0 15px 0;
 }
 .parrafo{
-<<<<<<< HEAD
-        font-weight: bold; 
-        padding-left: 100px;
-        display: flex;
-    }
-=======
     font-weight: bold;
-    padding: 0 0 0 20px;
+    padding-left: 100px;
+    display: flex;
 }
->>>>>>> 6f7fe7de2fcfcd9007ad06b0b51903152f259b3a
-
 .button{
     text-decoration: none;
     margin: 10px 50px;
