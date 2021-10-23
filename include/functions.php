@@ -274,6 +274,23 @@ function get_usuario_by_acta($id_acta){
     }
 }
 
+/* Funcion para obtener datos del usuario */
+function get_usuario_by_id($id_usuario){
+    try {
+        include 'db.php';
+        $sql_query = "SELECT * FROM usuario WHERE id_usuario = '?';";
+        $stmt = $conn->prepare($sql_query);
+        $stmt->bind_param('s', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        $conn->close();
+        return $row;
+    } catch (Exception $e) {
+        $msg = $e->getMessage();
+    }
+}
 
 function search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino){
     try {

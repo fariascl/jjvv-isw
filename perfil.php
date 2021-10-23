@@ -1,3 +1,13 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,22 +42,28 @@
         <div class="main">
             <div class="center">
                 <form action="crearcomunidad.php" method="POST" autocomplete="off">
+                    <?php
+                    require_once('include/functions.php');
+                    $usuario = get_usuario_by_acta($_SESSION['id_usuario']);
+
+                    echo '
                     <p class="tittle">Datos generales de la cuenta</p>
                     <div class="block">
                         <p class="negrita">Nombre:</p>
-                        <p class="parrafo">Nombre del usuario</p>
+                        <p class="parrafo">'.$usuario['nombre'].'</p>
                     </div>
                     <div class="block">
                         <p class="negrita">Correo electrónico:</p>
-                        <p class="parrafo">Correo</p>
+                        <p class="parrafo">'.$usuario['correo'].'</p>
                     </div>
                     <div class="block">
-                        <p class="negrita">Rut:</p>
-                        <p class="parrafo">11.111.111-1</p>
+                        <p class="negrita">RUT:</p>
+                        <p class="parrafo">'.$usuario['rut'].'</p>
                     </div>
                     <select class="input">
                         <option value="0">Sus Comunidades</option>
-                    </select>
+                    </select>';
+                    ?>
                 </form>
             </div>
         </div>
