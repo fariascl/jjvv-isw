@@ -45,7 +45,11 @@ if (check_session()){
                             echo '
                                 <div class="block">
                                 <p class="parrafo">' .$comunidad[1]. '</p>
-                                <a class="button" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
+                                    <div class="separate">
+                                        <a class="button" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>                                
+                                        <a class="button unirse" href="#">Unirse</a>
+                                        <a class="button salirse" href="#">Salirse</a>
+                                    </div>
                                 </div>';
                         }
                     ?>
@@ -56,13 +60,3 @@ if (check_session()){
 </body>
 
 </html>
-
-
-<!--
-<div class="block">
-                        <p class="parrafo">Nombre Comunidad</p>
-                        <a href="#" class="button">Descripción</a>
-                    </div>
-
-
--->

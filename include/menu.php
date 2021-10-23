@@ -25,11 +25,11 @@ if ($_SERVER['PHP_SELF'] == '/actas.php'){
 else {
     echo '<a href="actas.php">Actas</a>';
 }
-if ($_SERVER['PHP_SELF'] == '/contacto.php'){
-   echo '<a href="contacto.php" class="active">Contacto</a>';
+if ($_SERVER['PHP_SELF'] == '/perfil.php'){
+   echo '<a href="perfil.php" class="active">Perfil</a>';
 }
 else {
-    echo '<a href="contacto.php">Contacto</a>';
+    echo '<a href="perfil.php">Perfil</a>';
 }
 if (isset($_GET['salir']) && $_GET['salir'] == true){
     session_destroy();

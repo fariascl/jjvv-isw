@@ -8,6 +8,13 @@
     border: 1px solid var(--color-bloque-central);
     background: var(--color-bloque-central);
 }
+.tittle{
+    font-size: var(--tamano-titulo-20px);
+    color: var(--color-titulo);
+    font-weight: var(--grosor-negrita);
+    padding: 0 0 15px 0;
+    border-bottom: 3px solid var(--color-fondo-menu) ;
+}
 .block{
     display: flex;
     flex-direction: row;
@@ -19,7 +26,6 @@
     margin: 0 0 15px 0;
 }
 .parrafo{
-    padding: 0 0 0 30px;
     font-weight: bold;
 }
 .button{
@@ -38,20 +44,12 @@
     background-color: var(--color-boton-secundario-hover);
     border: 1px solid var(--color-boton-secundario-hover);
 }
-
-.unirse{
+.principal{
     background: var(--color-boton-principal);
     border: 1px solid var(--color-boton-principal);
 }
-.unirse:hover{
+.principalm:hover{
     background: var(--color-boton-principal-hover);
     border: 1px solid var(--color-boton-principal-hover);
 }
-.salirse{
-    background: var(--color-boton-peligro);
-    border: 1px solid var(--color-boton-peligro);
-}
-.salirse:hover{
-    background: var(--color-boton-peligro-hover);
-    border: 1px solid var(--color-boton-peligro-hover);
-}
+
