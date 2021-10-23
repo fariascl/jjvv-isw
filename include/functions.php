@@ -278,7 +278,7 @@ function get_usuario_by_acta($id_acta){
 function get_usuario_by_id($id_usuario){
     try {
         include 'db.php';
-        $sql_query = "SELECT * FROM usuario WHERE id_usuario = '?';";
+        $sql_query = "SELECT * FROM usuario WHERE id_usuario = ?;";
         $stmt = $conn->prepare($sql_query);
         $stmt->bind_param('s', $id_usuario);
         $stmt->execute();

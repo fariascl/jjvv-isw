@@ -44,7 +44,7 @@ if (check_session()){
                 <form action="crearcomunidad.php" method="POST" autocomplete="off">
                     <?php
                     require_once('include/functions.php');
-                    $usuario = get_usuario_by_acta($_SESSION['id_usuario']);
+                    $usuario = get_usuario_by_id($_SESSION['id_usuario']);
 
                     echo '
                     <p class="tittle">Datos generales de la cuenta</p>
