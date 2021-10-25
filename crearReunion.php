@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación" required>
                     <textarea class="input textarea" id="descripcion" name="descripcion" cols="10" rows="5"
                         placeholder="Descripción" required></textarea>
-                    <input class="button" type="submit" value="Agendar">
+                    <input class="button primario" type="submit" value="Agendar">
                 </form>
             </div>
         </div>

@@ -46,9 +46,9 @@ if (check_session()){
                                 <div class="block">
                                 <p class="parrafo">' .$comunidad[1]. '</p>
                                     <div class="separate">
-                                        <a class="button" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>                                
-                                        <a class="button unirse" href="#">Unirse</a>
-                                        <a class="button salirse" href="#">Salirse</a>
+                                        <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
+                                        <a class="button primario" href="#">Unirse</a>
+                                        <a class="button eliminar" href="#">Salirse</a>
                                     </div>
                                 </div>';
                         }

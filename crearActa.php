@@ -47,7 +47,7 @@
                     <input class="input" type="date" name="fecha_acta" placeholder="Fecha del acta">
                     <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
                         placeholder="Descripción"></textarea>
-                    <input class="button" type="submit" value="Crear acta">
+                    <input class="button secundario" type="submit" value="Crear acta">
                 </form>
             </div>
         </div>

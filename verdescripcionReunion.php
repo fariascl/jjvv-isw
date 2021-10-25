@@ -53,7 +53,7 @@ if (check_session()){
                     <p class="parrafo">'.$row['hora_reunion'].'</p>
                     <p class="parrafo">'.$row['ubicacion_reunion'].'</p>
                     <p class="parrafo">'.$row['descripcion_reunion'].'</p>
-                    <a class="button" href="reuniones.php">Volver</a>
+                    <a class="button eliminar" href="reuniones.php">Volver</a>
                 </form>';
                 ?>
             </div>

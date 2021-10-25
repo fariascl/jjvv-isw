@@ -40,8 +40,8 @@
                     <select class="input">
                         <option value="">Tipo de usuario</option>
                     </select>
-                    <input type="button" class="button precaucion" value="Guardar cambios">
-                    <input type="button" class="button peligro" value="Eliminar cuenta">
+                    <input type="button" class="button modificar" value="Guardar cambios">
+                    <input type="button" class="button eliminar" value="Eliminar cuenta">
                 </form>
             </div>
         </div>

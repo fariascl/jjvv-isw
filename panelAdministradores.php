@@ -37,7 +37,7 @@
                         <p class="parrafo">Usuario:</p>
                         <div class="separate">
                             <input class="button primario" type="button" value="Hacer administrador">
-                            <a class="button precaucion" href="editarDatosCuenta.php">Editar datos</a>
+                            <a class="button modificar" href="editarDatosCuenta.php">Editar datos</a>
                         </div>
                     </div>
                 </form>

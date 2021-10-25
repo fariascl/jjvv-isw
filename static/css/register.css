@@ -27,21 +27,6 @@
     outline: 1px solid var(--color-texto-placeholder);
     border: 1px solid var(--color-texto-placeholder);
 }
-.button{
-    margin: 10px 50px;
-    padding: 10px;
-    text-align: center;
-    background: var(--color-boton-secundario);
-    color: var(--color-texto-botones);
-    font-weight: var(--grosor-negrita);
-    border-radius: 5px;
-    border: 1px solid var(--color-boton-secundario);
-}
-.button:hover{
-    transition: var(--transicion);
-    background-color: var(--color-boton-secundario-hover);
-    border: 1px solid var(--color-boton-secundario-hover);
-}
 .blocktext{
     display: flex;
     flex-direction: row;

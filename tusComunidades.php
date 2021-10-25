@@ -36,15 +36,15 @@
                     <div class="block">
                         <p class="parrafo">Comunidad:</p>
                         <div class="separate">
-                            <a href="" class="button">Ver reuniones</a>
-                            <a class="button principal" href="#">Ver actas</a>
+                            <a href="" class="button secundario">Ver reuniones</a>
+                            <a class="button primario" href="#">Ver actas</a>
                         </div>
                     </div>
                     <div class="block">
                         <p class="parrafo">Comunidad:</p>
                         <div class="separate">
-                            <a href="" class="button">Ver reuniones</a>
-                            <a class="button principal" href="#">Ver actas</a>
+                            <a href="" class="button secundario">Ver reuniones</a>
+                            <a class="button primario" href="#">Ver actas</a>
                         </div>
                     </div>
                 </form>

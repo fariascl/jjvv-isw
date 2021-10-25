@@ -37,8 +37,8 @@
                     <input class="input" type="email" placeholder="Correo electrónico" required>
                     <input class="input" type="text" placeholder="Rut" required>
                     <input class="input" type="password" placeholder="Contraseña" required>
-                    <input type="button" class="button precaucion" value="Guardar cambios">
-                    <input type="button" class="button peligro" value="Eliminar cuenta">
+                    <input type="button" class="button modificar" value="Guardar cambios">
+                    <input type="button" class="button eliminar" value="Eliminar cuenta">
                 </form>
             </div>
         </div>

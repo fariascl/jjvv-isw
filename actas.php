@@ -50,14 +50,11 @@ if (check_session()){
                     <select class="input" name="comunidad" onchange="location = this.value;">
                         <?php
                             require_once('include/functions.php');
-
-                        
                             $row = get_comunidad();
                             if (isset($_GET['comunidad'])){
                                 $id_comunidad = $_GET['comunidad'];
                                 echo '<option selected disabled>'.get_comunidad_by_id($id_comunidad)['nombre_comunidad'].'</option>';
                             }
-                            
                             foreach ($row as $comunidad){
                                 echo '<option value="actas.php?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
                             }
@@ -66,19 +63,16 @@ if (check_session()){
                     <?php
                         if (!isset($_GET['comunidad'])){
                             $id_comunidad = 1;
-                            
                             $row_2 = get_actas_by_comun($id_comunidad);
-                            
                             foreach ($row_2 as $acta){
                             echo '
                                 <div class="datosActas">
                                     <p>'.$acta[1].'</p>
                                     <p>'.$acta[2].'</p>
-                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                    <a class="button secundario" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                                 </div>
                                 ';
                             }
-
                         }
                         if (isset($_GET['fecha_comienzo'])){
                             $id_comunidad = $_GET['comunidad'];
@@ -87,7 +81,6 @@ if (check_session()){
                             //echo $id_comunidad;
                             //echo $fecha_comienzo;
                             //echo $fecha_termino;
-                            
                             $row_2 = search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino);
                             if (count($row_2) == 0){
                                 echo '<p class="mensaje">No se han encontrado actas</p>';
@@ -97,17 +90,14 @@ if (check_session()){
                                 <div class="datosActas">
                                     <p>'.$acta[1].'</p>
                                     <p>'.$acta[3].'</p>
-                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                    <a class="button secundario" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                                 </div>
                                 ';
                             }
                         }
                         else {
-                            
                             $id_comunidad = $_GET['comunidad'];
-                            
                             $row_2 = get_actas_by_comun($id_comunidad);
-
                             if (count($row_2) == 0){
                                 echo '<p class="mensaje">No se han encontrado actas</p>';
                             }
@@ -116,7 +106,7 @@ if (check_session()){
                                 <div class="datosActas">
                                     <p>'.$acta[1].'</p>
                                     <p>'.$acta[2].'</p>
-                                    <a class="button" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
+                                    <a class="button secundario" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                                 </div>
                                 ';
                             }

@@ -76,7 +76,7 @@ if (check_session()){
                                 <p>'.$reunion[1].'</p>
                                 <p>'.$fecha.'</p>
                                 
-                                <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
+                                <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                             </div>
                             ';
                             }
@@ -93,7 +93,7 @@ if (check_session()){
                         <div class="datosReunion">
                             <p>'.$reunion[1].'</p>
                             <p>'.$reunion[2].'</p>
-                            <a class="button" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
+                            <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                         </div>
                         ';
                         }

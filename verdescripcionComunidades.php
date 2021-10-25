@@ -50,8 +50,8 @@ if (!isset($_GET['id'])){
                     <p class="tittle">' .$row['nombre_comunidad']. '</p>
                     <textarea class="input textarea" cols="30" rows="10" placeholder="'.$row['descripcion_comunidad'].'" readonly></textarea>
                     '; ?>
-                    <a class="button" href="comunidades.php">Volver</a>
-                    <a class="button" href="actas.php">Actas</a>
+                    <a class="button primario" href="actas.php">Actas</a>
+                    <a class="button eliminar" href="comunidades.php">Volver</a>
                 </form>
             </div>
         </div>

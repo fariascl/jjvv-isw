@@ -13,7 +13,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 10px;
     border: 1px solid var(--color-texto-placeholder);
     background-color: var(--color-fondo-inputs);
     margin: 0 0 15px 0;
@@ -21,37 +21,4 @@
 .parrafo{
     padding: 0 0 0 30px;
     font-weight: bold;
-}
-.button{
-    text-decoration: none;
-    margin: 10px 10px;
-    padding: 10px;
-    text-align: center;
-    background: var(--color-boton-secundario);
-    color: var(--color-texto-botones);
-    font-weight: var(--grosor-negrita);
-    border-radius: 5px;
-    border: 1px solid var(--color-boton-secundario);
-}
-.button:hover{
-    transition: var(--transicion);
-    background-color: var(--color-boton-secundario-hover);
-    border: 1px solid var(--color-boton-secundario-hover);
-}
-
-.unirse{
-    background: var(--color-boton-principal);
-    border: 1px solid var(--color-boton-principal);
-}
-.unirse:hover{
-    background: var(--color-boton-principal-hover);
-    border: 1px solid var(--color-boton-principal-hover);
-}
-.salirse{
-    background: var(--color-boton-peligro);
-    border: 1px solid var(--color-boton-peligro);
-}
-.salirse:hover{
-    background: var(--color-boton-peligro-hover);
-    border: 1px solid var(--color-boton-peligro-hover);
 }

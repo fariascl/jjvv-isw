@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="input" name="nombre_comunidad" type="text" placeholder="Nombre de la Comunidad">
                     <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
                         placeholder="Descripción"></textarea>
-                    <input class="button" type="submit" value="Crear comunidad">
+                    <input class="button primario" type="submit" value="Crear comunidad">
                 </form>
             </div>
         </div>

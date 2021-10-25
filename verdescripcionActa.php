@@ -60,7 +60,7 @@ if (check_session()){
                         <p class="parrafo">Escrito por <strong>'.$data['nombre'].'</strong></p>
                         <p class="parrafo">Fecha: '.$row['fecha_acta'].'</p>
                     </div>
-                    <a class="button" href="actas.php">Volver</a>
+                    <a class="button eliminar" href="actas.php">Volver</a>
                 </form>';
                 ?>
             </div>

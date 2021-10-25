@@ -40,7 +40,7 @@ if (check_session()){
                     <div class="datosReunion">
                         <p>Nombre reunion</p>
                         <p>Fecha Reunión</p>
-                        <a class="button" href="">Ver detalle</a>
+                        <a class="button secundario" href="">Ver detalle</a>
                     </div>
                 </form>
             </div>

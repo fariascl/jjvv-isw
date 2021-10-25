@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" required>
                     <input class="input" name="rut" id="rut" type="text" placeholder="Rut" required>
                     <input class="input" name="password" id="password" type="password" placeholder="Contraseña" required>
-                    <input class="button" type="submit" value="Regístrate">
+                    <input class="button secundario" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
                         <a href="login.php" class="link">Entrar</a>
@@ -69,9 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
         </div>
     </div>
-    <!--
-    <script src="static/js/validationMenu.js"></script>
-    -->
 </body>
 
 </html>

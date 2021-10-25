@@ -15,35 +15,17 @@
     border-bottom: 3px solid var(--color-fondo-menu) ;
 }
 .input{
-    margin: 10px 50px;
+    font-family:  Helvetica, Arial;
+    margin: 0 0 20px 0;
     padding: 10px;
     text-align: center;
     background: var(--color-fondo-inputs);
     border: 1px solid var(--color-texto-placeholder);
-    font-family:  Helvetica, Arial;
 }
 .input:focus{
     outline: 1px solid var(--color-texto-placeholder);
     border: 1px solid var(--color-texto-placeholder);
 }
-
 .textarea{
     resize: none;
-}
-
-.button{
-    text-decoration: none;
-    margin: 10px 50px;
-    padding: 10px;
-    text-align: center;
-    background: var(--color-boton-precaucion);
-    color: var(--color-texto-botones);
-    font-weight: var(--grosor-negrita);
-    border-radius: 5px;
-    border: 1px solid var(--color-boton-precaucion);
-}
-.button:hover{
-    transition: var(--transicion);
-    background-color: var(--color-boton-precaucion-hover);
-    border: 1px solid var(--color-boton-precaucion-hover);
 }

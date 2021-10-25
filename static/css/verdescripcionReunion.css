@@ -21,18 +21,3 @@
     font-size: var(--tamano-texto-14px);
     text-align: center;
 }
-.button{
-    text-decoration: none;
-    padding: 10px;
-    text-align: center;
-    background: var(--color-boton-peligro);
-    color: var(--color-texto-botones);
-    font-weight: var(--grosor-negrita);
-    border-radius: 5px;
-    border: 1px solid var(--color-boton-peligro);
-}
-.button:hover{
-    transition: var(--transicion);
-    background-color: var(--color-boton-peligro-hover);
-    border: 1px solid var(--color-boton-peligro-hover);
-}
