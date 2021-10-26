@@ -112,7 +112,6 @@ html,body {
 .center{
     margin: 90px 0 0 0;
 }
-
 .alerta{
     padding: 20px 20px;
     font-size: var(--tamano-texto-botones-16px);
@@ -145,36 +144,98 @@ html,body {
     font-weight: var(--grosor-negrita);
     border-radius: 5px;
     margin: 0 0 10px 5px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    transition: .3s ease-in;
 }
 .primario{
     background: var(--color-boton-principal);
     border: 1px solid var(--color-boton-principal);
 }
+.primario::before{
+    content: "";
+    position: absolute;
+    background-color: var(--color-boton-principal-hover);
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: .3s ease-in;
+}
 .primario:hover{
     background: var(--color-boton-principal-hover);
     border: 1px solid var(--color-boton-principal-hover);
+}
+.primario:hover:before{
+    bottom: 0;
 }
 .secundario{
     background: var(--color-boton-secundario);
     border: 1px solid var(--color-boton-secundario);
 }
+.secundario::before{
+    content: "";
+    position: absolute;
+    background-color: var(--color-boton-secundario-hover);
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: .3s ease-in;
+}
 .secundario:hover{
     background: var(--color-boton-secundario-hover);
     border: 1px solid var(--color-boton-secundario-hover);
+}
+.secundario:hover:before{
+    bottom: 0;
 }
 .modificar{
     background: var(--color-boton-precaucion);
     border: 1px solid var(--color-boton-precaucion);
 }
+.modificar::before{
+    content: "";
+    position: absolute;
+    background-color: var(--color-boton-precaucion-hover);
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: .3s ease-in;
+}
 .modificar:hover{
     background: var(--color-boton-precaucion-hover);
     border: 1px solid var(--color-boton-precaucion-hover);
+}
+.modificar:hover:before{
+    bottom: 0;
 }
 .eliminar{
     background: var(--color-boton-peligro);
     border: 1px solid var(--color-boton-peligro);
 }
+.eliminar::before{
+    content: "";
+    position: absolute;
+    background-color: var(--color-boton-peligro-hover);
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: .3s ease-in;
+}
 .eliminar:hover{
     background: var(--color-boton-peligro-hover);
     border: 1px solid var(--color-boton-peligro-hover);
+}
+.eliminar:hover:before{
+    bottom: 0;
 }
