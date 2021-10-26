@@ -2,7 +2,6 @@
 .center{
     display: flex;
     flex-direction: row;
-    
 }
 .welcome{
     margin-left: 40px;
@@ -11,17 +10,18 @@
     background: var(--color-bloque-central);
     border: 1px solid var(--color-bloque-central);
     padding: 10px 70px;
-
 }
 .parrafo{
     font-size: var(--tamano-texto-14px);
     text-align: center;
 }
 .center form{
+    background: var(--color-bloque-central);
+    border: 1px solid var(--color-bloque-central);
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--color-bloque-central);
-    background: var(--color-bloque-central);
+    margin: 0 350px;
+    padding: 40px 60px;
 }
 .tittle{
     font-size: var(--tamano-titulo-20px);

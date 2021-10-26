@@ -1,60 +1,60 @@
 :root{
     /* Variables textos de la página */
+    --color-titulo:#061C23;
+    --color-texto-botones:#FFFFFF;
+    --color-texto-links:#4EA5D9;
+    --color-texto-menu:#F3E9D2;
+    --color-texto-menu-hover:#B18A2F;
+    --color-texto-placeholder:#707070;
+    --fuente-general:Helvetica, Arial, sans-serif;
+    --grosor-negrita:bold;
+    --grosor-normal:regular;
     --tamano-texto-14px:14px;
     --tamano-texto-botones-16px:16px;
     --tamano-titulo-20px:20px;
-    --color-texto-menu:#F3E9D2;
-    --color-texto-menu-hover:#B18A2F;
-    --color-titulo:#061C23;
-    --color-texto-placeholder:#707070;
-    --color-texto-botones:#FFFFFF;
-    --color-texto-links:#4EA5D9;
-    --grosor-negrita:bold;
-    --grosor-normal:regular;
-    --fuente-general:Helvetica, Arial, sans-serif;
     /* Variables de color de la pagina (fondos etc) */
-    --color-fondo-menu:#114b5f;
     --color-barra-activa:#27db87;
     --color-bloque-central:#f3e9d2;
     --color-fondo-inputs:#b3dfb5;
+    --color-fondo-menu:#114b5f;
     --color-fondo-submenu:#186E8B;
     /* Variable color botones */
-    --color-boton-principal:#4ea5d9;
-    --color-boton-secundario:#6adc7f;
     --color-boton-peligro:#DF535C;
-    --color-boton-precaucion:#FCCE36;
-    --color-boton-principal-hover:#2784B9;
-    --color-boton-secundario-hover:#2BB644;
     --color-boton-peligro-hover:#BE232D;
+    --color-boton-precaucion:#FCCE36;
     --color-boton-precaucion-hover:#DDAA03;
+    --color-boton-principal:#4ea5d9;
+    --color-boton-principal-hover:#2784B9;
+    --color-boton-secundario:#6adc7f;
+    --color-boton-secundario-hover:#2BB644;
     /* Transiciones */
     --transicion:0.3s;
 }
 html,body {
     font-family:var(--fuente-general);
-    margin: 0px;
     height: 100%;
-    width: 100%;
-    max-width: 1920px;
+    margin: 0px;
     max-height: 1080px;
+    max-width: 1920px;
+    width: 100%;
 }
 .container{
-    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
     width: 100%;
 }
 .menu{
     background-color:var(--color-fondo-menu);
-    padding: 15px 70px 15px 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
     left: 0;
+    padding: 15px 70px 15px 60px;
+    position: fixed;
     right: 0;
+    top: 0;
 }
 .logo a{
     color: var(--color-texto-menu);
@@ -63,9 +63,9 @@ html,body {
     text-decoration: none;
 }
 .action a{
-    padding: 0 10px 5px 10px;
     color: var(--color-texto-menu);
     font-size: var(--tamano-texto-14px);
+    padding: 0 10px 5px 10px;
     text-decoration: none;
 }
 .action a:hover{
@@ -77,18 +77,18 @@ html,body {
 }
 .submenu{
     background: var(--color-fondo-submenu);
-    padding: 15px 70px 20px 60px;
-    position: fixed;
-    top: 49px;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
+    left: 0;
+    padding: 15px 70px 20px 60px;
+    position: fixed;
+    right: 0;
+    top: 49px;
 }
 .action-submenu a{
-    padding: 0 10px 5px 10px;
     color: var(--color-texto-menu);
     font-size: var(--tamano-texto-14px);
+    padding: 0 10px 5px 10px;
     text-decoration: none;
 }
 .action-submenu a:hover{
@@ -96,146 +96,85 @@ html,body {
     transition: var(--transicion);
 }
 .main{
-    background-image: url(../img/fondo.png);
     background-attachment: fixed;
+    background-image: url(../img/fondo.png);
     background-position: center;
     background-repeat: no-repeat;
-    padding: 49px 60px 0 60px;
-    width:auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-    text-align: center;
+    padding: 49px 60px 0 60px;
     height: 100%;
+    text-align: center;
+    width:auto;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 .center{
     margin: 90px 0 0 0;
 }
-.alerta{
-    padding: 20px 20px;
+.mensaje{
+    background-color: var(--color-fondo-menu);
+    border: 1px solid var(--color-fondo-menu);
+    color: var(--color-bloque-central);
     font-size: var(--tamano-texto-botones-16px);
     font-weight: var(--grosor-negrita);
-    color: var(--color-texto-botones);
-
-}
-.exito{
-    border: 1px solid var(--color-boton-secundario-hover);
-    background-color: var(--color-boton-secundario-hover);
-}
-.error{
-    border: 1px solid var(--color-boton-peligro-hover);
-    background-color: var(--color-boton-peligro-hover);
-}
-.mensaje{
-    border: 1px solid var(--color-fondo-menu);
-    background-color: var(--color-fondo-menu);
     padding: 15px 20px;
     text-align: center;
-    font-size: var(--tamano-texto-botones-16px);
-    font-weight: var(--grosor-negrita);
-    color: var(--color-bloque-central);
 }
 .button{
-    text-decoration: none;
+    border-radius: 5px;
+    color: var(--color-texto-botones);
+    cursor: pointer;
+    font-weight: var(--grosor-negrita);
+    margin: 0 0 10px 5px;
     padding: 10px;
     text-align: center;
-    color: var(--color-texto-botones);
-    font-weight: var(--grosor-negrita);
-    border-radius: 5px;
-    margin: 0 0 10px 5px;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    z-index: 1;
+    text-decoration: none;
     transition: .3s ease-in;
 }
 .primario{
     background: var(--color-boton-principal);
     border: 1px solid var(--color-boton-principal);
 }
-.primario::before{
-    content: "";
-    position: absolute;
-    background-color: var(--color-boton-principal-hover);
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    transition: .3s ease-in;
-}
 .primario:hover{
     background: var(--color-boton-principal-hover);
     border: 1px solid var(--color-boton-principal-hover);
-}
-.primario:hover:before{
-    bottom: 0;
 }
 .secundario{
     background: var(--color-boton-secundario);
     border: 1px solid var(--color-boton-secundario);
 }
-.secundario::before{
-    content: "";
-    position: absolute;
-    background-color: var(--color-boton-secundario-hover);
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    transition: .3s ease-in;
-}
 .secundario:hover{
     background: var(--color-boton-secundario-hover);
     border: 1px solid var(--color-boton-secundario-hover);
-}
-.secundario:hover:before{
-    bottom: 0;
 }
 .modificar{
     background: var(--color-boton-precaucion);
     border: 1px solid var(--color-boton-precaucion);
 }
-.modificar::before{
-    content: "";
-    position: absolute;
-    background-color: var(--color-boton-precaucion-hover);
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    transition: .3s ease-in;
-}
 .modificar:hover{
     background: var(--color-boton-precaucion-hover);
     border: 1px solid var(--color-boton-precaucion-hover);
-}
-.modificar:hover:before{
-    bottom: 0;
 }
 .eliminar{
     background: var(--color-boton-peligro);
     border: 1px solid var(--color-boton-peligro);
 }
-.eliminar::before{
-    content: "";
-    position: absolute;
-    background-color: var(--color-boton-peligro-hover);
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    transition: .3s ease-in;
-}
 .eliminar:hover{
     background: var(--color-boton-peligro-hover);
     border: 1px solid var(--color-boton-peligro-hover);
 }
-.eliminar:hover:before{
-    bottom: 0;
+.alerta{
+    color: var(--color-texto-botones);
+    font-size: var(--tamano-texto-botones-16px);
+    font-weight: var(--grosor-negrita);
+    padding: 20px 20px;
+}
+.exito{
+    background-color: var(--color-boton-secundario-hover);
+    border: 1px solid var(--color-boton-secundario-hover);
+}
+.error{
+    background-color: var(--color-boton-peligro-hover);
+    border: 1px solid var(--color-boton-peligro-hover);
 }

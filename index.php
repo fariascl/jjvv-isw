@@ -15,7 +15,7 @@ if (check_session()){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <title>Home</title>
-    <link rel="stylesheet" href="static/css/contacto.css">
+    <link rel="stylesheet" href="static/css/menu.css">
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 
