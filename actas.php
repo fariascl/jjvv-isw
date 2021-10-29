@@ -102,10 +102,11 @@ if (check_session()){
                                 echo '<p class="mensaje">No se han encontrado actas</p>';
                             }
                             foreach ($row_2 as $acta){
+                            $fecha = date("d-m-Y", strtotime($acta[2]));
                             echo '
                                 <div class="datosActas">
                                     <p>'.$acta[1].'</p>
-                                    <p>'.$acta[2].'</p>
+                                    <p>'.$fecha.'</p>
                                     <a class="button secundario" href="verdescripcionActa.php?id='.$acta[0].'">Ver detalle</a>
                                 </div>
                                 ';

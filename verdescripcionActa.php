@@ -42,23 +42,27 @@ if (check_session()){
                 include 'include/functions.php';
                 $id_acta = $_GET['id'];
                 $row = get_acta_by_id($id_acta);
-                $data = get_usuario_by_acta($id_acta); 
+                $data = get_usuario_by_acta($id_acta);
                 $aux_com = get_comunidad_by_acta($id_acta);
+                $fechaReunionOriginal = $data['fecha_reunion'];
+                $fechaReunionSwap = date("d-m-Y", strtotime($fechaReunionOriginal));
+                $fechaActaOriginal = $data['fecha_acta'];
+                $fechaActaSwap = date("d-m-Y", strtotime($fechaActaOriginal));
                 echo '
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">'.$row['titulo_acta'].'</p>
                     <div class="comunidades">
-                        <p class="parrafo">Comunidad: '.$aux_com['nombre_comunidad'].':</p>
+                        <p class="parrafo">Comunidad: '.$aux_com['nombre_comunidad'].'</p>
                     </div>
                     <div class="fecha">
-                        <p class="parrafo">Reunión: '.$data['fecha_reunion'].'</p>
+                        <p class="parrafo">Fecha reunión: '.$fechaReunionSwap.'</p>
                     </div>
                     <p class="contenido">
                         '.$row['contenido_acta'].'
                     </p>
                     <div class="datos">
                         <p class="parrafo">Escrito por <strong>'.$data['nombre'].'</strong></p>
-                        <p class="parrafo">Fecha: '.$row['fecha_acta'].'</p>
+                        <p class="parrafo">Fecha creación: '.$fechaActaSwap.'</p>
                     </div>
                     <a class="button eliminar" href="actas.php">Volver</a>
                 </form>';

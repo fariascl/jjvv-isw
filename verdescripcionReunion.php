@@ -44,12 +44,13 @@ if (check_session()){
             include 'include/functions.php';
             $id_reunion = $_GET['id'];
             $row = get_reunion_by_id($id_reunion);
-
+            $fechaOriginal = $row['fecha_reunion'];
+            $fechaSwap = date("d-m-Y", strtotime($fechaOriginal));
             echo '
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Detalle Reunión</p>
                     <p class="parrafo">'.$row['tema_reunion'].'</p>
-                    <p class="parrafo">'.$row['fecha_reunion'].'</p>
+                    <p class="parrafo">'.$fechaSwap.'</p>
                     <p class="parrafo">'.$row['hora_reunion'].'</p>
                     <p class="parrafo">'.$row['ubicacion_reunion'].'</p>
                     <p class="parrafo">'.$row['descripcion_reunion'].'</p>
