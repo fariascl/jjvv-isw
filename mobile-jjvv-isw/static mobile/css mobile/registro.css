@@ -1,0 +1,13 @@
+@import url(./general.css);
+@media (max-width:575px){
+    .footer{
+        display: flex;
+        flex-direction: row;
+        margin: 0px 0px 0px 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer a:last-child{
+        margin: 0px 0px 0px 5px;
+    }
+}

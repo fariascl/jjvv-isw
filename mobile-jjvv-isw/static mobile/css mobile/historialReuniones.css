@@ -1,0 +1,71 @@
+@import url(./general.css);
+@media (max-width:575px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+    }
+    .center{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        right: 10%;
+    }
+    .proxReunion{
+        margin-top: 30px;
+    }
+    select{
+        padding: 10px;
+        font-family:  Helvetica, Arial;
+        text-align: center;
+        background: var(--color-fondo-inputs);
+        border: 1px solid var(--color-texto-placeholder);
+        margin: 0px 0px 20px 0px;
+    }
+    .info{
+        border: 1px solid black;
+        position: relative;
+        left: 0;
+        right: 0;
+        display: flex;
+        background: var(--color-fondo-inputs);
+        padding: 10px 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0px 10px 0px;
+    }
+    .info:last-child{
+        margin-bottom: 20px;
+    }
+    .block{
+        margin-top: 50px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        margin: 0px 0px 0px 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .date{
+        margin: 0px 0px 0px 20px;
+    }
+    .dato{
+        margin: 0px;
+    }
+    .datofinal{
+        margin: 15px 0px 15px 0px;
+    }
+    .searcher{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

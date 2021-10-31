@@ -1,0 +1,10 @@
+@import url(./general.css);
+@media (max-width:575px){
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer a:first-child{
+        margin: 5px 0 0 0;
+    }
+}

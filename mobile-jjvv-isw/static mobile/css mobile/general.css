@@ -1,0 +1,219 @@
+:root{
+    /* Variables textos de la página */
+    --color-titulo:#061C23;
+    --color-texto-botones:#FFFFFF;
+    --color-texto-links:#4EA5D9;
+    --color-texto-menu:#F3E9D2;
+    --color-texto-menu-hover:#B18A2F;
+    --color-texto-placeholder:#707070;
+    --fuente-general:Helvetica, Arial, sans-serif;
+    --grosor-negrita:bold;
+    --grosor-normal:regular;
+    --tamano-texto-14px:14px;
+    --tamano-texto-botones-16px:16px;
+    --tamano-titulo-20px:20px;
+    /* Variables de color de la pagina (fondos etc) */
+    --color-barra-activa:#27db87;
+    --color-bloque-central:#f3e9d2;
+    --color-fondo-inputs:#b3dfb5;
+    --color-fondo-menu:#114b5f;
+    --color-fondo-submenu:#186E8B;
+    /* Variable color botones */
+    --color-boton-peligro:#DF535C;
+    --color-boton-peligro-hover:#BE232D;
+    --color-boton-precaucion:#FCCE36;
+    --color-boton-precaucion-hover:#DDAA03;
+    --color-boton-principal:#4ea5d9;
+    --color-boton-principal-hover:#2784B9;
+    --color-boton-secundario:#6adc7f;
+    --color-boton-secundario-hover:#2BB644;
+    /* Transiciones */
+    --transicion:0.3s;
+}
+@media (max-width:575px){
+    html,body {
+    font-family:var(--fuente-general);
+    height: 100%;
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: var(--color-bloque-central);
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        padding: 15px 20px;
+        justify-content: space-between;
+        background-color: var(--color-fondo-menu);
+        align-items: center;
+        z-index: 1;
+    }
+    #btn-menu{
+        display: none;
+    }
+    .container-menu{
+        position: fixed;
+        background-color: var(--color-fondo-menu);
+        width: 50%;
+        height: 100%;
+        top: 54px;
+        border: 0px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+    }
+    #btn-menu:checked ~ .container-menu{
+        opacity: 100;
+        visibility: visible;
+    }
+     /* Aca empieza el submenu desplegable */
+    .menu-item {
+        list-style: none;
+        overflow: hidden;
+    }
+    .asd{
+        display: flex;
+        align-items: center;
+        padding: 10px 0px 0px 20px;
+    }
+    .btn {
+        display: block;
+        padding: 15px 20px;
+        background-color: var(--color-fondo-menu);
+        color: var(--color-texto-menu);
+        position: relative;
+        text-decoration: none;
+    }
+    .menu-item__sub {
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 20px;
+        background: var(--color-fondo-submenu);
+        overflow: hidden;
+        max-height: 0;
+    }
+    .menu-item__sub a {
+        text-decoration: none;
+        display: block;
+        color: var(--color-texto-menu);
+        padding: 20px 20px;
+        position: relative;
+    }
+    .menu-item:target .menu-item__sub {
+        max-height: 10em;
+    }
+    .actions a{
+        text-decoration: none;
+        color: var(--color-texto-menu);
+        padding: 0px 10px 5px 10px;
+    }
+    .active{
+        border-bottom: 3px solid var(--color-barra-activa);
+    }
+    /* acá empieza el bloque central */
+    .main{
+        display: flex;
+        flex-direction: column;
+        top: 0%;
+        left: 20%;
+        right: 20%;
+        bottom: 0%;
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+    }
+    /* acá van todas las clases que contienen letras */
+    .tittle{
+        font-size: var(--tamano-titulo-20px);
+        color: var(--color-titulo);
+        font-weight: var(--grosor-negrita);
+        padding: 0 0 15px 0;
+        border-bottom: 3px solid var(--color-fondo-menu);
+    }
+    .link{
+        font-weight: var(--grosor-negrita);
+        color: var(--color-texto-links);
+        padding: 5px 0px;
+        text-decoration: none;
+    }
+    .account{
+        text-decoration: none;
+        color: var(--color-titulo);
+        font-size: var(--tamano-texto-14px);
+    }
+    /* Acá empiezan los botones */
+    .button{
+        border-radius: 5px;
+        color: var(--color-texto-botones);
+        cursor: pointer;
+        font-weight: var(--grosor-negrita);
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+    }
+    .primario{
+        background: var(--color-boton-principal);
+        border: 1px solid var(--color-boton-principal);
+    }
+    .primario:hover{
+        background: var(--color-boton-principal-hover);
+        border: 1px solid var(--color-boton-principal-hover);
+    }
+    .secundario{
+        background: var(--color-boton-secundario);
+        border: 1px solid var(--color-boton-secundario);
+    }
+    .secundario:hover{
+        background: var(--color-boton-secundario-hover);
+        border: 1px solid var(--color-boton-secundario-hover);
+    }
+    .modificar{
+        background: var(--color-boton-precaucion);
+        border: 1px solid var(--color-boton-precaucion);
+    }
+    .modificar:hover{
+        background: var(--color-boton-precaucion-hover);
+        border: 1px solid var(--color-boton-precaucion-hover);
+    }
+    .eliminar{
+        background: var(--color-boton-peligro);
+        border: 1px solid var(--color-boton-peligro);
+    }
+    .eliminar:hover{
+        background: var(--color-boton-peligro-hover);
+        border: 1px solid var(--color-boton-peligro-hover);
+    }
+    .btnlist{
+        margin: 10px 0px 20px 0px !important;
+    }
+    /* acá van todos los campos */
+    .input{
+        padding: 10px;
+        font-family:  Helvetica, Arial;
+        text-align: center;
+        background: var(--color-fondo-inputs);
+        border: 1px solid var(--color-texto-placeholder);
+        margin: 0px 0px 10px 0px;
+    }
+    .description{
+        text-align: justify;
+        padding: 10px 20px;
+    }
+    .force{
+        width: auto !important;
+        color: var(--color-texto-placeholder);
+        text-align: center;
+    }
+    .textarea{
+        resize: none;
+    }
+}
