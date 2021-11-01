@@ -119,7 +119,7 @@
                     <!-- Este es el bloque que se repite -->
                     <!-- Ejemplo con el boton de unirse -->
                     <?php
-                        include('include/functions.php');
+                        include('../include/functions.php');
                         $row = get_comunidad();
                         foreach ($row as $comunidad){
                             echo'
