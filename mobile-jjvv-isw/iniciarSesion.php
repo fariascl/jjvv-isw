@@ -71,9 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div>
     <div class="main">
         <p class="tittle">Inicio de sesión</p>
-        <input class="input" type="email" name="email" placeholder="Correo electrónico">
-        <input class="input" type="password" name="password" placeholder="Contraseña">
-        <input class="button primario" type="submit" value="Iniciar sesión">
+        <form action="iniciarSesion.php" method="POST">
+            <input class="input" type="email" name="email" placeholder="Correo electrónico">
+            <input class="input" type="password" name="password" placeholder="Contraseña">
+            <input class="button primario" type="submit" value="Iniciar sesión">
+        </form>
         <div class="footer">
             <a class="link" href="#">¿Has olvidado tu contraseña?</a>
             <a class="link" href="registro.php">Regístrate</a>
