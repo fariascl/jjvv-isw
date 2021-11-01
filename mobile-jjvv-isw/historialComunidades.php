@@ -118,21 +118,21 @@
                     <p class="tittle">Listado de comunidades</p>
                     <!-- Este es el bloque que se repite -->
                     <!-- Ejemplo con el boton de unirse -->
-                    <div class="info">
-                        <p class="parrafo">Nombre</p>
-                        <div class="botonera">
-                            <a class="button secundario" href="#">Detalle</a>
-                            <a class="button primario" href="#">Unirse</a>
-                        </div>
-                    </div>
+                    <?php
+                        include('include/functions.php');
+                        $row = get_comunidad();
+                        foreach ($row as $comunidad){
+                            echo'
+                            <div class="info">
+                                <p class="parrafo">'.$comunidad[1].'</p>
+                                <div class="botonera">
+                                    <a class="button secundario" href="#">Detalle</a>
+                                    <a class="button primario" href="#">Unirse</a>
+                                </div>
+                            </div>';
+                        }
+                    ?>
                     <!-- Ejemplo con el boton salirse -->
-                    <div class="info">
-                        <p class="parrafo">Nombre</p>
-                        <div class="botonera">
-                            <a class="button secundario" href="#">Detalle</a>
-                            <a class="button eliminar" href="#">Salirse</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
