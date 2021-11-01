@@ -1,3 +1,11 @@
+<?php
+require_once('../include/session.php');
+if (check_session()){
+    header('Location: iniciarSesion.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -116,7 +124,7 @@
             <div class="center">
                 <div class="welcome">
                     <p class="titulo">¡Bienvenido!</p>
-                    <p class="nombre">Nombre de usuario</p>
+                    <p class="nombre"><?php echo $_SESSION['nombre']; ?></p>
                 </div>
                 <div class="proxReunion">
                     <p class="tittle">Tus próximas reuniones</p>
