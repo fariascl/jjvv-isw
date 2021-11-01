@@ -124,7 +124,9 @@
                         foreach ($row as $comunidad){
                             echo'
                             <div class="info">
-                                <p class="parrafo">'.$comunidad[1].'</p>
+                                <div class="nameComunidad">
+                                    <p class="parrafo">'.$comunidad[1].'</p>
+                                </div>
                                 <div class="botonera">
                                     <a class="button secundario" href="#">Detalle</a>
                                     <a class="button primario" href="#">Unirse</a>
@@ -132,7 +134,6 @@
                             </div>';
                         }
                     ?>
-                    <!-- Ejemplo con el boton salirse -->
                 </div>
             </div>
         </div>
