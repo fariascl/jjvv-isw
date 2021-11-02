@@ -70,20 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
     </div>
     <div class="main">
-<<<<<<< HEAD
-        <p class="tittle">Inicio de sesión</p>
-        <form action="login.php" method="POST">
-            <input class="input" type="email" name="email" placeholder="Correo electrónico">
-            <input class="input" type="password" name="password" placeholder="Contraseña">
-            <input class="button primario" type="submit" value="Iniciar sesión">
-        </form>
-        <div class="footer">
-            <a class="link" href="#">¿Has olvidado tu contraseña?</a>
-            <a class="link" href="registro.php">Regístrate</a>
-=======
         <div class="center">
             <p class="tittle">Inicio de sesión</p>
-            <form action="iniciarSesion.php" method="POST">
+            <form action="login.php" method="POST">
                 <input class="input" type="email" name="email" placeholder="Correo electrónico">
                 <input class="input" type="password" name="password" placeholder="Contraseña">
                 <input class="button primario" type="submit" value="Iniciar sesión">
@@ -92,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <a class="link" href="#">¿Has olvidado tu contraseña?</a>
                 <a class="link" href="registro.php">Regístrate</a>
             </div>
->>>>>>> 49bdfd33e553e89f2619d6ebc82a956b07f03b21
         </div>
     </div>
     </div>
