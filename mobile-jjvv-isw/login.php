@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 $_SESSION['correo'] = $row['correo'];
                 $_SESSION['clave'] = $row['clave'];
 
-                header('Location: index.php');
+                header('Location: home.php');
 
             }
             catch (Exception $e) {
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div>
     <div class="main">
         <p class="tittle">Inicio de sesión</p>
-        <form action="iniciarSesion.php" method="POST">
+        <form action="login.php" method="POST">
             <input class="input" type="email" name="email" placeholder="Correo electrónico">
             <input class="input" type="password" name="password" placeholder="Contraseña">
             <input class="button primario" type="submit" value="Iniciar sesión">
