@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="register.php" method="POST" onclick="" autocomplete="off">
+                <form id="form" action="register.php" method="POST" onclick="" autocomplete="off" onsubmit="return checkInputs()">
                     <p class="tittle">Registro junta vecinos</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
                             echo "<p class='alerta exito'>El usuario se ha registrado</p>"; 
@@ -56,10 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
                             echo "<p class='alerta error'>Ha habido un error al registrar el usuario, revise los datos e inténtelo nuevamente</p>";
                         } ?>
-                    <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico" required>
-                    <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" required>
-                    <input class="input" name="rut" id="rut" type="text" placeholder="Rut" required>
-                    <input class="input" name="password" id="password" type="password" placeholder="Contraseña" required>
+                    <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico" >
+                    <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" >
+                    <input class="input" name="rut" id="rut" oninput="checkRut(this);" type="text" placeholder="Rut" >
+                    <input class="input" name="password" id="password" type="password" placeholder="Contraseña" >
                     <input class="button secundario" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>
@@ -69,6 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
         </div>
     </div>
+<script src="static/js/validaciones.js"></script>
+<script src="static/js/validacionRut.js"></script>
 </body>
 
 </html>
