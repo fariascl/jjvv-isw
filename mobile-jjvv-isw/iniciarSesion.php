@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <title>Inicio sesión</title>
     <link rel="stylesheet" href="static/css/general.css">
-    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="static/css/iniciarSesion.css">
 </head>
 
 <body>
@@ -70,17 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
     </div>
     <div class="main">
-        <div class="center">
-            <p class="tittle">Inicio de sesión</p>
-            <form action="iniciarSesion.php" method="POST">
-                <input class="input" type="email" name="email" placeholder="Correo electrónico">
-                <input class="input" type="password" name="password" placeholder="Contraseña">
-                <input class="button primario" type="submit" value="Iniciar sesión">
-            </form>
-            <div class="footer">
-                <a class="link" href="#">¿Has olvidado tu contraseña?</a>
-                <a class="link" href="registro.php">Regístrate</a>
-            </div>
+        <p class="tittle">Inicio de sesión</p>
+        <form action="iniciarSesion.php" method="POST">
+            <input class="input" type="email" name="email" placeholder="Correo electrónico">
+            <input class="input" type="password" name="password" placeholder="Contraseña">
+            <input class="button primario" type="submit" value="Iniciar sesión">
+        </form>
+        <div class="footer">
+            <a class="link" href="#">¿Has olvidado tu contraseña?</a>
+            <a class="link" href="registro.php">Regístrate</a>
         </div>
     </div>
     </div>

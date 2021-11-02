@@ -7,4 +7,8 @@
     .footer a:first-child{
         margin: 5px 0 0 0;
     }
+    .center form{
+        display: flex;
+        flex-direction: column;
+    }
 }
