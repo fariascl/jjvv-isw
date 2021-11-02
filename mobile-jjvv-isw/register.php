@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div>
     <div class="main">
         <p class="tittle">Registro</p>
-        <form action="registro.php" method="POST">
+        <form action="register.php" method="POST">
             <input class="input" type="email" name="email" placeholder="Correo electrónico">
             <input class="input" type="text" name="name" placeholder="Nombre completo">
             <input class="input" type="text" name="rut" placeholder="Rut">
