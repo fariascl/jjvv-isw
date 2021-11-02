@@ -17,7 +17,7 @@
             <label for="btn-menu" class="burger"><img src="static/img/burger.png" alt=""></label>
             <div class="actions">
                 <a href="#" class="active">Listado comunidades</a>
-                <a href="#">Cerrar sesión</a>
+                <a href="logout.php">Cerrar sesión</a>
             </div>
         </div>
         <input type="checkbox" id="btn-menu">
