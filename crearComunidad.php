@@ -53,17 +53,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form action="crearcomunidad.php" method="POST" autocomplete="off">
+                <form action="crearcomunidad.php" method="POST" autocomplete="off" onsubmit="return noBlank();">
                     <p class="tittle">Crear Comunidad</p>
-                    <input class="input" name="nombre_comunidad" type="text" placeholder="Nombre de la Comunidad">
-                    <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
+                    <input class="input" name="nombre_comunidad" id="nombre" type="text" placeholder="Nombre de la Comunidad">
+                    <textarea class="input textarea" name="descripcion_comunidad" id="descripcion" cols="10" rows="5"
                         placeholder="Descripción"></textarea>
                     <input class="button primario" type="submit" value="Crear comunidad">
                 </form>
             </div>
         </div>
     </div>
-
+<script src="static/js/validacionVarias.js"></script>
 </body>
 
 </html>

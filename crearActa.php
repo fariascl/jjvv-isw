@@ -30,9 +30,9 @@
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="" autocomplete="off">
+                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return noBlank();">
                     <p class="tittle">Crear nueva acta</p>
-                    <input class="input" type="text" placeholder="Título del acta">
+                    <input class="input"  type="text" id="nombre" placeholder="Título del acta">
                     <select class="input" name="comunidad">
                         <option class="input" value="comunidad 1">Comunidad 1</option>
                         <option value="comunidad 2">Comunidad 2</option>
@@ -45,13 +45,14 @@
                         ?>
                     </select>
                     <input class="input" type="date" name="fecha_acta" placeholder="Fecha del acta">
-                    <textarea class="input textarea" name="descripcion_comunidad" cols="10" rows="5"
+                    <textarea class="input textarea" name="descripcion_comunidad" id="descripcion" cols="10" rows="5"
                         placeholder="Descripción"></textarea>
                     <input class="button secundario" type="submit" value="Crear acta">
                 </form>
             </div>
         </div>
     </div>
+    <script src="static/js/validacionVarias.js"></script>
 </body>
 
 </html>

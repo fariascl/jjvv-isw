@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="crearReunion.php" method="POST" onsubmit="return validar();" autocomplete="off">
+                <form id="form" action="crearReunion.php" method="POST" autocomplete="off" onsubmit="return noBlank_exp();" >
                     <p class="tittle">Agendar reunión</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
                             echo "<p class='alerta exito'>La reunión ha sido agendada con éxito</p>"; 
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                             echo "<p class='alerta error'>Ha habido un error al agendar la reunión, revise los datos e inténtelo nuevamente</p>";
                         }
                             ?>
-                    <input class="input" id="titulo" name="titulo" type="text" placeholder="Título" required>
+                    <input class="input"  name="titulo" id="nombre" type="text" placeholder="Título">
                     <!-- Elegir comunidad -->
                     <select class="input" name="comunidad">
                         <?php
@@ -81,17 +81,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         }
                         ?>
                     </select>
-                    <input class="input" id="dia" name="fecha" type="date" placeholder="Día" required>
-                    <input class="input" id="hora" name="hora" type="time" placeholder="Hora" required>
-                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación" required>
+                    <input class="input" id="dia" name="fecha" type="date" placeholder="Día">
+                    <input class="input" id="hora" name="hora" type="time" placeholder="Hora">
+                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación">
                     <textarea class="input textarea" id="descripcion" name="descripcion" cols="10" rows="5"
-                        placeholder="Descripción" required></textarea>
+                        placeholder="Descripción" ></textarea>
                     <input class="button primario" type="submit" value="Agendar">
                 </form>
             </div>
         </div>
     </div>
-    <script src="./static/js/validaciones.js"></script>
+    <script src="./static/js/validacionVarias.js"></script>
 </body>
 
 </html>
