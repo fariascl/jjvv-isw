@@ -21,3 +21,18 @@ function noBlank_exp(){
     }
 
 }
+function date(){
+
+    const inicial = new Date(document.getElementById("date-inicial").value);
+    const final = new Date(document.getElementById("date-final").value);
+
+    const dia = 1;
+    inicial.setDate(inicial.getDate()+dia);
+    final.setDate(final.getDate()+dia);
+
+    if(final < inicial){
+        alert("La fecha final no puede ser antes de la fecha inicial");
+        return false
+    }
+
+}

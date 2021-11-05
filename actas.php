@@ -39,10 +39,10 @@ if (check_session()){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="actas.php" method="GET" onclick="">
+                <form id="form" action="actas.php" method="GET" onclick="" onsubmit="date();">
                     <div class="searcher">
-                        <input class="date" type="date" name="fecha_comienzo" required>
-                        <input class="date" type="date" name="fecha_termino" required>
+                        <input class="date" id="date-inicial" type="date" name="fecha_comienzo" required>
+                        <input class="date" id="date-final" type="date" name="fecha_termino" required>
                         <input type="hidden" name="comunidad" value="<?php if(!isset($_GET['comunidad'])){$_GET['comunidad']=1; } echo $_GET['comunidad'];?>">
                         <button class="date" type="submit" value="filtrar">🔎</button>
                     </div>
@@ -117,6 +117,7 @@ if (check_session()){
             </div>
         </div>
     </div>
+    <script src="static/js/validacionVarias.js"></script>
 </body>
 
 </html>
