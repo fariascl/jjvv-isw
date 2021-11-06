@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <title>Registro</title>
     <link rel="stylesheet" href="static/css/general.css">
-    <link rel="stylesheet" href="static/css/registro.css">
+    <link rel="stylesheet" href="static/css/login.css">
 </head>
 
 <body>
@@ -36,23 +36,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class="menu">
             <label for="btn-menu" class="burger"><img src="static/img/burger.png" alt=""></label>
             <div class="actions">
-                <a href="iniciarSesion.html">Iniciar sesión</a>
-                <a href="#" class="active">Registro</a>
+                <a href="login.php">Iniciar sesión</a>
+                <a href="register.php" class="active">Registro</a>
             </div>
         </div>
     </div>
     <div class="main">
-        <p class="tittle">Registro</p>
-        <form action="register.php" method="POST">
-            <input class="input" type="email" name="email" placeholder="Correo electrónico">
-            <input class="input" type="text" name="name" placeholder="Nombre completo">
-            <input class="input" type="text" name="rut" placeholder="Rut">
-            <input class="input" type="password" name="password" placeholder="Contraseña">
-            <input class="button secundario" type="submit" value="Registrarte">
-        </form>
-        <div class="footer">
-            <p class="parrafo">¿Tienes cuenta?</p>
-            <a class="link" href="iniciarSesion.html">Entrar</a>
+        <div class="center">
+            <p class="tittle">Registro</p>
+            <form action="register.php" method="POST" autocomplete="off">
+                <input class="input" type="email" name="email" placeholder="Correo electrónico">
+                <input class="input" type="text" name="name" placeholder="Nombre completo">
+                <input class="input" type="text" name="rut" placeholder="Rut">
+                <input class="input" type="password" name="password" placeholder="Contraseña">
+                <button class="button secundario" type="submit">Registrarte</button>
+            </form>
+            <div class="footerRegistro">
+                <p class="parrafo">¿Tienes cuenta?</p>
+                <a class="link" href="login.php">Entrar</a>
+            </div>
         </div>
     </div>
     </div>

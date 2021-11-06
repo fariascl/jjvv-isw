@@ -1,5 +1,9 @@
 @import url(./general.css);
 @media (max-width:575px){
+    .center form{
+        display: flex;
+        flex-direction: column;
+    }
     .footer{
         display: flex;
         flex-direction: row;

@@ -65,21 +65,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <label for="btn-menu" class="burger"><img src="static/img/burger.png" alt=""></label>
             <div class="actions">
                 <a href="#" class="active">Iniciar sesión</a>
-                <a href="registro.php">Registro</a>
+                <a href="register.php">Registro</a>
             </div>
         </div>
     </div>
     <div class="main">
         <div class="center">
             <p class="tittle">Inicio de sesión</p>
-            <form action="login.php" method="POST">
-                <input class="input" type="email" name="email" placeholder="Correo electrónico">
-                <input class="input" type="password" name="password" placeholder="Contraseña">
-                <input class="button primario" type="submit" value="Iniciar sesión">
+            <form action="login.php" method="POST" autocomplete="off">
+                <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+                <input class="input" type="password" name="password" placeholder="Contraseña" required>
+                <button class="button primario" type="submit">Iniciar sesión</button>
             </form>
             <div class="footer">
                 <a class="link" href="#">¿Has olvidado tu contraseña?</a>
-                <a class="link" href="registro.php">Regístrate</a>
+                <a class="link" href="register.php">Regístrate</a>
             </div>
         </div>
     </div>

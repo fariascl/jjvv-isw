@@ -27,7 +27,7 @@
                 <li class="menu-item" id="Home">
                     <div class="asd">
                         <img src="static/img/home.png">
-                        <a href="#" class="btn">Home</a>
+                        <a href="home.php" class="btn">Home</a>
                     </div>
                 </li>
                 <!-- submenu Reuniones -->
@@ -38,11 +38,11 @@
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/crear.png">
-                        <a href="#">Crear nueva reunión</a>
+                        <a href="crearReunion.php">Crear nueva reunión</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/historial.png">
-                        <a href="#">Historial de reuniones</a>
+                        <a href="historialReuniones.php">Historial de reuniones</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/configuración.png">
@@ -57,11 +57,11 @@
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/crear.png">
-                        <a href="#">Crear nueva comunidad</a>
+                        <a href="crearComunidad.php">Crear nueva comunidad</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/historial.png">
-                        <a href="#">Historial de comunidades</a>
+                        <a href="historialComunidades.php">Historial de comunidades</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/configuración.png">
@@ -76,11 +76,11 @@
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/crear.png">
-                        <a href="#">Crear nueva acta</a>
+                        <a href="crearActa.php">Crear nueva acta</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/historial.png">
-                        <a href="#">Historial de actas</a>
+                        <a href="historialActas.php">Historial de actas</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/configuración.png">
@@ -95,19 +95,19 @@
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/Comunidades.png">
-                        <a href="#">Tus comunidades</a>
+                        <a href="tusComunidades.php">Tus comunidades</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/datospersonales.png">
-                        <a href="#">Datos personales</a>
+                        <a href="datosPersonales.php">Datos personales</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/configuración.png">
-                        <a href="#">Configuración personal</a>
+                        <a href="editarPerfil.php">Configuración personal</a>
                     </div>
                     <div class="menu-item__sub">
                         <img src="static/img/configuracionAdmin.png">
-                        <a href="#">Panel de administradores</a>
+                        <a href="panelAdministrador.php">Panel de administradores</a>
                     </div>
                 </li>
             </div>
