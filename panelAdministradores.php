@@ -9,6 +9,8 @@
     <title>Panel administradores</title>
     <link rel="stylesheet" href="static/css/menu.css">
     <link rel="stylesheet" href="static/css/panelAdministradores.css">
+    <!-- ICONOS -->
+    <script src="https://kit.fontawesome.com/410536779e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
                         <p class="parrafo">Usuario:</p>
                         <div class="separate">
                             <input class="button primario" type="button" value="Hacer administrador">
-                            <a class="button modificar" href="editarDatosCuenta.php">Editar datos</a>
+                            <a class="button modificar" href="editarDatosCuenta.php"><i class="fas fa-edit"></i></a>
                         </div>
                     </div>
                 </form>
