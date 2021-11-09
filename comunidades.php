@@ -1,12 +1,15 @@
 <?php
+//session_start();
 require_once('include/session.php');
 if (check_session()){
     header('Location: login.php');
     exit;
 }
 
+
 if (isset($_GET['unirse'])){
-    $unido = unirse($_GET['unirse']);
+    include 'include/functions.php';
+    $unido = unirse($_SESSION['id_usuario'], $_GET['unirse']);
     header('Location: comunidades.php');
 }
 ?>
@@ -46,31 +49,31 @@ if (isset($_GET['unirse'])){
                     <?php
                         include('include/functions.php');
                         $row = get_comunidad();
-                        $unido_en = esta_en_comunidad($_SESSION['id_usuario']);
-                        $i = 0;
+                        $id_usuario = $_SESSION['id_usuario'];
+                        $unido_en = esta_en_comunidad($id_usuario);
+                        echo var_dump($unido_en);
                         foreach ($row as $comunidad){
-                            for ($i = 0; $i < count($unido_en)-1; $i++){
-                                if (in_array($comunidad, $unido_en[$i])){
-                                    echo '
-                                        <div class="block">
-                                        <p class="parrafo">' .$comunidad[1]. '</p>
-                                            <div class="separate">
-                                                <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
-                                                <a class="button eliminar" href="#">Salirse</a>
-                                            </div>
-                                        </div>';
-                                }
+                            if (in_array($comunidad[0], $unido_en)){
+                                echo '
+                                <div class="block">
+                                <p class="parrafo">' .$comunidad[1]. '</p>
+                                    <div class="separate">
+                                        <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
+                                        <a class="button eliminar" href="#">Salirse</a>
+                                    </div>
+                                </div>';
                             }
                             
+                           else{ 
                             echo '
                                 <div class="block">
                                 <p class="parrafo">' .$comunidad[1]. '</p>
                                     <div class="separate">
                                         <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
                                         <a class="button primario" href="?unirse='.$comunidad[0].'">Unirse</a>
-                                        <a class="button eliminar" href="#">Salirse</a>
                                     </div>
                                 </div>';
+                            }
                         }
                     ?>
                 </form>

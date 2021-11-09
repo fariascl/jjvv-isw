@@ -35,12 +35,18 @@ function unirse($id_usuario, $id_comunidad){
 function esta_en_comunidad($id_usuario){
     include 'db.php';
     $sql_query = "SELECT id_comunidad FROM pertenece WHERE id_usuario = ?;";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $id_usuario);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_all();
-    return $row;
+    $stmt->close();
+    $conn->close();
+    $row_aux = array();
+    for ($i=0;$i<count($row); $i++){
+        array_push($row_aux, $row[$i][0]);
+    }
+    return $row_aux;
 }
 
 function login($correo, $clave){
