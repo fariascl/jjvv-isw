@@ -87,16 +87,17 @@ if (check_session()){
                         if (count($row_2) == 0){
                             echo '<p class="mensaje">No se han encontrado reuniones</p>';
                         }
-                        foreach ($row_2 as $reunion){
-                        echo '
-                        
-                        <div class="datosReunion">
-                            <p>'.$reunion[1].'</p>
-                            <p>'.$reunion[2].'</p>
-                            <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
-                        </div>
-                        ';
-                        }
+                            foreach ($row_2 as $reunion){
+                                $fecha = date("d-m-Y", strtotime($reunion[2]));
+                                echo '
+                                
+                                <div class="datosReunion">
+                                    <p>'.$reunion[1].'</p>
+                                    <p>'.$fecha.'</p>
+                                    <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
+                                </div>
+                                ';
+                            }
                         }
                         ?>
                     </div>
