@@ -49,9 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class="main">
             <div class="center">
                 <form id="form" action="register.php" method="POST" onclick="" autocomplete="off" onsubmit="return checkInputs()">
-                    <p class="tittle">Registro junta vecinos</p>
+                    <p class="tittle">Registro en comunidades</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
-                            echo "<p class='alerta exito'>El usuario se ha registrado</p>"; 
+                            echo "<p class='alerta exito'>El usuario se ha registrado</p>";
                         }
                         else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
                             echo "<p class='alerta error'>Ha habido un error al registrar el usuario, revise los datos e inténtelo nuevamente</p>";
