@@ -4,6 +4,11 @@ if (check_session()){
     header('Location: login.php');
     exit;
 }
+
+if (isset($_GET['unirse'])){
+    $unido = unirse($_GET['unirse']);
+    header('Location: comunidades.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,13 +46,28 @@ if (check_session()){
                     <?php
                         include('include/functions.php');
                         $row = get_comunidad();
+                        $unido_en = esta_en_comunidad($_SESSION['id_usuario']);
+                        $i = 0;
                         foreach ($row as $comunidad){
+                            for ($i = 0; $i < count($unido_en)-1; $i++){
+                                if (in_array($comunidad, $unido_en[$i])){
+                                    echo '
+                                        <div class="block">
+                                        <p class="parrafo">' .$comunidad[1]. '</p>
+                                            <div class="separate">
+                                                <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
+                                                <a class="button eliminar" href="#">Salirse</a>
+                                            </div>
+                                        </div>';
+                                }
+                            }
+                            
                             echo '
                                 <div class="block">
                                 <p class="parrafo">' .$comunidad[1]. '</p>
                                     <div class="separate">
                                         <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
-                                        <a class="button primario" href="#">Unirse</a>
+                                        <a class="button primario" href="?unirse='.$comunidad[0].'">Unirse</a>
                                         <a class="button eliminar" href="#">Salirse</a>
                                     </div>
                                 </div>';

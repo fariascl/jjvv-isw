@@ -21,6 +21,28 @@ function register($nombre, $correo, $clave, $rut){
     return 1;
 }
 
+function unirse($id_usuario, $id_comunidad){
+    include 'db.php';
+    $sql_query = "INSERT INTO pertenece VALUES (?,?);";
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bind_param('si', $id_usuario, $id_comunidad);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+    return 1;
+}
+
+function esta_en_comunidad($id_usuario){
+    include 'db.php';
+    $sql_query = "SELECT id_comunidad FROM pertenece WHERE id_usuario = ?;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $id_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_all();
+    return $row;
+}
+
 function login($correo, $clave){
     include 'db.php';
     $sql_query = "SELECT COUNT(*), clave FROM usuario WHERE correo = ? GROUP BY clave;";
