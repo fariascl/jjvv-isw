@@ -51,7 +51,6 @@ if (isset($_GET['unirse'])){
                         $row = get_comunidad();
                         $id_usuario = $_SESSION['id_usuario'];
                         $unido_en = esta_en_comunidad($id_usuario);
-                        echo var_dump($unido_en);
                         foreach ($row as $comunidad){
                             if (in_array($comunidad[0], $unido_en)){
                                 echo '
