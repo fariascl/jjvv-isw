@@ -32,13 +32,14 @@ function noBlank_exp() {
         alert("El título no puede contener simbolos");
         return false
     } else if (!expresionUbicacion.test(ubicacion)) {
-        alert("");
+        alert("La ubicación no puede contener símbolos, exceptuando el '#'");
         return false
     } else if (hoy > fechainicial) {
         alert("No se pueden agendar reuniones con fechas pasadas");
         return false
     } else if (!expresionDescripcion.test(descripcion)) {
         alert("La descripción posee cáracteres inválidos");
+        return false
     }
 
 
