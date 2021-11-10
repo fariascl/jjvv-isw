@@ -55,18 +55,18 @@ if (isset($_GET['unirse'])){
                             if (in_array($comunidad[0], $unido_en)){
                                 echo '
                                 <div class="block">
-                                <p class="parrafo">' .$comunidad[1]. '</p>
+                                    <div class="contenedor">
+                                        <p class="parrafo">' .$comunidad[1]. '</p>
+                                    </div>
                                     <div class="separate">
                                         <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
                                         <a class="button eliminar" href="#">Salirse</a>
                                     </div>
                                 </div>';
-                            }
-                            
-                           else{ 
+                            }else{
                             echo '
                                 <div class="block">
-                                <p class="parrafo">' .$comunidad[1]. '</p>
+                                    <p class="parrafo">' .$comunidad[1]. '</p>
                                     <div class="separate">
                                         <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
                                         <a class="button primario" href="?unirse='.$comunidad[0].'">Unirse</a>

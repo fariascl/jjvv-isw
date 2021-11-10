@@ -49,17 +49,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class="main">
             <div class="center">
                 <form id="form" action="register.php" method="POST" onclick="" autocomplete="off" onsubmit="return checkInputs()">
-                    <p class="tittle">Registro en comunidades</p>
+                    <p class="tittle">Registro</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
                             echo "<p class='alerta exito'>El usuario se ha registrado</p>";
                         }
                         else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
                             echo "<p class='alerta error'>Ha habido un error al registrar el usuario, revise los datos e inténtelo nuevamente</p>";
-                        } ?>
-                    <input class="input" name="email" id="email" type="text" placeholder="Correo electrónico" >
-                    <input class="input" name="name" id="name" type="text" placeholder="Nombre completo" >
-                    <input class="input" name="rut" id="rut" oninput="checkRut(this);" type="text" placeholder="Rut" >
-                    <input class="input" name="password" id="password" type="password" placeholder="Contraseña" >
+                        }
+                    ?>
+                    <p class="preinput">Correo electrónico</p>
+                    <input class="input" name="email" id="email" type="text" placeholder="Ingrese correo electrónico" >
+                    <p class="preinput">Nombre completo</p>
+                    <input class="input" name="name" id="name" type="text" placeholder="Ingrese nombre completo" >
+                    <p class="preinput">Rut</p>
+                    <input class="input" name="rut" id="rut" oninput="checkRut(this);" type="text" placeholder="Ingrese rut" >
+                    <p class="preinput">Contraseña</p>
+                    <input class="input" name="password" id="password" type="password" placeholder="Ingrese contraseña" >
                     <input class="button secundario" type="submit" value="Regístrate">
                     <nav class="blocktext">
                         <p class="account">¿Tienes cuenta?</p>

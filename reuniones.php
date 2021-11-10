@@ -41,15 +41,18 @@ if (check_session()){
         <div class="main">
             <div class="center">
                 <form id="form" action="#" method="" onclick="">
-                    <p class="tittle">Reuniones realizadas</p>
+                    <div class="searcher">
+                        <input class="date" id="date-inicial" type="date" name="fecha_comienzo" required>
+                        <input class="date" id="date-final" type="date" name="fecha_termino" required>
+                        <input type="hidden" name="comunidad" value="<?php if(!isset($_GET['comunidad'])){$_GET['comunidad']=1; } echo $_GET['comunidad'];?>">
+                        <button class="date" type="submit" value="filtrar">🔎</button>
+                    </div>
+                    <p class="tittle">Reuniones planificadas</p>
                     <div class="reuniones">
                         <select class="input" name="comunidad" onchange="location = this.value;">
                             <?php
                                 require_once('include/functions.php');
-                                
                                 $row = get_comunidad();
-                                
-                                
                                 if (isset($_GET['comunidad'])){
                                     $id_com_aux = $_GET['comunidad'];
                                     echo '<option selected disabled>'.get_comunidad_by_id($id_com_aux)['nombre_comunidad'].'</option>';
@@ -59,7 +62,6 @@ if (check_session()){
                                 }
                             ?>
                         </select>
-
                         <?php
                         if (!isset($_GET['comunidad'])){
                             $id_comunidad = 1;
@@ -67,15 +69,12 @@ if (check_session()){
                             if (count($row_2) == 0){
                                 echo '<p class="mensaje">No se han encontrado reuniones</p>';
                             }
-                            
                         foreach ($row_2 as $reunion){
                             $fecha = date("d-m-Y", strtotime($reunion[2])); // Esto es para cambiar formato de fecha
                         echo '
-                            
                             <div class="datosReunion">
-                                <p>'.$reunion[1].'</p>
+                                <b>'.$reunion[1].'</b>
                                 <p>'.$fecha.'</p>
-                                
                                 <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                             </div>
                             ';
@@ -90,9 +89,8 @@ if (check_session()){
                             foreach ($row_2 as $reunion){
                                 $fecha = date("d-m-Y", strtotime($reunion[2]));
                                 echo '
-                                
                                 <div class="datosReunion">
-                                    <p>'.$reunion[1].'</p>
+                                    <b>'.$reunion[1].'</b>
                                     <p>'.$fecha.'</p>
                                     <a class="button secundario" href="verdescripcionReunion.php?id='.$reunion[0].'">Ver detalle</a>
                                 </div>

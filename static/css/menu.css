@@ -31,6 +31,15 @@
     --transicion:0.3s;
 }
 html,body {
+    background-image: url(../img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+
     font-family:var(--fuente-general);
     height: 100%;
     margin: 0px;
@@ -96,18 +105,12 @@ html,body {
     transition: var(--transicion);
 }
 .main{
-    background-attachment: fixed;
-    background-image: url(../img/fondo.png);
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     padding: 49px 60px 0 60px;
     height: 100%;
     text-align: center;
     width:auto;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
+    
 }
 .center{
     margin: 90px 0 0 0;

@@ -18,16 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
             $msg = "Comunidad creada correctamente"; // flag
             header('Location: crearReunion.php?msg=1');
-            
-        }
-        else {
+        }else {
             header('Location: crearReunion.php?msg=2');
         }
-
     }
-    
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -69,9 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
                             echo "<p class='alerta error'>Ha habido un error al agendar la reunión, revise los datos e inténtelo nuevamente</p>";
                         }
-                            ?>
-                    <input class="input"  name="titulo" id="nombre" type="text" placeholder="Título">
+                    ?>
+                    <p class="preinput">Título</p>
+                    <input class="input"  name="titulo" id="nombre" type="text" placeholder="Ingrese título">
                     <!-- Elegir comunidad -->
+                    <p class="preinput">Selecciona comunidad</p>
                     <select class="input" name="comunidad">
                         <?php
                         require_once('include/functions.php');
@@ -81,11 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         }
                         ?>
                     </select>
-                    <input class="input" id="dia" name="fecha" type="date" placeholder="Día">
-                    <input class="input" id="hora" name="hora" type="time" placeholder="Hora">
-                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ubicación">
+                    <p class="preinput">Selecciona fecha</p>
+                    <input class="input" id="dia" name="fecha" type="date">
+                    <p class="preinput">Selecciona hora</p>
+                    <input class="input" id="hora" name="hora" type="time">
+                    <p class="preinput">Ubicación</p>
+                    <input class="input" id="ubicacion" name="ubicacion" type="text" placeholder="Ingrese ubicación">
+                    <p class="preinput">Descripción</p>
                     <textarea class="input textarea" id="descripcion" name="descripcion" cols="10" rows="5"
-                        placeholder="Descripción" ></textarea>
+                        placeholder="Ingrese descripción" ></textarea>
                     <input class="button primario" type="submit" value="Agendar">
                 </form>
             </div>

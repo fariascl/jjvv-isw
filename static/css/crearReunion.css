@@ -15,6 +15,12 @@
     padding: 0 0 15px 0;
     border-bottom: 3px solid var(--color-fondo-menu) ;
 }
+.preinput{
+    margin: 0px;
+    padding: 0px 0px 5px 0px;
+    font-size: var(--tamano-texto-14px);
+    font-weight: var(--grosor-negrita);
+}
 .input{
     margin: 0 0 15px 0;
     padding: 10px;

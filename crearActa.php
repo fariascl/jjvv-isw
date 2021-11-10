@@ -32,7 +32,9 @@
             <div class="center">
                 <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return noBlank();">
                     <p class="tittle">Crear nueva acta</p>
-                    <input class="input"  type="text" id="nombre" placeholder="Título del acta">
+                    <p class="preinput">Título</p>
+                    <input class="input"  type="text" id="nombre" placeholder="Ingrese título">
+                    <p class="preinput">Seleccione comunidad</p>
                     <select class="input" name="comunidad">
                         <option class="input" value="comunidad 1">Comunidad 1</option>
                         <option value="comunidad 2">Comunidad 2</option>
@@ -44,9 +46,11 @@
                             }
                         ?>
                     </select>
-                    <input class="input" type="date" name="fecha_acta" placeholder="Fecha del acta">
+                    <p class="preinput">Selecciona fecha</p>
+                    <input class="input" type="date" name="fecha_acta">
+                    <p class="preinput">Descripción</p>
                     <textarea class="input textarea" name="descripcion_comunidad" id="descripcion" cols="10" rows="5"
-                        placeholder="Descripción"></textarea>
+                        placeholder="Ingrese descripción"></textarea>
                     <input class="button secundario" type="submit" value="Crear acta">
                 </form>
             </div>

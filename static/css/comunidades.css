@@ -18,7 +18,13 @@
     background-color: var(--color-fondo-inputs);
     margin: 0 0 15px 0;
 }
+.separate{
+    display: flex;
+    flex-direction: row;
+}
+.contenedor{
+    text-align: justify;
+}
 .parrafo{
-    padding: 0 0 0 30px;
     font-weight: bold;
 }
