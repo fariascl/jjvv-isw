@@ -10,9 +10,9 @@ function noBlank() {
     }
 }
 function noBlank_exp() {
-    expresionTitulo = /^[a-zA-ZÀ-ÿ0-9\s\#]{5,30}$/;
-    expresionUbicacion = /^[a-zA-ZÀ-ÿ0-9\s\#\,\.]{5,40}$/;
-    expresionDescripcion = /^[a-zA-ZÀ-ÿ0-9\s\,\.]{5,500}$/;
+    expresionTitulo = /^[a-zA-ZÀ-ÿ0-9\s\#]{5,50}$/;
+    expresionUbicacion = /^[a-zA-ZÀ-ÿ0-9\s\#\,\.]{5,80}$/;
+    expresionDescripcion = /^[a-zA-ZÀ-ÿ0-9\s\,\.\"\'\$]{5,500}$/;
 
     const titulo = document.getElementById("nombre").value;
     const descripcion = document.getElementById("descripcion").value;
