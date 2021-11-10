@@ -10,9 +10,9 @@ function noBlank() {
     }
 }
 function noBlank_exp() {
-    expresionTitulo = /^[a-zA-ZÀ-ÿ0-9\s\#]{5,50}$/;
-    expresionUbicacion = /^[a-zA-ZÀ-ÿ0-9\s\#\,\.]{5,80}$/;
-    expresionDescripcion = /^[a-zA-ZÀ-ÿ0-9\s\,\.\"\'\$]{5,500}$/;
+    expresionTitulo = /^[a-zA-ZÀ-ÿ0-9\s\#]{1,}$/;
+    expresionUbicacion = /^[a-zA-ZÀ-ÿ0-9\s\#\,\.]{1,}$/;
+    expresionDescripcion = /^[a-zA-ZÀ-ÿ0-9\s\,\.\"\'\$]{1,}$/;
 
     const titulo = document.getElementById("nombre").value;
     const descripcion = document.getElementById("descripcion").value;
@@ -28,21 +28,28 @@ function noBlank_exp() {
     if (titulo === "" || fecha === "" || hora === "" || ubicacion === "" || descripcion === "") {
         alert("Todos los campos obligatorios");
         return false
+    } else if (titulo.length < 5 || titulo.length >= 50) {
+        alert("El título debe tener como mínimo 5 caracteres y 50 como máximo");
+        return false;
     } else if (!expresionTitulo.test(titulo)) {
-        alert("El título no puede contener simbolos");
+        alert("El título no puede contener simbolos, exceptuando el '#'");
+        return false
+    } else if (hoy >= fechainicial) {
+        alert("No se pueden agendar reuniones con fechas pasadas");
+        return false
+    } else if (ubicacion.length < 4 || ubicacion.length >= 80) {
+        alert("La ubicación debe tener como mínimo 4 caracteres y 80 como máximo");
         return false
     } else if (!expresionUbicacion.test(ubicacion)) {
         alert("La ubicación no puede contener símbolos, exceptuando el '#'");
         return false
-    } else if (hoy > fechainicial) {
-        alert("No se pueden agendar reuniones con fechas pasadas");
+    } else if (descripcion.length < 5 || descripcion >= 500) {
+        alert("La descripción debe tener como mínimo 5 caracteres y 500 como máximo");
         return false
     } else if (!expresionDescripcion.test(descripcion)) {
-        alert("La descripción posee cáracteres inválidos");
+        alert("La descripción solo puede tener los siguientes símbolos EJ: ',' '.' '('')' '$' ");
         return false
     }
-
-
 }
 
 function date() {
