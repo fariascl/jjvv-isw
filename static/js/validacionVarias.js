@@ -9,7 +9,7 @@ function noBlank() {
         return false;
     }
 }
-function noBlank_exp() {
+function ValidacionCrearReunion() {
     expresionTitulo = /^[a-zA-ZÀ-ÿ0-9\s\#]{1,}$/;
     expresionUbicacion = /^[a-zA-ZÀ-ÿ0-9\s\#\,\.]{1,}$/;
     expresionDescripcion = /^[a-zA-ZÀ-ÿ0-9\s\,\.\"\'\$]{1,}$/;
@@ -23,6 +23,9 @@ function noBlank_exp() {
     const fechainicial = new Date(fecha);
     const fechaActual = Date.now();
     const hoy = new Date(fechaActual);
+    const dia = 1;
+    fechainicial.setDate(fechainicial.getDate() + dia);
+
 
 
     if (titulo === "" || fecha === "" || hora === "" || ubicacion === "" || descripcion === "") {

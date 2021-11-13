@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="crearReunion.php" method="POST" autocomplete="off" onsubmit="return noBlank_exp();" >
+                <form id="form" action="crearReunion.php" method="POST" autocomplete="off" onsubmit="return ValidacionCrearReunion();" >
                     <p class="tittle">Agendar reunión</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
                             echo "<p class='alerta exito'>La reunión ha sido agendada con éxito</p>"; 

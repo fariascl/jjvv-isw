@@ -30,7 +30,7 @@
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return noBlank();">
+                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return noBlank();"> <!--falta validar-->
                     <p class="tittle">Crear nueva acta</p>
                     <p class="preinput">Título</p>
                     <input class="input"  type="text" id="nombre" placeholder="Ingrese título">
