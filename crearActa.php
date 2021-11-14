@@ -30,7 +30,7 @@
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return noBlank();"> <!--falta validar-->
+                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return ValidacionCrearActa();"> <!--falta validar-->
                     <p class="tittle">Crear nueva acta</p>
                     <p class="preinput">Título</p>
                     <input class="input"  type="text" id="nombre" placeholder="Ingrese título">
@@ -47,7 +47,7 @@
                         ?>
                     </select>
                     <p class="preinput">Selecciona fecha</p>
-                    <input class="input" type="date" name="fecha_acta">
+                    <input class="input" type="date" id="fecha" name="fecha_acta">
                     <p class="preinput">Descripción</p>
                     <textarea class="input textarea" name="descripcion_comunidad" id="descripcion" cols="10" rows="5"
                         placeholder="Ingrese descripción"></textarea>

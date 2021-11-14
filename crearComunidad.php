@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form action="crearcomunidad.php" method="POST" autocomplete="off" onsubmit="return noBlank();">
+                <form action="crearcomunidad.php" method="POST" autocomplete="off" onsubmit="return ValidacionCrearComunidad();">
                     <p class="tittle">Crear Comunidad</p>
                     <p class="preinput">Nombre de la comunidad</p>
                     <input class="input" name="nombre_comunidad" id="nombre" type="text" placeholder="Ingrese nombre de la Comunidad">
