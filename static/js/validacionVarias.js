@@ -19,7 +19,12 @@ function ValidacionCrearReunion() {
     const fechaActual = Date.now();
     const hoy = new Date(fechaActual);
     const dia = 1;
+    const horaActual = hoy.getHours() +':'+ hoy.getMinutes();
+    console.log(
+        horaActual.toLocaleString('en-US', { hour: 'numeric'})
+      );
     fechainicial.setDate(fechainicial.getDate() + dia);
+
     if (titulo === "" || fecha === "" || hora === "" || ubicacion === "" || descripcion === "") {
         alert("Todos los campos obligatorios");
         return false
@@ -30,6 +35,9 @@ function ValidacionCrearReunion() {
         alert("El título no puede contener simbolos, exceptuando el '#'");
         return false
     } else if (hoy >= fechainicial) {
+        alert("No se pueden agendar reuniones con fechas pasadas");
+        return false
+    }else if(hora <= horaActual){
         alert("No se pueden agendar reuniones con fechas pasadas");
         return false
     } else if (ubicacion.length < 4 || ubicacion.length >= 80) {
