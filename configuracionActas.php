@@ -1,3 +1,10 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -48,7 +55,7 @@
                         <p class="parrafo negrita">Título Acta:</p>
                         <div class="conenedorBoton">
                             <a class="button modificar" href="editarActa.php"><i class="fas fa-edit"></i></a>
-                            <a class="button eliminar" href="editarActa.php"><i class="fas fa-trash-alt"></i></a>
+                            <a class="button eliminar" href="eliminarActa.php"><i class="fas fa-trash-alt"></i></a>
                         </div>
                     </div>
                 </form>
@@ -58,3 +65,17 @@
 </body>
 
 </html>
+
+<?php
+
+    Hice esto por si acaso en vola algo sirve uwu, con cariño metal <3.
+
+    $ID_ACTA = $_GET['ID_ACTA'];
+    $eliminar = "DELETE FROM ACTA WHERE ID_ACTA = '$ID_ACTA';";
+    $resultado = mysqli_query($conection, $eliminar);
+    if($resultado){
+        echo "<script>alert('Eliminado con exito'); </script>";
+        header('Location: configuracionActas.php');
+    }
+
+?>
