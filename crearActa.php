@@ -35,6 +35,7 @@
                     <p class="preinput">Título</p>
                     <input class="input"  type="text" id="nombre" placeholder="Ingrese título">
                     <p class="preinput">Seleccione comunidad</p>
+                    <!-- Acá debería ser un selector de reunion en ves de comunidad -->
                     <select class="input" name="comunidad">
                         <option class="input" value="comunidad 1">Comunidad 1</option>
                         <option value="comunidad 2">Comunidad 2</option>

@@ -20,12 +20,7 @@
                 <a href="#">J.J.V.V</a>
             </div>
             <div class="action">
-                <a href="#">Home</a>
-                <a href="reuniones.php">Reuniones</a>
-                <a href="vercomunidad.php">Comunidades</a>
-                <a class="active" href="actas.php">Actas</a>
-                <a href="login.php">Iniciar Sesión</a>
-                <a href="register.php">Registro</a>
+                <?php include 'include/menu.php'; ?>
             </div>
         </div>
         <div class="submenu">
@@ -38,6 +33,17 @@
         <div class="main">
             <div class="center">
                 <form id="form" action="#" method="" onclick="">
+                    <select class="input" name="comunidad">
+                        <option class="input" value="comunidad 1">Comunidad 1</option>
+                        <option value="comunidad 2">Comunidad 2</option>
+                        <?php
+                            require_once('include/functions.php');
+                            $row = get_comunidad();
+                            foreach ($row as $comunidad){
+                                echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                            }
+                        ?>
+                    </select>
                     <div class="contenedor">
                         <p class="parrafo negrita">Título Acta:</p>
                         <div class="conenedorBoton">
