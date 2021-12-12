@@ -137,8 +137,7 @@ function get_reunion(){
     } catch (Exception $e) {
         $msg = $e->getMessage();
         return $msg;
-    }
-    
+    }   
 }
 
 function get_reunion_by_comun($id_comunidad){
@@ -336,6 +335,56 @@ function search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino){
         $msg = $e->getMessage();
     }
 }
+
+function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
+    try {
+        include 'db.php';
+        $sql_query = "INSERT INTO acta VALUES (?, ?, ?);";
+        $sql_query_2 = "INSERT INTO registra VALUES (?,?);";
+        $stmt = $conn->prepare($sql_query);
+        $stmt_2 = $conn->prepare($sql_query);
+        
+        $stmt->bind_param('ssss', $titulo_acta, $contenido_acta, $fecha_acta);
+        $lastid_acta = intval($stmt->insert_id);
+        $stmt_2->bind_param('ii', $id_reunion, $lastid_acta);
+        $stmt->execute();
+        $stmt_2->execute();
+        $stmt->close();
+        $stmt_2->close();
+        $conn->close();
+    }
+    catch (Exception $e){
+        $msg = $e->getMessage();
+    }
+}
+
+/* Funciones para selectores de agregar actas */
+function listing_comunidades($id_usuario){
+    include 'db.php';
+    $sql_query = "SELECT comunidad.id_comunidad, comunidad.nombre_comunidad, com FROM comunidad, pertenece, usuario_admin WHERE comunidad.id_comunidad = pertenece.id_comunidad AND pertenece.id_usuario = ?";
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bind_param('s', $id_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $stmt->close();
+    $conn->close();
+    return $row;
+}
+
+function listing_reuniones($id_comunidad){
+    include 'db.php';
+    $sql_query = "SELECT reunion.id_reunion, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = ?;";
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bin_param('i', $id_comunidad);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $stmt->close();
+    $conn->close();
+    return $row;
+}
+/* Fin funciones para selectores de agregar actas */
 ?>
 
 
