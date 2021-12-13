@@ -13,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         if (create_comunidad($nombre_com, $desc_com) == 1){
             $msg = "Comunidad creada correctamente";
             //return $msg;
+            header('Location: crearComunidad.php?msg=1');
+        }else {
+            header('Location: crearComunidad.php?msg=2');
         }
     }
     
@@ -53,17 +56,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form action="crearcomunidad.php" method="POST" autocomplete="off" onsubmit="return ValidacionCrearComunidad();">
+                <form id="form" action="crearComunidad.php" method="POST" autocomplete="off" onsubmit="return ValidacionCrearComunidad();">
                     <p class="tittle">Crear Comunidad</p>
                     <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
-                            echo "<p class='alerta exito'>La reunión ha sido agendada con éxito</p>"; 
+                            echo "<p class='alerta exito'>Comunidad creada</p>"; 
                         }
                         else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
-                            echo "<p class='alerta error'>Ha habido un error al agendar la reunión, revise los datos e inténtelo nuevamente</p>";
+                            echo "<p class='alerta error'>Ha habido un error al crear la comunidad, revise los datos e inténtelo nuevamente</p>";
                         }
                     ?>
                     <p class="preinput">Nombre de la comunidad</p>
-                    <input class="input" name="nombre_comunidad" id="nombre" type="text" placeholder="Ingrese nombre de la Comunidad">
+                    <input class="input" name="nombre_comunidad" id="nombre" type="text" placeholder="Ingrese nombre de la comunidad">
                     <p class="preinput">Descripción</p>
                     <textarea class="input textarea" name="descripcion_comunidad" id="descripcion" cols="10" rows="5"
                         placeholder="Ingrese descripción"></textarea>
