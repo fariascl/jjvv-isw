@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $reunion_acta = $_POST['reunion_acta'];
         echo $titulo_acta. $fecha_acta. $descripcion_acta. $reunion_acta;
         $id_usuario = $_SESSION['id_usuario']; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
-        if (crear_acta($titulo_acta, $fecha_acta, $descripcion_acta, $reunion_acta)  == 1){
+        if (crear_acta($titulo_acta, $descripcion_acta, $fecha_acta, $reunion_acta)  == 1){
             $msg = "Acta creada correctamente"; // flag
             header('Location: crearActa.php?msg=1');
         }else {
