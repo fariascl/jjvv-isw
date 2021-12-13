@@ -13,7 +13,8 @@ if (!isset($_GET['comunidad'])){
 }
 
 if (isset($_GET['eliminar'])){
-    $eliminado = delete_acta($_GET['eliminar']);
+    include 'include/functions.php';
+    $eliminado = delete_acta(intval($_GET['eliminar']));
     if ($eliminado == 1){
         echo "Acta eliminada";
     }
@@ -67,14 +68,13 @@ if (isset($_GET['eliminar'])){
                     echo '</select>';
                         $id_comunidad = $_GET['comunidad'];
                         $row_2 = get_actas_by_comun($id_comunidad);
-                        echo var_dump($row_2);
                         foreach ($row_2 as $acta){
                             echo '
                                 <div class="contenedor">
-                                <p class="parrafo negrita">Título Acta: '.$acta[1].'</p>
+                                <p class="parrafo negrita"> '.$acta[1].':</p>
                                     <div class="conenedorBoton">
                                         <!--<a class="button modificar" href="editarActa.php"><i class="fas fa-edit"></i></a>-->
-                                        <a class="button eliminar" href="?comunidad='.$id_comunidad.'eliminar='.$acta[0].'"><i class="fas fa-trash-alt"></i></a>
+                                        <a class="button eliminar" href="?comunidad='.$id_comunidad.'&eliminar='.$acta[0].'"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                                 </div>
                             ';
@@ -88,18 +88,3 @@ if (isset($_GET['eliminar'])){
 </body>
 
 </html>
-
-<?php
-/*
-
-    Hice esto por si acaso en vola algo sirve uwu, con cariño metal <3.
-
-    $ID_ACTA = $_GET['ID_ACTA'];
-    $eliminar = "DELETE FROM ACTA WHERE ID_ACTA = '$ID_ACTA';";
-    $resultado = mysqli_query($conection, $eliminar);
-    if($resultado){
-        echo "<script>alert('Eliminado con exito'); </script>";
-        header('Location: configuracionActas.php');
-    }
-*/
-?>
