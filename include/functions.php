@@ -32,6 +32,17 @@ function unirse($id_usuario, $id_comunidad){
     return 1;
 }
 
+function salirse($id_usuario, $id_comunidad){
+    include 'include/db.php';
+    $sql_query = "DELETE FROM pertenece WHERE id_usuario = ? AND id_comunidad = ?;";
+    $stmt = $conn->prepare($sql_query);
+    $stmt->bind_param('ss', $id_usuario, $id_comunidad);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+    return 1;
+}
+
 function esta_en_comunidad($id_usuario){
     include 'db.php';
     $sql_query = "SELECT id_comunidad FROM pertenece WHERE id_usuario = ?;";
@@ -408,5 +419,6 @@ function delete_acta($id_acta){
 
 }
 ?>
+
 
 

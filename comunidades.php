@@ -12,6 +12,13 @@ if (isset($_GET['unirse'])){
     $unido = unirse($_SESSION['id_usuario'], $_GET['unirse']);
     header('Location: comunidades.php');
 }
+
+/*if (isset($_GET['salirse'])){
+    include 'include/functions.php';
+    $salido = salirse($_SESSION['id_usuario'], $_GET['salirse']);
+    header('Location: comunidades.php');
+}*/
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -60,7 +67,7 @@ if (isset($_GET['unirse'])){
                                     </div>
                                     <div class="separate">
                                         <a class="button secundario" href="verdescripcionComunidades.php?id='.$comunidad[0].'">Descripción</a>
-                                        <a class="button eliminar" href="#">Salirse</a>
+                                        <a class="button eliminar" href="eliminarComunidad.php?id_comunidad='.$comunidad[0].'&id_usuario='.$id_usuario.'">Salirse</a>
                                     </div>
                                 </div>';
                             }else{
