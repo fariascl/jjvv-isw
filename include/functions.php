@@ -352,6 +352,7 @@ function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
         $stmt->close();
         $stmt_2->close();
         $conn->close();
+        return 1;
     }
     catch (Exception $e){
         $msg = $e->getMessage();
