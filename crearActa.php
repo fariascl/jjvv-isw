@@ -11,12 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $fecha_acta = $_POST['fecha_acta'];
         $descripcion_acta = $_POST['descripcion_acta'];
         $reunion_acta = $_POST['reunion_acta'];
+        echo $titulo_acta. $fecha_acta. $descripcion_acta. $reunion_acta;
         $id_usuario = $_SESSION['id_usuario']; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
-        if (create_reunion($titulo_acta, $fecha_acta, $descripcion_acta, $reunion_acta)  == 1){
-            $msg = "Comunidad creada correctamente"; // flag
-            header('Location: crearReunion.php?msg=1');
+        if (crear_acta($titulo_acta, $fecha_acta, $descripcion_acta, $reunion_acta)  == 1){
+            $msg = "Acta creada correctamente"; // flag
+            header('Location: crearActa.php?msg=1');
         }else {
-            header('Location: crearReunion.php?msg=2');
+            header('Location: crearActa.php?msg=2');
         }
     }
 }
@@ -55,8 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
         <div class="main">
             <div class="center">
-                <form id="form" action="#" method="" onclick="" autocomplete="off" onsubmit="return ValidacionCrearActa();"> <!--falta validar-->
+                <form id="form" action="crearActa.php" method="POST" onclick="" autocomplete="off" onsubmit="return ValidacionCrearActa();"> <!--falta validar-->
                     <p class="tittle">Crear nueva acta</p>
+                    <?php if (isset($_GET['msg']) && $_GET['msg'] == '1'){
+                            echo "<p class='alerta exito'>El acta ha sido creada con éxito</p>"; 
+                        }
+                        else if (isset($_GET['msg']) && $_GET['msg'] == '2'){
+                            echo "<p class='alerta error'>Ha habido un error al crear el acta, revise los datos e inténtelo nuevamente</p>";
+                        }
+                    ?>
                     <p class="preinput">Título</p>
                     <input class="input"  type="text" id="nombre" name="titulo_acta" placeholder="Ingrese título">
                     <p class="preinput">Seleccione reunión</p>

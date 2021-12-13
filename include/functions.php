@@ -339,16 +339,18 @@ function search_acta_by_date($id_comunidad, $fecha_comienzo, $fecha_termino){
 function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
     try {
         include 'db.php';
-        $sql_query = "INSERT INTO acta VALUES (?, ?, ?);";
-        $sql_query_2 = "INSERT INTO registra VALUES (?,?);";
+        $sql_query = "INSERT INTO acta (titulo_acta, contenido_acta, fecha_acta) VALUES (?, ?, ?);";
+        $sql_query_2 = "INSERT INTO registra (id_reunion, id_acta) VALUES (?,?);";
         $stmt = $conn->prepare($sql_query);
-        $stmt_2 = $conn->prepare($sql_query);
+        $stmt->bind_param('sss', $titulo_acta, $contenido_acta, $fecha_acta);
+        $stmt->execute();
         
-        $stmt->bind_param('ssss', $titulo_acta, $contenido_acta, $fecha_acta);
+
+        $stmt_2 = $conn->prepare($sql_query_2);
         $lastid_acta = intval($stmt->insert_id);
         $stmt_2->bind_param('ii', $id_reunion, $lastid_acta);
-        $stmt->execute();
         $stmt_2->execute();
+        
         $stmt->close();
         $stmt_2->close();
         $conn->close();
@@ -356,6 +358,7 @@ function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
     }
     catch (Exception $e){
         $msg = $e->getMessage();
+        echo $msg;
     }
 }
 
