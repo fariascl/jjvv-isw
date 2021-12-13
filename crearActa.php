@@ -1,3 +1,11 @@
+<?php
+require_once('include/session.php');
+if (check_session()){
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,16 +42,16 @@
                     <p class="tittle">Crear nueva acta</p>
                     <p class="preinput">Título</p>
                     <input class="input"  type="text" id="nombre" placeholder="Ingrese título">
-                    <p class="preinput">Seleccione comunidad</p>
-                    <!-- Acá debería ser un selector de reunion en ves de comunidad -->
-                    <select class="input" name="comunidad">
-                        <option class="input" value="comunidad 1">Comunidad 1</option>
-                        <option value="comunidad 2">Comunidad 2</option>
+                    <p class="preinput">Seleccione reunión</p>
+                    <select class="input" name="reunion">
                         <?php
                             require_once('include/functions.php');
-                            $row = get_comunidad();
-                            foreach ($row as $comunidad){
-                                echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                            $id_usuario = $_SESSION['id_usuario'];
+                            $row = listing_reuniones($id_usuario);
+                            foreach ($row as $reunion){
+                                $fecha = date("d-m-Y", strtotime($reunion[3]));
+                                //reunion.id_reunion, comunidad.nombre_comunidad, reunion.tema_reunion, reunion.fecha_reunion FROM reunion,
+                                echo '<option value="'.$reunion[0].'">'.$reunion[1]. ' &mdash; '.$reunion[2].' &mdash; '.$fecha.'</option>';
                             }
                         ?>
                     </select>

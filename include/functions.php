@@ -361,25 +361,26 @@ function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
 /* Funciones para selectores de agregar actas */
 function listing_comunidades($id_usuario){
     include 'db.php';
-    $sql_query = "SELECT comunidad.id_comunidad, comunidad.nombre_comunidad, com FROM comunidad, pertenece, usuario_admin WHERE comunidad.id_comunidad = pertenece.id_comunidad AND pertenece.id_usuario = ?";
+    $sql_query = "SELECT DISTINCT comunidad.id_comunidad, comunidad.nombre_comunidad FROM comunidad, administra, usuario_admin WHERE comunidad.id_comunidad = administra.id_comunidad AND administra.id_usuario = ?;";
     $stmt = $conn->prepare($sql_query);
     $stmt->bind_param('s', $id_usuario);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $row = $result->fetch_all();
     $stmt->close();
     $conn->close();
+    
     return $row;
 }
 
-function listing_reuniones($id_comunidad){
+function listing_reuniones($id_usuario){
     include 'db.php';
-    $sql_query = "SELECT reunion.id_reunion, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = ?;";
+    $sql_query = "SELECT DISTINCT reunion.id_reunion, comunidad.nombre_comunidad, reunion.tema_reunion, reunion.fecha_reunion FROM reunion, tiene, comunidad, administra, usuario_admin WHERE reunion.id_reunion = tiene.id_reunion AND tiene.id_comunidad = comunidad.id_comunidad AND comunidad.id_comunidad = administra.id_comunidad AND administra.id_usuario = ?;";
     $stmt = $conn->prepare($sql_query);
-    $stmt->bin_param('i', $id_comunidad);
+    $stmt->bind_param('s', $id_usuario);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $row = $result->fetch_all();
     $stmt->close();
     $conn->close();
     return $row;
