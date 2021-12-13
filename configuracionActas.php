@@ -4,6 +4,20 @@ if (check_session()){
     header('Location: login.php');
     exit;
 }
+
+if (!isset($_GET['comunidad'])){
+    include 'include/functions.php';
+    $row = listing_comunidades($_SESSION['id_usuario']);
+    //echo var_dump($row);
+    header('Location: ?comunidad='.$row[0][0].'');
+}
+
+if (isset($_GET['eliminar'])){
+    $eliminado = delete_acta($_GET['eliminar']);
+    if ($eliminado == 1){
+        echo "Acta eliminada";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,24 +54,33 @@ if (check_session()){
         <div class="main">
             <div class="center">
                 <form id="form" action="#" method="" onclick="">
-                    <select class="input" name="comunidad">
-                        <option class="input" value="comunidad 1">Comunidad 1</option>
-                        <option value="comunidad 2">Comunidad 2</option>
+                    <select class="input" name="comunidad" onchange="location = this.value";>
                         <?php
                             require_once('include/functions.php');
-                            $row = get_comunidad();
+                            
+                            $id_usuario = $_SESSION['id_usuario'];
+                            $row = listing_comunidades($id_usuario);
                             foreach ($row as $comunidad){
-                                echo '<option value="'.$comunidad[0].'">'.$comunidad[1].'</option>';
+                                echo '<option value="?comunidad='.$comunidad[0].'">'.$comunidad[1].'</option>';
                             }
-                        ?>
-                    </select>
-                    <div class="contenedor">
-                        <p class="parrafo negrita">Título Acta:</p>
-                        <div class="conenedorBoton">
-                            <a class="button modificar" href="editarActa.php"><i class="fas fa-edit"></i></a>
-                            <a class="button eliminar" href="eliminarActa.php"><i class="fas fa-trash-alt"></i></a>
-                        </div>
-                    </div>
+                        
+                    echo '</select>';
+                        $id_comunidad = $_GET['comunidad'];
+                        $row_2 = get_actas_by_comun($id_comunidad);
+                        echo var_dump($row_2);
+                        foreach ($row_2 as $acta){
+                            echo '
+                                <div class="contenedor">
+                                <p class="parrafo negrita">Título Acta: '.$acta[1].'</p>
+                                    <div class="conenedorBoton">
+                                        <!--<a class="button modificar" href="editarActa.php"><i class="fas fa-edit"></i></a>-->
+                                        <a class="button eliminar" href="?eliminar='.$acta[0].'"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                    ?>
+                    
                 </form>
             </div>
         </div>
@@ -67,6 +90,7 @@ if (check_session()){
 </html>
 
 <?php
+/*
 
     Hice esto por si acaso en vola algo sirve uwu, con cariño metal <3.
 
@@ -77,5 +101,5 @@ if (check_session()){
         echo "<script>alert('Eliminado con exito'); </script>";
         header('Location: configuracionActas.php');
     }
-
+*/
 ?>

@@ -350,7 +350,7 @@ function crear_acta($titulo_acta, $contenido_acta, $fecha_acta, $id_reunion){
         $lastid_acta = intval($stmt->insert_id);
         $stmt_2->bind_param('ii', $id_reunion, $lastid_acta);
         $stmt_2->execute();
-        
+
         $stmt->close();
         $stmt_2->close();
         $conn->close();
@@ -390,6 +390,23 @@ function listing_reuniones($id_usuario){
     return $row;
 }
 /* Fin funciones para selectores de agregar actas */
+
+function delete_acta($id_acta){
+    include 'db.php';
+    $sql_query = "DELETE FROM registra WHERE id_acta = ?;";
+    $sql_query_2 = "DELETE FROM acta WHERE id_acta = ?;";
+    $stmt = $conn->prepare($sql_query);
+    $stmt = $conn->prepare($sql_query_2);
+    $stmt->bind_param('i', $id_acta);
+    $stmt_2->bind_param('i', $id_acta);
+    $stmt->execute();
+    $stmt_2->execute();
+    $stmt->close();
+    $stmt_2->close();
+    $conn->close();
+    return 1;
+
+}
 ?>
 
 
