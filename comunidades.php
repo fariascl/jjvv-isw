@@ -47,7 +47,7 @@ if (isset($_GET['unirse'])){
             <div class="action-submenu">
                 <a href="crearComunidad.php">Crear nueva comunidad</a>
                 <a href="comunidades.php" class="active">Ver comunidades</a>
-                <a href="#">Configuración comunidades</a>
+                <!-- <a href="#">Configuración comunidades</a> -->
             </div>
         </div>
         <div class="main">

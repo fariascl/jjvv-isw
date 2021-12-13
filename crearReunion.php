@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="action-submenu">
                 <a href="crearReunion.php" class="active">Crear nueva reunión</a>
                 <a href="reuniones.php">Historial de reuniones</a>
-                <a href="#">Configuración de reuniones</a>
+                <!-- <a href="#">Configuración de reuniones</a> -->
             </div>
         </div>
         <div class="main">

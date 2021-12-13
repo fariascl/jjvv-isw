@@ -33,10 +33,10 @@ if (check_session()){
         </div>
         <div class="submenu">
             <div class="action-submenu">
-                <a href="tusComunidades.php">Tus comunidades</a>
+                <!-- <a href="tusComunidades.php">Tus comunidades</a> -->
                 <a href="perfil.php" class="active">Datos personales</a>
-                <a href="configuracionPersonal.php">Configuración personal</a>
-                <a href="panelAdministradores.php">Panel administradores</a>
+                <!-- <a href="configuracionPersonal.php">Configuración personal</a>
+                <a href="panelAdministradores.php">Panel administradores</a> -->
             </div>
         </div>
         <div class="main">

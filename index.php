@@ -35,6 +35,7 @@ if (check_session()){
                     <p class="tittle">Bienvenido</p>
                     <p class="parrafo"><?php echo $_SESSION['nombre']; ?></p>
                 </div>
+                <!--
                 <form id="form" action="#" method="" onclick="">
                     <p class="tittle">Tus próximas reuniones</p>
                     <div class="datosReunion">
@@ -43,6 +44,7 @@ if (check_session()){
                         <a class="button secundario" href="">Ver detalle</a>
                     </div>
                 </form>
+                -->
             </div>
         </div>
     </div>

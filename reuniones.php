@@ -33,7 +33,7 @@ if (check_session()){
             <div class="action-submenu">
                 <a href="crearReunion.php">Crear nueva reunión</a>
                 <a href="reuniones.php" class="active">Historial de reuniones</a>
-                <a href="configuracionReunion.php">Configuración de reuniones</a>
+                <!-- <a href="configuracionReunion.php">Configuración de reuniones</a> -->
             </div>
         </div>
         <div class="main">
