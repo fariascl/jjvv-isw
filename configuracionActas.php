@@ -74,7 +74,7 @@ if (isset($_GET['eliminar'])){
                                 <p class="parrafo negrita">Título Acta: '.$acta[1].'</p>
                                     <div class="conenedorBoton">
                                         <!--<a class="button modificar" href="editarActa.php"><i class="fas fa-edit"></i></a>-->
-                                        <a class="button eliminar" href="?eliminar='.$acta[0].'"><i class="fas fa-trash-alt"></i></a>
+                                        <a class="button eliminar" href="?comunidad='.$_GET['comunidad'].'eliminar='.$acta[0].'"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                                 </div>
                             ';
