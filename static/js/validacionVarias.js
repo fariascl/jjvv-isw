@@ -34,13 +34,15 @@ function ValidacionCrearReunion() {
     } else if (!expresionTitulo.test(titulo)) {
         alert("El título no puede contener simbolos, exceptuando el '#'");
         return false
-    } else if (hoy >= fechainicial) {
+    } else if (hoy >= fechainicial) {        
+        /*if(hora <= horaActual){
+            alert("No se pueden agendar reuniones con fechas pasadas");
+            return false
+        }*/
         alert("No se pueden agendar reuniones con fechas pasadas");
         return false
-    }else if(hora <= horaActual){
-        alert("No se pueden agendar reuniones con fechas pasadas");
-        return false
-    } else if (ubicacion.length < 4 || ubicacion.length >= 80) {
+
+    }else if (ubicacion.length < 4 || ubicacion.length >= 80) {
         alert("La ubicación debe tener como mínimo 4 caracteres y 80 como máximo");
         return false
     } else if (!expresionUbicacion.test(ubicacion)) {
