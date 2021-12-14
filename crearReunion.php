@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $descripcion = $_POST['descripcion'];
         $comunidad = $_POST['comunidad'];
         $id_usuario = $_SESSION['id_usuario']; // Id para pruebas, pero cuando todo esté funcional con el panel admin deberia sacarse de la variable session
-        if (crear_acta($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
+        if (create_reunion($titulo, $fecha, $hora, $ubicacion, $descripcion, $comunidad, $id_usuario)  == 1){
             $msg = "Comunidad creada correctamente"; // flag
             header('Location: crearReunion.php?msg=1');
         }else {
