@@ -59,12 +59,14 @@ if (check_session()){
                     <div class="block">
                         <p class="negrita">RUT:</p>
                         <p class="parrafo">'.$usuario['rut'].'</p>
-                    </div>
-                    <select class="input">
-                        <option value="0">Sus Comunidades</option>
-                    </select>';
+                    </div>';
                     ?>
                 </form>
+                <!--
+                    <select class="input">
+                        <option value="0">Sus Comunidades</option>
+                    </select>
+                -->
             </div>
         </div>
     </div>
