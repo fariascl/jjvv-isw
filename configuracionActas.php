@@ -5,6 +5,14 @@ if (check_session()){
     exit;
 }
 
+if(!isset($_GET['comunidad']) && isset($_GET['msg']) && $_GET['msg'] == 1){
+    
+    include 'include/functions.php';
+    $row = listing_comunidades($_SESSION['id_usuario']);
+    header('Location: ?comunidad='.$row[0][0].'&msg=1');
+
+}
+
 if (!isset($_GET['comunidad'])){
     include 'include/functions.php';
     $row = listing_comunidades($_SESSION['id_usuario']);
@@ -12,13 +20,17 @@ if (!isset($_GET['comunidad'])){
     header('Location: ?comunidad='.$row[0][0].'');
 }
 
+
 if (isset($_GET['eliminar'])){
     include 'include/functions.php';
     $eliminado = delete_acta(intval($_GET['eliminar']));
     if ($eliminado == 1){
-        echo "Acta eliminada";
+        $msg = "Acta eliminada";
+        header('Location: configuracionActas.php?msg=1');
     }
+    
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,9 +65,17 @@ if (isset($_GET['eliminar'])){
             </div>
         </div>
         <div class="main">
-            <div class="center">
+            <div class="center">                    
+
                 <form id="form" action="#" method="" onclick="">
+                    <?php
+                        if(isset($_GET['msg']) && $_GET['msg'] == '1')
+                        {
+                            echo '<p class="alerta exito">Acta eliminada con éxito</p>';
+                        }
+                        ?>  
                     <select class="input" name="comunidad" onchange="location = this.value";>
+
                         <?php
                             require_once('include/functions.php');
                             
