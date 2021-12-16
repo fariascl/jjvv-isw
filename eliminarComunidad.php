@@ -9,6 +9,6 @@
     $stmt->execute();
     $stmt->close();
     $conn->close();
-    header('Location: comunidades.php');
+    header('Location: comunidades.php?msg=2');
 
 ?>

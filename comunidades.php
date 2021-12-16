@@ -10,7 +10,7 @@ if (check_session()){
 if (isset($_GET['unirse'])){
     include 'include/functions.php';
     $unido = unirse($_SESSION['id_usuario'], $_GET['unirse']);
-    header('Location: comunidades.php');
+    header('Location: comunidades.php?msg=1');
 }
 
 /*if (isset($_GET['salirse'])){
@@ -53,6 +53,21 @@ if (isset($_GET['unirse'])){
         <div class="main">
             <div class="center">
                 <form action="">
+
+                    <?php
+                        if(isset($_GET['msg']) && $_GET['msg'] == '1')
+                        {
+                            echo '<p class="alerta exito">Te has unido a la comunidad</p>';
+                        }
+                    ?>
+
+                    <?php
+                        if(isset($_GET['msg']) && $_GET['msg'] == '2')
+                        {
+                            echo '<p class="alerta error">Te has salido de la comunidad</p>';
+                        }
+                    ?>
+
                     <?php
                         include('include/functions.php');
                         $row = get_comunidad();
