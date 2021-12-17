@@ -54,6 +54,7 @@ if (isset($_GET['unirse'])){
             <div class="center">
                 <form action="">
 
+                    <!-- Alerta de que usuario se unió a comunidad -->
                     <?php
                         if(isset($_GET['msg']) && $_GET['msg'] == '1')
                         {
@@ -61,6 +62,7 @@ if (isset($_GET['unirse'])){
                         }
                     ?>
 
+                    <!-- Alerta de que usuario salió de comunidad -->
                     <?php
                         if(isset($_GET['msg']) && $_GET['msg'] == '2')
                         {
@@ -74,6 +76,7 @@ if (isset($_GET['unirse'])){
                         $id_usuario = $_SESSION['id_usuario'];
                         $unido_en = esta_en_comunidad($id_usuario);
                         foreach ($row as $comunidad){
+                            /* Pregunta si usuario se encuentra en comunidad listada */
                             if (in_array($comunidad[0], $unido_en)){
                                 echo '
                                 <div class="block">
@@ -86,6 +89,7 @@ if (isset($_GET['unirse'])){
                                     </div>
                                 </div>';
                             }else{
+                            /* Si no se encuentra dentro entonces da la opción de unirse*/
                             echo '
                                 <div class="block">
                                     <p class="parrafo">' .$comunidad[1]. '</p>
