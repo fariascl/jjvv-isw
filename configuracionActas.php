@@ -1,11 +1,14 @@
 <?php
-require_once('include/session.php');
+//Verificar si está logeado
+require_once('include/session.php'); 
 if (check_session()){
     header('Location: login.php');
     exit;
 }
 
-if(!isset($_GET['comunidad']) && isset($_GET['msg']) && $_GET['msg'] == 1){
+//
+
+if(!isset($_GET['comunidad']) && isset($_GET['msg']) && $_GET['msg'] == 1){ //Muestra el mensaje de eliminacion de acta con éxito y redirecciona a la comunidad de la acta
     
     include 'include/functions.php';
     $row = listing_comunidades($_SESSION['id_usuario']);
@@ -13,7 +16,7 @@ if(!isset($_GET['comunidad']) && isset($_GET['msg']) && $_GET['msg'] == 1){
 
 }
 
-if (!isset($_GET['comunidad'])){
+if (!isset($_GET['comunidad'])){ //Redirecciona a la primera comunidad
     include 'include/functions.php';
     $row = listing_comunidades($_SESSION['id_usuario']);
     //echo var_dump($row);
@@ -21,7 +24,7 @@ if (!isset($_GET['comunidad'])){
 }
 
 
-if (isset($_GET['eliminar'])){
+if (isset($_GET['eliminar'])){ //Elimina el acta
     include 'include/functions.php';
     $eliminado = delete_acta(intval($_GET['eliminar']));
     if ($eliminado == 1){
@@ -69,7 +72,7 @@ if (isset($_GET['eliminar'])){
 
                 <form id="form" action="#" method="" onclick="">
                     <?php
-                        if(isset($_GET['msg']) && $_GET['msg'] == '1')
+                        if(isset($_GET['msg']) && $_GET['msg'] == '1') // Muestra el mensaje con el estilo css
                         {
                             echo '<p class="alerta exito">Acta eliminada con éxito</p>';
                         }
@@ -77,7 +80,7 @@ if (isset($_GET['eliminar'])){
                     <select class="input" name="comunidad" onchange="location = this.value";>
 
                         <?php
-                            require_once('include/functions.php');
+                            require_once('include/functions.php'); // Listado de comunidades en el selector y solamente a las que es admin
                             
                             $id_usuario = $_SESSION['id_usuario'];
                             $row = listing_comunidades($id_usuario);
@@ -86,7 +89,7 @@ if (isset($_GET['eliminar'])){
                             }
                         
                     echo '</select>';
-                        $id_comunidad = $_GET['comunidad'];
+                        $id_comunidad = $_GET['comunidad']; //Muestra las actas por comunidad y
                         $row_2 = get_actas_by_comun($id_comunidad);
                         foreach ($row_2 as $acta){
                             echo '
