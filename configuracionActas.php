@@ -91,7 +91,10 @@ if (isset($_GET['eliminar'])){ //Elimina el acta
                     echo '</select>';
                         $id_comunidad = $_GET['comunidad']; //Muestra las actas por comunidad y
                         $row_2 = get_actas_by_comun($id_comunidad);
-                        foreach ($row_2 as $acta){
+                        if (count($row_2) == 0){
+                                echo '<p class="mensaje">No se han encontrado actas</p>';
+                            }else{
+                                foreach ($row_2 as $acta){
                             echo '
                                 <div class="contenedor">
                                 <p class="parrafo negrita"> '.$acta[1].':</p>
@@ -102,6 +105,8 @@ if (isset($_GET['eliminar'])){ //Elimina el acta
                                 </div>
                             ';
                         }
+                            }
+                        
                     ?>
                     
                 </form>
